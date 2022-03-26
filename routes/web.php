@@ -12,18 +12,22 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+// SITE ROUTES 
 
+$router->get('/', function () use ($router) {
+    return view('site.index');
+});
 
 // ADMIN Routes
 $router->get('/admin', function () use ($router) {
-    return view('admin.index', ['name' => 'Simon']);
+    return view('admin.index');
 });
 
 $router->get('/admin/users', function () use ($router) {
     return view('admin.users.index', ['name' => 'Simon']);
 });
 
-$router->get('/admin/users', function () use ($router) {
+$router->get('/admin/templates', function () use ($router) {
     return view('admin.templates.index', []);
 });
 
