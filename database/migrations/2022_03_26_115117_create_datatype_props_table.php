@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nodes', function (Blueprint $table) {
+        Schema::create('datatype_properties', function (Blueprint $table) {
             $table->id()->autoIncrement();
-            $table->uuid('uuid');
-            $table->integer('parent_id');
             $table->string('name');
             $table->string('alias');
-            $table->integer('doctype');
-            $table->timestamps();
-            $table->boolean('hidden');
-            $table->boolean('softdeleted');
         });
     }
 
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('nodes');
+        Schema::dropIfExists('datatype_properties');
     }
 };
