@@ -13,6 +13,6 @@
 |
 */
 
-$router->get('/', function () use ($router) {
+$router->get('/admin', function () use ($router) {
     return view('admin.index', ['name' => 'Simon']);
 });
