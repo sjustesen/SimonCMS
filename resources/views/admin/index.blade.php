@@ -1,4 +1,5 @@
-@include(admin.layout.header)
+@extends('admin.layout.master')
 
+@section('content')
 <h1>Hello from the Administration!</h1>
-@include(admin.layout.footer)
+@endsection
