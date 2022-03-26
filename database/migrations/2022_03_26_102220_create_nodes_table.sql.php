@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('nodes', function (Blueprint $table) {
             $table->id();
-            $table->uniqid();
+            $table->uuid('uuid');
             $table->integer('parentid');
             $table->string('name');
             $table->timestamps();
