@@ -13,6 +13,20 @@
 |
 */
 
+
+// ADMIN Routes
 $router->get('/admin', function () use ($router) {
     return view('admin.index', ['name' => 'Simon']);
+});
+
+$router->get('/admin/users', function () use ($router) {
+    return view('admin.users.index', ['name' => 'Simon']);
+});
+
+$router->get('/admin/users', function () use ($router) {
+    return view('admin.templates.index', []);
+});
+
+$router->get('/admin/doctypes', function () use ($router) {
+    return view('admin.doctypes.index', []);
 });
