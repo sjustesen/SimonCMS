@@ -19,18 +19,20 @@ $router->get('/', function () use ($router) {
 });
 
 // ADMIN Routes
-$router->get('/admin', function () use ($router) {
-    return view('admin.index');
-});
+$router->group(['prefix' => 'admin'], function () use ($router) {
+    $router->get('/', function () use ($router) {
+        return view('admin.index');
+    });
 
-$router->get('/admin/users', function () use ($router) {
-    return view('admin.users.index', ['name' => 'Simon']);
-});
+    $router->get('users', function () use ($router) {
+        return view('admin.users.index', ['name' => 'Simon']);
+    });
 
-$router->get('/admin/templates', function () use ($router) {
-    return view('admin.templates.index', []);
-});
+    $router->get('templates', function () use ($router) {
+        return view('admin.templates.index', []);
+    });
 
-$router->get('/admin/doctypes', function () use ($router) {
-    return view('admin.doctypes.index', []);
+    $router->get('doctypes', function () use ($router) {
+        return view('admin.doctypes.index', []);
+    });
 });
