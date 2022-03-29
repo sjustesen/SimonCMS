@@ -24,8 +24,13 @@ class App extends router(LitElement) {
   static get routes() {
     return [
       {
-        name: "content",
+        name: "admin",
         pattern: "admin",
+        data: { title: "Contents" },
+      },
+      {
+        name: "content",
+        pattern: "admin/content",
         data: { title: "Contents" },
       },
       {
@@ -67,7 +72,6 @@ class App extends router(LitElement) {
       <nav-link href="/admin/media">Media</nav-link>
       <nav-link href="/admin/settings">Settings</nav-link>
       <nav-link href="/admin/developer">Developer</nav-link>
-      <nav-link href="/admin/about">About</nav-link>
 
       <router-outlet active-route=${this.route}>
         <content-section route="content"></content-section>
