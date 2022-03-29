@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password_hash');
             $table->string('email');
             $table->timestamp('added_at');
-            $table->timestamp('last_login');
+            $table->time('last_login');
             $table->integer('password_attempts');
             $table->ipAddress('ipaddress');
             $table->boolean('account_locked');
