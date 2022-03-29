@@ -6,9 +6,13 @@
     <header id="menu">
     </header>
     <main>
-        <div id="documentTree">@yield('doctree')</div>
+        <div id="documentTree"><div class="nav-container">
+            <nav-link href="/">Home</nav-link>
+            <nav-link href="/about">About</nav-link>
+        </div>
+         </div>
         <div id="mainSection"> @yield('content')</div>
-        <simple-greeting name="Simon"></simple-greeting>
+        <phpbraco-doctree name="Simon"></phpbraco-doctree>
     </main>
     <footer>
     </footer>
