@@ -7,8 +7,10 @@ import "./components/navigation/nav-link";
 import "./routing/router-outlet";
 
 //pages
-import "./pages/index.js";
-import "./pages/about.js"
+import "./sections/content";
+import "./sections/media"
+import "./sections/settings";
+import "./sections/developer";
 
 class App extends router(LitElement) {
   static get properties() {
@@ -22,13 +24,21 @@ class App extends router(LitElement) {
   static get routes() {
     return [
       {
-        name: "home",
-        pattern: "",
-        data: { title: "Home" },
+        name: "content",
+        pattern: "admin",
+        data: { title: "Contents" },
       },
       {
-        name: "about",
-        pattern: "about",
+        name: "media",
+        pattern: "admin/media",
+      },
+      {
+        name: "settings",
+        pattern: "admin/settings",
+      },
+      {
+        name: "developer",
+        pattern: "admin/developer",
       },
       {
         name: "not-found",
@@ -53,20 +63,22 @@ class App extends router(LitElement) {
 
   render() {
     return html`
-      <app-header></app-header>
-      <nav-link href="/">Home</nav-link>
-      <nav-link href="/contact">Contact</nav-link>
-      <nav-link href="/about">About</nav-link>
+      <nav-link href="/admin/content">Content</nav-link>
+      <nav-link href="/admin/media">Media</nav-link>
+      <nav-link href="/admin/settings">Settings</nav-link>
+      <nav-link href="/admin/developer">Developer</nav-link>
+      <nav-link href="/admin/about">About</nav-link>
 
       <router-outlet active-route=${this.route}>
-        <home-page route="home"></home-page>
-        <about-page route="about"></about-page>
-        <contact-page route="contact"></contact-page>
-        <h1 route="not-found">Not Found</h1>
+        <content-section route="content"></content-section>
+        <media-section route="media"></media-section>
+        <settings-section route="settings"></settings-section>
+        <developer-section route="developer"></developer-section>
+        <error-page route="not-found">Not Found</h1>
       </router-outlet>
     `;
   }
 }
 
-customElements.define("app-container", App);
+customElements.define("app-main", App);
 

@@ -13,6 +13,9 @@
 |
 */
 // SITE ROUTES 
+$router->get('(.*)', function ()  {
+    return view('site.index', []);
+});
 
 $router->get('/', function () use ($router) {
     return view('site.index');
@@ -20,11 +23,15 @@ $router->get('/', function () use ($router) {
 
 // ADMIN Routes
 $router->group(['prefix' => 'admin'], function () use ($router) {
-    $router->get('/', function () use ($router) {
+    $router->get('/{route:.*}/', function ($path = null)  {
         return view('admin.index');
     });
 
-    $router->get('users', function () use ($router) {
+     $router->get('/', function () use ($router) {
+        return view('admin.index');
+     });
+
+    /* $router->get('users', function () use ($router) {
         return view('admin.users.index', ['name' => 'Simon']);
     });
 
@@ -33,8 +40,8 @@ $router->group(['prefix' => 'admin'], function () use ($router) {
     });
 
     $router->get('doctypes', function () use ($router) {
-        return view('admin.doctypes.index', []);
-    });
+        return view('admin.doctypes.index', []); 
+    });*/
 });
 
 // Api Routing

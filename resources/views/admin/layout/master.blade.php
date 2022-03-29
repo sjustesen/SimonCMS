@@ -6,13 +6,12 @@
     <header id="menu">
     </header>
     <main>
-        <div id="documentTree"><div class="nav-container">
-            <nav-link href="/">Home</nav-link>
-            <nav-link href="/about">About</nav-link>
-        </div>
-         </div>
-        <div id="mainSection"> @yield('content')</div>
-        <phpbraco-doctree name="Simon"></phpbraco-doctree>
+        <app-main active-route=${this.route}>
+            <h1 route='content'>Content</h1>
+            <h1 route='media'>Media</h1>
+            <h1 route='settings'>Settings<h1>
+            <h1 route='developer'>Developer</h1>
+        </app-main>
     </main>
     <footer>
     </footer>

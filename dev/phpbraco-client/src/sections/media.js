@@ -1,16 +1,14 @@
 import { LitElement, css, html } from "lit";
 
-class Home extends LitElement {
+class MediaLibrarySection extends LitElement {
   static get styles() {
     return [css``];
   }
-
   render() {
     return html` <div>
-      <h1>This is Home Page</h1>
+      <h1>This is the MediaLibrary</h1>
     </div>`;
   }
-
   static get properties() {
     return {
       eg: {
@@ -22,5 +20,4 @@ class Home extends LitElement {
     super();
   }
 }
-
-customElements.define("home-page", Home);
+customElements.define("media-section", MediaLibrarySection);

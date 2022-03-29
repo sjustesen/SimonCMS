@@ -1,14 +1,16 @@
 import { LitElement, css, html } from "lit";
 
-class About extends LitElement {
+class ContentSection extends LitElement {
   static get styles() {
     return [css``];
   }
+
   render() {
     return html` <div>
-      <h1>This is About Page</h1>
+      <h1>This is Home Page</h1>
     </div>`;
   }
+
   static get properties() {
     return {
       eg: {
@@ -20,4 +22,5 @@ class About extends LitElement {
     super();
   }
 }
-customElements.define("about-page", About);
+
+customElements.define("content-section", ContentSection);
