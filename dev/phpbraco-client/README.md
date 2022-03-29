@@ -1,15 +1,6 @@
-# 🚀 Welcome to your new awesome project!
+#PHPbraco client
 
-This project has been created using **webpack-cli**, you can now run
+This is the PHPbraco client, 
+you can build it by running 
 
-```
-npm run build
-```
-
-or
-
-```
-yarn build
-```
-
-to bundle your application
+npm i and then npm build
