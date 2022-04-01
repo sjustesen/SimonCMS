@@ -1,9 +1,9 @@
 import {LitElement, css, html} from 'lit';
-import './components/doctree';
 import { router } from "lit-element-router";
 
 //Components
 import "./components/navigation/nav-link";
+import './components/doctree';
 import "./routing/router-outlet";
 
 //pages

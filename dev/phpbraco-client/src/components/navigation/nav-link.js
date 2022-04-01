@@ -1,7 +1,8 @@
-import { LitElement, html } from "lit";
+import { LitElement, html, css } from "lit";
 import { navigator } from "lit-element-router";
 
 class NavLink extends navigator(LitElement) {
+
     static get properties() {
       return {
         href: { type: String },
@@ -11,6 +12,13 @@ class NavLink extends navigator(LitElement) {
       super();
       this.href = "";
     }
+    
+    static styles = css`
+    ::slotted(*) {
+      display: block;
+      color: red;
+    }
+  `;
     render() {
       return html`
         <a href="${this.href}" @click="${this.handleClick}">
