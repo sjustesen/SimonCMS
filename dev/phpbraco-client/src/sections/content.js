@@ -6,7 +6,8 @@ class ContentSection extends LitElement {
   }
 
   render() {
-    return html` <div>
+    return html` 
+    <div>
       <h1>This is Home Page</h1>
     </div>`;
   }

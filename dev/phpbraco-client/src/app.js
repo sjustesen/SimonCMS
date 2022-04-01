@@ -68,11 +68,12 @@ class App extends router(LitElement) {
 
   render() {
     return html`
+    <nav id="header">
       <nav-link href="/admin/content">Content</nav-link>
       <nav-link href="/admin/media">Media</nav-link>
       <nav-link href="/admin/settings">Settings</nav-link>
       <nav-link href="/admin/developer">Developer</nav-link>
-
+    </nav>
       <router-outlet active-route=${this.route}>
         <content-section route="content"></content-section>
         <media-section route="media"></media-section>
