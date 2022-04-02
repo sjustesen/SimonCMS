@@ -59,25 +59,25 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('content/{id}', ['uses' => 'Api\ContentApiController@deleteContent']);
     $router->put('contents/{id}', ['uses' => 'Api\ContentApiController@updateContent']);
 
-    $router->get('media',  ['uses' => 'Api\MediaApiController@showAllMedia']);
+    $router->get('media',  ['uses' => 'Api\MediaApiController@listMedia']);
     $router->get('media/{id}', ['uses' => 'Api\MediaApiController@showMedia']);
     $router->post('media', ['uses' => 'Api\MediaApiController@createMedia']);
     $router->delete('media/{id}', ['uses' => 'Api\MediaApiController@deleteMedia']);
     $router->put('media/{id}', ['uses' => 'Api\MediaApiController@updateMedia']);
 
-    $router->get('doctype',  ['uses' => 'Api\DoctypeApiController@showAllDoctypes']);
+    $router->get('doctype',  ['uses' => 'Api\DoctypeApiController@listDoctypes']);
     $router->get('doctype/{id}', ['uses' => 'Api\DoctypeApiController@showDoctype']);
     $router->post('doctype', ['uses' => 'Api\octypeApiController@createDoctype']);
     $router->delete('doctype/{id}', ['uses' => 'Api\DoctypeApiController@deleteDoctype']);
     $router->put('doctype/{id}', ['uses' => 'Api\DoctypeApiController@updateDoctype']);
 
-    $router->get('datatype',  ['uses' => 'Api\ApiController@showAllDatatypes']);
+    $router->get('datatype',  ['uses' => 'Api\ApiController@listDatatypes']);
     $router->get('datatype/{id}', ['uses' => 'Api\ApiController@showDatatype']);
     $router->post('datatype', ['uses' => 'Api\ApiController@createDatatype']);
     $router->delete('datatype/{id}', ['uses' => 'Api\ApiController@deleteDatatype']);
     $router->put('datatype/{id}', ['uses' => 'Api\ApiController@updateDatatype']);
 
-    $router->get('template',  ['uses' => 'Api\ApiController@showAllTemplates']);
+    $router->get('template',  ['uses' => 'Api\ApiController@listTemplates']);
     $router->get('template/{id}', ['uses' => 'Api\ApiController@showTemplate']);
     $router->post('template', ['uses' => 'Api\ApiController@createTemplate']);
     $router->delete('template/{id}', ['uses' => 'Api\ApiController@deleteTemplate']);

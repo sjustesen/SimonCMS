@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 class MediaApiController extends ApiController
 {
@@ -12,6 +12,11 @@ class MediaApiController extends ApiController
     public function __construct()
     {
         //
+    }
+
+    public function listMedia() {
+        return response()->json('Hello from Media');
+
     }
 
     //
