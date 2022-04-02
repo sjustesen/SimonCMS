@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Doctype;
 
-class ApiController extends Controller
+class DoctypeApiController extends ApiController
 {
     /**
      * Create a new controller instance.
@@ -16,15 +16,9 @@ class ApiController extends Controller
         //
     }
 
-    // Create methods
-
-    public function createContent() {
-
-    }
-
     // doctype endpoints 
     public function showAllDoctypes() {
-        return response()->json('Hello World');
+        return response()->json('Hello from Doctype');
     }
 
     public function createDoctype(Request $request) {

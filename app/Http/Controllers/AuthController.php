@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class BackendController extends Controller
+class AuthController extends ApiController
 {
     /**
      * Create a new controller instance.
@@ -12,6 +12,10 @@ class BackendController extends Controller
     public function __construct()
     {
         //
+    }
+
+    public function login() {
+        
     }
 
     //

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class MediaController extends Controller
+class MediaApiController extends ApiController
 {
     /**
      * Create a new controller instance.
