@@ -1,7 +1,6 @@
 import { LitElement, css, html } from "lit";
-import '../components/navigation/treeview'
 
-class ContentSection extends LitElement {
+class NotFoundRoute extends LitElement {
   constructor() {
     super();
   }
@@ -32,4 +31,4 @@ class ContentSection extends LitElement {
  
 }
 
-customElements.define("content-section", ContentSection);
+customElements.define("not-found", NotFoundRoute);

@@ -14,6 +14,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@binar/tree-view-component": "^1.0.25",
     "lit": "^2.2.1",
     "lit-element-router": "^2.0.3",
     "mithril": "^2.0.4"
