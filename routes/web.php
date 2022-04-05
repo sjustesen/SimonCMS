@@ -23,25 +23,39 @@ $router->get('/', function () use ($router) {
 
 // ADMIN Routes
 $router->group(['prefix' => 'admin'], function () use ($router) {
-    $router->get('/{route:.*}/', function ($path = null)  {
+   /* $router->get('/{route:.*}/', function ($path = null)  {
         return view('admin.index');
-    });
+    }); */
 
      $router->get('/', function () use ($router) {
         return view('admin.index');
      });
 
-    /* $router->get('users', function () use ($router) {
-        return view('admin.users.index', ['name' => 'Simon']);
+     $router->get('content', function () use ($router) {
+        // views are found in /resources/views/
+        return view('admin.content.index');
+     });
+
+     $router->get('media', function () use ($router) {
+        return view('admin.media.index');
+     });
+
+     $router->get('settings', function () use ($router) {
+        return view('admin.settings.index');
+     });
+
+    $router->get('users', function () use ($router) {
+        return view('admin.users.index', []);
     });
 
-    $router->get('templates', function () use ($router) {
-        return view('admin.templates.index', []);
+    // TODO: Needs to go
+    $router->get('settings/templates', function () use ($router) {
+        return view('admin.settings.templates.index', []);
     });
 
-    $router->get('doctypes', function () use ($router) {
-        return view('admin.doctypes.index', []); 
-    });*/
+    $router->get('settings/doctypes', function () use ($router) {
+        return view('admin.settings.doctypes.index', []); 
+    });
 });
 
 // Api Routing
