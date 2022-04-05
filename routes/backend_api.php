@@ -24,7 +24,7 @@ $router->group(['prefix' => 'admin/api'], function () use ($router) {
 
     $router->get('doctypes',  ['uses' => 'Api\DoctypeApiController@listDoctypes']);
     $router->get('doctype/{id}', ['uses' => 'Api\DoctypeApiController@showDoctype']);
-    $router->post('doctype', ['uses' => 'Api\octypeApiController@createDoctype']);
+    $router->post('doctype', ['uses' => 'Api\DoctypeApiController@createDoctype']);
     $router->delete('doctype/{id}', ['uses' => 'Api\DoctypeApiController@deleteDoctype']);
     $router->put('doctype/{id}', ['uses' => 'Api\DoctypeApiController@updateDoctype']);
 
