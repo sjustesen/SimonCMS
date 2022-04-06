@@ -15,5 +15,24 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call('UsersTableSeeder');
+       # DB::table('nodes')->delete();
+
+        $nodes = array(
+            [
+             'name' => 'Root Node', 
+             'alias' => 'root', 
+             'doctype' => 1000, 
+             'created_at' => datetime::now(),
+             'parent_id' => 0,
+             'updated_at' => null,
+             'hidden' => 0,
+             'softdeleted => 0'
+            ]
+        );
+
+        // Loop through each user above and create the record for them in the database
+        foreach ($nodes as $node) {
+            DocumentNode::create($node);
+        }
     }
 }
