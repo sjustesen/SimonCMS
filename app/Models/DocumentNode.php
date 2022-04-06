@@ -15,9 +15,13 @@ class DocumentNode extends Model
      * @var string[]
      */
     protected $fillable = [
-        'uuid', 'parent_id', 
-        'name', 'alias', 'doctype',
-        'hidden', 'softdeleted'
+        'uuid', 
+        'parent_id', 
+        'name', 
+        'alias', 
+        'doctype',
+        'hidden', 
+        'softdeleted'
     ];
 
     /**
