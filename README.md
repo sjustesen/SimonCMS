@@ -4,10 +4,10 @@
 This is not a clone, merely it is a loveletter to the Umbraco. And it is *not* afiliated with Umbraco project.
 
 ## Short story
-I've been away from the PHP platform for quite some years. I have been using this wonderful Content Management System called Umbraco on the Microsoft.NET platform. Having utilized other CMS' on the PHP from time to time, I see that many contemporary PHP content management systems lack the flexibility found in .NETs Umbraco. Normally, in PHP CMS space, you get a buttload of controls, and you end up using 10% of them.  You, the designer/developer designs the experience. What Umbraco does so brilliantly is that it turns the user experience upside down.  I want to bring that to the PHP platform. So this is why this very repo exists.
+I've been away from the PHP platform for quite some years. I have been using this wonderful Content Management System called Umbraco on the Microsoft.NET platform. Having utilized other CMS' on the PHP from time to time, I see that many contemporary PHP content management systems lack the flexibility found in .NETs Umbraco. Normally, in PHP CMS space, you get a buttload of controls, and you end up using 10% of them.  You, the designer/developer should be to make a tailormade experience. What Umbraco does so brilliantly is that it starts at nothing more or less, and then it's up to you to design the rest. I want to bring that to the PHP platform. So this is why this very repo exists.
 
 ## When...
-I am notoriously known for not completing projects (because I have a lot of ideas, and bounce back and fourth between them), however I have thought about starting a project like this for years, and having worked on this for a little while, I find that I'm having loads of fun. 
+I am notoriously known for not completing projects (because I have a lot of ideas, and bounce back and fourth between them), however I have thought about starting a project like this for years, and well, if you don't try things, they never happen... So, yeah, here we are :) 
 And I got plenty of time, like years.. Not going to make any promises as to when you'll be able to see an alpha version, but perhaps in 1/2 year from now (april 2022).
 
 ## Contributions
