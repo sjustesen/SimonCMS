@@ -13,7 +13,7 @@
 <div class="uk-section">
     <div class="uk-container uk-container-expand">
         <div class="uk-child-width-expand" uk-grid>
-            <div class="uk-width-1-4 uk-height-large">Navigation</div>
+            <div class="uk-width-1-4 uk-height-large"><phpbraco-treeview></phpbraco-treeview></div>
             <div class="uk-width-3-4">@yield('content')</div>
         </div>
     </div>

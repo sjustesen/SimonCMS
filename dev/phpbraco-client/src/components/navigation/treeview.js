@@ -1,14 +1,18 @@
 import {LitElement, css, html} from 'lit';
+import { TreeviewController } from './treeview.controller';
 
-class TreeView extends LitElement {
+export default class TreeView extends LitElement {
 
     constructor() {
       super();
+      this.controller = new TreeviewController(this);
       console.log('Treeview loaded');
     }
 
-    render() {html`
-        <tree-view id="chart" key="id" value="1" ></tree-view>`
+    
+
+    render() {
+      return html`<h1>hello world</h1>`
     }
   
   }
