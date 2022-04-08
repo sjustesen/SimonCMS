@@ -1,0 +1,30 @@
+
+navigation: {
+    nodes: [
+      {
+        pathSegment: 'TopNav1',
+        label: 'Top Navigation Element One',
+        viewUrl: 'https://example.com',
+        children: [
+          {
+            pathSegment: 'SideNav1',
+            label: 'Side Navigation Element One',
+            viewUrl: 'https://example.com/projects/list.html',
+            children: [
+              {
+                link: '/TopNav1/internalLink',
+                label: 'This takes you to [YOUR.WEBSITE]/TopNav1/internalLink',
+              },
+              {
+                externalLink: {
+                  url: 'http://www.luigi-project.io',
+                  sameWindow: false
+                },
+                label: 'This takes you to an external page',
+              },
+            ]
+          },
+        ]
+      },
+    ],
+  }
