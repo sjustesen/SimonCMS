@@ -1,7 +1,10 @@
 body {
     background-color: #fff;
 }
-
+.sc-container-padding {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 nav#header a {
     color: aqua;
 }
