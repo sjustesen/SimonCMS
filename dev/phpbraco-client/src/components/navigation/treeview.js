@@ -6,27 +6,22 @@ export default class TreeView extends LitElement {
   constructor() {
     super();
     this.controller = new TreeviewController(this);
-
-  }
-
-  getData(parsed_data) {
-    return '<ul><li>{parsed_data.id}</li></ul>';
   }
 
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('updateMenu', (e) => {
-       console.dir(e.detail.data);
-       document.getElementById('main-navtree').innerHTML = '<ul><li>Hejhej</li></ul>';
+      this.fetchedMenuData = e.detail.data;
+      const slot = this.shadowRoot.querySelector('slot');
+      slot.innerHTML= '<ul><li>' + this.fetchedMenuData.title + '</li></ul>';
      });
   }
 
-  updated(element) {
-    console.dir(element)
-  }
-
   render() {
-    return html`<div id="pb-navtree"></div>`
+   return html`
+    <div id="pb-navtree">
+    <slot></slot>
+    </div>`
   }
 
 }

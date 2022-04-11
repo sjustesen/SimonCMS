@@ -5,7 +5,7 @@ export class TreeviewController {
     }
 
     fetchJSON(navtype) {
-        fetch('https://jsonplaceholder.typicode.com/todos/1')
+        fetch('/api/navtree/')
             .then(response => response.json())
             .then(data => this.host.dispatchEvent(
                 new CustomEvent("updateMenu", {
@@ -14,7 +14,6 @@ export class TreeviewController {
                     },
                 })));
         this.host.requestUpdate();
-        console.dir('dispatching...');
     }
 
     // fetchJSON callback
@@ -25,5 +24,6 @@ export class TreeviewController {
     }
 
     hostDisconnected() {
+        // gracefully cleanup
     }
 }
