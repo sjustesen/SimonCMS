@@ -44,8 +44,12 @@ $router->group(['prefix' => 'admin'], function () use ($router) {
         return view('admin.settings.index');
      });
 
-    $router->get('users', function () use ($router) {
-        return view('admin.users.index', []);
+     $router->get('developer', function () use ($router) {
+        return view('admin.developer.index');
+     });
+
+    $router->get('members', function () use ($router) {
+        return view('admin.members.index', []);
     });
 
     // TODO: Needs to go
