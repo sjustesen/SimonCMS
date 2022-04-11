@@ -11,10 +11,19 @@ export default class TreeView extends LitElement {
   connectedCallback() {
     super.connectedCallback()
     this.addEventListener('updateMenu', (e) => {
-      this.fetchedMenuData = e.detail.data;
-      const slot = this.shadowRoot.querySelector('slot');
-      slot.innerHTML= '<ul><li>' + this.fetchedMenuData.title + '</li></ul>';
+      this.renderMenu(e.detail.data);
      });
+  }
+
+  renderMenu(fetchedMenuData) {
+    const slot = this.shadowRoot.querySelector('slot');
+    let menu = '<ul>';
+    fetchedMenuData.forEach(element => {
+      menu += `<li><a href="${element.href}">${element.title}</a></li>`;
+    });
+    menu += '</ul>';
+    
+    slot.innerHTML= menu;
   }
 
   render() {
