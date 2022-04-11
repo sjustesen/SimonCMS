@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 class AdminNavtreeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * The admin navtree controller.
+     * This will be static in the first versions,
+     * But will eventually allow you to attach your own nodes ^SJ
      *
-     * @return void
+     * All class methods in here should json_encode output
      */
     public function __construct()
     {
