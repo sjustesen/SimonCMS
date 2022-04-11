@@ -62,4 +62,26 @@ class AdminNavtreeController extends Controller
         
         return json_encode($menu_array);
     }
+
+    public function settings() {
+        $menu_array = [];
+        $item_one = new \StdClass();
+        $item_one->title = 'Document Types';
+        $item_one->icon = '';
+        $item_one->href='/admin/settings/doctypes';
+
+        $item_two = new \StdClass();
+        $item_two->title = 'Display';
+        $item_two->icon = '';
+        $item_two->href='/admin/media';
+
+        $item_three = new \StdClass();
+        $item_three->title = 'Medianodes';
+        $item_three->icon = '';
+        $item_three->href = '/admin/settings';
+
+        array_push($menu_array, $item_one, $item_two, $item_three);
+        
+        return json_encode($menu_array);
+    }
 }
