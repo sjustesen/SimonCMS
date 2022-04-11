@@ -5,7 +5,7 @@ export class TreeviewController {
     }
 
     fetchJSON(navtype) {
-        fetch('/api/navtree/')
+        fetch('/admin/navtree/content')
             .then(response => response.json())
             .then(data => this.host.dispatchEvent(
                 new CustomEvent("updateMenu", {

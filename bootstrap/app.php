@@ -109,8 +109,9 @@ $app->configure('app');
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
-    require __DIR__.'/../routes/web.php';
+    require __DIR__.'/../routes/backend_pageroutes.php';
     require __DIR__.'/../routes/backend_api.php';
+    require __DIR__.'/../routes/backend_navtrees.php';
 });
 
 return $app;
