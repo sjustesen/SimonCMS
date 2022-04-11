@@ -3,6 +3,20 @@ import { TreeviewController } from './treeview.controller';
 
 export default class TreeView extends LitElement {
 
+  static get styles() {
+
+    return css`
+      ul { 
+        list-style-type: none; 
+        padding: 0;
+        margin: 0;  
+      }
+      li, a { color: gray; }
+
+    `;
+
+  }
+
   constructor() {
     super();
     this.controller = new TreeviewController(this);

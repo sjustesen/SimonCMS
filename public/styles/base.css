@@ -1,12 +1,25 @@
 body {
-    background-color: #fff;
+    background-color: #eee;
     color: #000;
+    height: 100vh;
 }
+
+.uk-navbar-nav > li > a {
+    font-size: 14pt;
+}
+
 
 .sc-container-padding {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.uk-navbar-container:not(.uk-navbar-transparent) {
+    background-color: #000;
+    color: #fff;
+}
+
+
 nav#header a {
     color: aqua;
 }
