@@ -11,7 +11,6 @@ return array(
     'App\\Events\\ExampleEvent' => $baseDir . '/app/Events/ExampleEvent.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminController' => $baseDir . '/app/Http/Controllers/AdminController.php',
-    'App\\Http\\Controllers\\AdminNavtreeController' => $baseDir . '/app/Http/Controllers/AdminNavtreeController.php',
     'App\\Http\\Controllers\\AuthController' => $baseDir . '/app/Http/Controllers/AuthController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\FrontendController' => $baseDir . '/app/Http/Controllers/FrontendController.php',

@@ -12,7 +12,7 @@ const stylesHandler = 'style-loader';
 const config = {
     entry: './src/app.js',
     output: {
-        path: path.resolve(__dirname, '../../public/scripts'),
+        path: path.resolve(__dirname, '../../server/public/scripts'),
     },
     plugins: [
         // Add your plugins here

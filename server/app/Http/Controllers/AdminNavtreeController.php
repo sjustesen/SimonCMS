@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class AdminNavtreeController extends Controller
+use App\Models\Doctype;
+use App\Models\BackendNavtree;
+
+class BackendNavtreeController extends Controller
 {
     /**
      * The admin navtree controller.
@@ -11,12 +14,16 @@ class AdminNavtreeController extends Controller
      *
      * All class methods in here should json_encode output
      */
-    public function __construct()
+
+    protected $navtreeRepository; 
+
+    public function __construct(BackendNavRepository $navtree)
     {
-        //
+        $this->navtreeRepository = $navtree;
     }
 
     public function content() {
+
         // this will obviously be fetched from the database;
         // once doctypes and pages have been set up and connected
 
@@ -42,46 +49,13 @@ class AdminNavtreeController extends Controller
     }
 
     public function media() {
-        $menu_array = [];
-        $item_one = new \StdClass();
-        $item_one->title = 'This tree should';
-        $item_one->icon = '';
-        $item_one->href='/admin';
-
-        $item_two = new \StdClass();
-        $item_two->title = 'Display';
-        $item_two->icon = '';
-        $item_two->href='/admin/media';
-
-        $item_three = new \StdClass();
-        $item_three->title = 'Medianodes';
-        $item_three->icon = '';
-        $item_three->href = '/admin/settings';
-
-        array_push($menu_array, $item_one, $item_two, $item_three);
         
-        return json_encode($menu_array);
+        
     }
 
     public function settings() {
-        $menu_array = [];
-        $item_one = new \StdClass();
-        $item_one->title = 'Document Types';
-        $item_one->icon = '';
-        $item_one->href='/admin/settings/doctypes';
-
-        $item_two = new \StdClass();
-        $item_two->title = 'Display';
-        $item_two->icon = '';
-        $item_two->href='/admin/media';
-
-        $item_three = new \StdClass();
-        $item_three->title = 'Medianodes';
-        $item_three->icon = '';
-        $item_three->href = '/admin/settings';
-
-        array_push($menu_array, $item_one, $item_two, $item_three);
+        $menu = $this->navtreeRepository->find(1);
         
-        return json_encode($menu_array);
+        return $menu->to_json(); 
     }
 }
