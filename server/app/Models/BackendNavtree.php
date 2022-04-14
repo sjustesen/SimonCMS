@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BackendNavtree extends Model
+class BackendNavTree extends Model
 {
     use HasFactory;
 
+    protected $table = 'pb_backend_navtree';
     /**
      * The attributes that are mass assignable.
      *

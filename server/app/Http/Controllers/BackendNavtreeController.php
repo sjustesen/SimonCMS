@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Doctype;
 use App\Models\BackendNavtree;
+use App\Repositories\BackendNavigationRepository;
+use App\Providers\AppServiceProvider;
 
 class BackendNavtreeController extends Controller
 {
@@ -15,37 +17,19 @@ class BackendNavtreeController extends Controller
      * All class methods in here should json_encode output
      */
 
-    protected $navtreeRepository; 
+    protected $navtree; 
 
-    public function __construct(BackendNavRepository $navtree)
+    public function __construct(BackendNavigationRepository $navtree)
     {
-        $this->navtreeRepository = $navtree;
+        $this->navtree = $navtree;
     }
 
     public function content() {
 
         // this will obviously be fetched from the database;
         // once doctypes and pages have been set up and connected
-
-        $menu_array = [];
-        $item_one = new \StdClass();
-        $item_one->title = 'Go to frontpage';
-        $item_one->icon = '';
-        $item_one->href='/admin';
-
-        $item_two = new \StdClass();
-        $item_two->title = 'Visit media';
-        $item_two->icon = '';
-        $item_two->href='/admin/media';
-
-        $item_three = new \StdClass();
-        $item_three->title = 'Settings';
-        $item_three->icon = '';
-        $item_three->href = '/admin/settings';
-
-        array_push($menu_array, $item_one, $item_two, $item_three);
-        
-        return json_encode($menu_array);
+        $res = $this->navtree->get('content');
+        return json_encode([$res]);
     }
 
     public function media() {

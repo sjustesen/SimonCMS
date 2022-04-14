@@ -1,9 +1,9 @@
 <?php
 // TODO: this will need to be access protected (later)
 $router->group(['prefix' => 'admin/navtree'], function () use ($router) {
-    $router->get('content',  ['uses' => 'AdminNavtreeController@content']);
-    $router->get('media',  ['uses' => 'AdminNavtreeController@media']);
-    $router->get('settings',  ['uses' => 'AdminNavtreeController@settings']);
-    $router->get('developer',  ['uses' => 'AdminNavtreeController@developer']);
-    $router->get('members',  ['uses' => 'AdminNavtreeController@members']);
+    $router->get('content',  ['uses' => 'BackendNavtreeController@content']);
+    $router->get('media',  ['uses' => 'BackendNavtreeController@media']);
+    $router->get('settings',  ['uses' => 'BackendNavteeController@settings']);
+    $router->get('developer',  ['uses' => 'BackendNavtreeController@developer']);
+    $router->get('members',  ['uses' => 'BackendNavtreeController@members']);
 });
