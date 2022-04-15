@@ -31,9 +31,12 @@ export default class TreeView extends LitElement {
 
   renderMenu(fetchedMenuData) {
     const slot = this.shadowRoot.querySelector('slot');
+    const path = document.location.href;
+    
     let menu = '<ul>';
     fetchedMenuData.forEach(element => {
-      menu += `<li><a href="${element.href}">${element.name}</a></li>`;
+      let url = `${element.alias}`;
+      menu += `<li><a href="${url}">${element.name}</a></li>`;
     });
     menu += '</ul>';
     
