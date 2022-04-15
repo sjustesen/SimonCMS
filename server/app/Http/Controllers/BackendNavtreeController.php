@@ -34,7 +34,8 @@ class BackendNavtreeController extends Controller
     }
 
     public function media() {
-        
+        $res = $this->navtree->get('media', true);
+        return json_encode($res);
         
     }
 

@@ -4,6 +4,11 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+use App\Models\DocumentNode;
 
 class BackendContentTreeSeeder extends Seeder
 {
@@ -16,22 +21,21 @@ class BackendContentTreeSeeder extends Seeder
     {
         DB::table('nodes')->delete();
 
-        $nodes = array(
-            [
-             'name' => 'Root Node', 
-             'alias' => 'root', 
-             'doctype' => 1000, 
-             'created_at' => datetime::now(),
-             'parent_id' => 0,
-             'updated_at' => null,
-             'hidden' => 0,
-             'softdeleted => 0'
-            ]
-        );
+    
+        DB::table('nodes')->insert([		    
+            'name' => 'Root Node',
+            'uuid' => '',
+            'alias' => 'root',
+            'doctype' => 1000,
+	        'created_at' => null,
+            'parent_id' => 0,
+            'updated_at' => null,
+            'hidden' => 0,
+            'softdeleted' => 0,
+            'sorting' => 0
+	  ]);
 
         // Loop through each user above and create the record for them in the database
-        foreach ($nodes as $node) {
-            DocumentNode::create($node);
-        }
+       
     }
 }

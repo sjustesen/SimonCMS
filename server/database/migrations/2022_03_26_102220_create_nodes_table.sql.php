@@ -22,6 +22,7 @@ return new class extends Migration
             $table->integer('doctype');
             $table->timestamps();
             $table->boolean('hidden');
+            $table->integer('sorting');
             $table->boolean('softdeleted');
         });
     }
