@@ -18,6 +18,7 @@ class BackendNavtreeController extends Controller
      */
 
     protected $navtree; 
+    
 
     public function __construct(BackendNavigationRepository $navtree)
     {
@@ -28,8 +29,8 @@ class BackendNavtreeController extends Controller
 
         // this will obviously be fetched from the database;
         // once doctypes and pages have been set up and connected
-        $res = $this->navtree->get('content');
-        return json_encode([$res]);
+        $res = $this->navtree->get('content', true);
+        return json_encode($res);
     }
 
     public function media() {
@@ -38,8 +39,7 @@ class BackendNavtreeController extends Controller
     }
 
     public function settings() {
-        $menu = $this->navtreeRepository->find(1);
-        
-        return $menu->to_json(); 
+        $res = $this->navtree->get('settings', true);
+        return json_encode($res);
     }
 }

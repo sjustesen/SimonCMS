@@ -32,12 +32,23 @@ class BackendNavigationRepository {
         }
     }
 
-    public function get(string $section) {
+    public function get(string $section, bool $children = false) {
         $id = $this->resolve_nav_id($section);
-        $root_nav = BackendNavtree::where('id', $id)
-               ->orderBy('name')
+        $root_nav = null;
+    
+        if (!$children) {
+            $root_nav = BackendNavtree::where('id', $id)
+               ->orderBy('id')
                ->get();
+        } else {
+            $root_nav = BackendNavtree::where('id', $id)
+            ->orWhere('parent', $id)
+            ->orderBy('name')
+            ->get();
+        }
 
-        return $root_nav;
+        return $root_nav->toArray();
     }
+
+
 }

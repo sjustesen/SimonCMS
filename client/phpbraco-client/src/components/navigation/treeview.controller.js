@@ -5,7 +5,8 @@ export class TreeviewController {
     }
 
     fetchJSON(navtype) {
-        fetch('/admin/navtree/content')
+        let section = this.resolveUrl();
+        fetch(`/admin/navtree/${section}`)
             .then(response => response.json())
             .then(data => this.host.dispatchEvent(
                 new CustomEvent("updateMenu", {
@@ -16,11 +17,15 @@ export class TreeviewController {
         this.host.requestUpdate();
     }
 
-    // fetchJSON callback
-
+    // fetch tree based on path
+    
+    resolveUrl() {
+        let segment = document.location.pathname.split('/')[2];
+        return segment;
+    }
 
     hostConnected() {
-        this.fetchJSON('contenttree');
+        this.fetchJSON();
     }
 
     hostDisconnected() {
