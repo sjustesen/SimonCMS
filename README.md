@@ -16,6 +16,7 @@ Shush, no deadline this is about having fun!
 ## Contributions
 User contributions are always welcome. I know from other Open Source projects, it can be difficult to know where to step in. But right now everything is up for grabs, 
 so to speak: So send me an email at simon.justesen (at) gmail dot com and let's talk. Right now I'm just setting things up, testing out stuff to know which direction to go. 
+check the wiki for installation instructions.
 
 I got a great feeling about this! Can't wait to get started :)
 
