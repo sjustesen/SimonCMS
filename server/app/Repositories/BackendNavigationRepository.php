@@ -38,12 +38,11 @@ class BackendNavigationRepository {
     
         if (!$children) {
             $root_nav = BackendNavtree::where('id', $id)
-               ->orderBy('id')
                ->get();
         } else {
             $root_nav = BackendNavtree::where('id', $id)
             ->orWhere('parent', $id)
-            ->orderBy('name')
+            ->orderBy('parent')
             ->get();
         }
 
