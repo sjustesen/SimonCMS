@@ -3,8 +3,8 @@
         <title>Administration</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--  <link rel="stylesheet" href="/vendor/uikit/uikit.min.css">
-        <link rel="stylesheet" href="/styles/base.css"> -->
+        <script type="module" src="/scripts/main.js" ></script>
+        <script type="text/javascript" src="/vendor/uikit/uikit.min.js" ></script>   
     </head>
 <body>
     
@@ -18,7 +18,5 @@
         </div>
     </div>
 </div>
-    <script type="module" src="/scripts/main.js" ></script>
-    <script type="text/javascript" src="/vendor/uikit/uikit.min.js" ></script>   
 </body>
 </html>
