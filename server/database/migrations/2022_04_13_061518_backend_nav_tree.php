@@ -14,9 +14,11 @@ return new class extends Migration
     public function up()
     {
     	Schema::create('pb_backend_navtree', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->string('name');
+        $table->id()->autoIncrement();
+        $table->string('name');
 	    $table->string('alias');
+        $table->string('path')->default('');
+        $table->string('icon')->default('');
 	    $table->integer('parent');
 	    $table->boolean('hidden');
         });

@@ -20,43 +20,43 @@ class BackendSectionsSeeder extends Seeder
 	  DB::table('pb_backend_navtree')->insert([		    
             'name' => 'Root',
             'alias' => 'root',
-	    'parent' => 0,
-	    'hidden' => 0
+	    	'parent' => 0,
+	    	'hidden' => 0
 	  ]);
 
 	   DB::table('pb_backend_navtree')->insert([		    
             'name' => 'Content',
             'alias' => 'content',
-	    'parent' => 0,
-	    'hidden' => 0
+	    	'parent' => 0,
+	    	'hidden' => 0
 	   ]);
 
 	   DB::table('pb_backend_navtree')->insert([
             'name' => 'Media',
             'alias' => 'media',
-	    'parent' => 0,
-	    'hidden' => 0
+	    	'parent' => 0,
+	    	'hidden' => 0
 	  ]);
 
 	   DB::table('pb_backend_navtree')->insert([		    
             'name' => 'Settings',
             'alias' => 'settings',
-	    'parent' => 0,
-	    'hidden' => 0
+	    	'parent' => 0,
+	    	'hidden' => 0
 	   ]);
 
   	  DB::table('pb_backend_navtree')->insert([
             'name' => 'Developer',
             'alias' => 'developer',
-	    'parent' => 0,
-	    'hidden' => 0
+	    	'parent' => 0,
+	    	'hidden' => 0
 	  ]);
 
 	   DB::table('pb_backend_navtree')->insert([		    
             'name' => 'Member',
             'alias' => 'member',
-	    'parent' => 0,
-	    'hidden' => 0
+	    	'parent' => 0,
+	    	'hidden' => 0
 	   ]);
 
     }

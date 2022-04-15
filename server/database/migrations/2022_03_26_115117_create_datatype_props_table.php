@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('datatype_properties', function (Blueprint $table) {
+        Schema::create('pb_datatype_properties', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
             $table->string('alias');

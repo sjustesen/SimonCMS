@@ -19,10 +19,10 @@ class BackendContentTreeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('nodes')->delete();
+        DB::table('pb_nodes')->delete();
 
     
-        DB::table('nodes')->insert([		    
+        DB::table('pb_nodes')->insert([		    
             'name' => 'Root Node',
             'uuid' => '',
             'alias' => 'root',

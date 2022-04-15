@@ -9,7 +9,7 @@ class DocumentNode extends Model
 {
     use HasFactory;
 
-    protected $table = 'nodes';
+    protected $table = 'pb_nodes';
     /**
      * The attributes that are mass assignable.
      *

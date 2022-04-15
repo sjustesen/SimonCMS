@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nodes', function (Blueprint $table) {
+        Schema::create('pb_nodes', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->uuid('uuid');
             $table->integer('parent_id');
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::drop('nodes');
+        Schema::drop('pb_nodes');
     }
 };

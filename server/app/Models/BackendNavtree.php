@@ -16,7 +16,7 @@ class BackendNavTree extends Model
      * @var string[]
      */
     protected $fillable = [ 
-        'name', 'alias', 'href', 'parent', 'hidden'
+        'name', 'alias', 'url', 'parent', 'hidden'
     ];
 
     /**

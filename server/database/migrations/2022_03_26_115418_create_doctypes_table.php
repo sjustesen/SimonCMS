@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('doctypes', function (Blueprint $table) {
+        Schema::create('pb_doctypes', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('parent_id');
             $table->string('name');
