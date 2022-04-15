@@ -3,8 +3,8 @@
         <title>Administration</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/vendor/uikit/uikit.min.css">
-        <link rel="stylesheet" href="/styles/base.css">
+      <!--  <link rel="stylesheet" href="/vendor/uikit/uikit.min.css">
+        <link rel="stylesheet" href="/styles/base.css"> -->
     </head>
 <body>
     

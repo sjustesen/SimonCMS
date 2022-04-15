@@ -1,4 +1,5 @@
 @extends('admin.layout.master')
 @section('content')
-        <h1>Doctype</h1>
+        <h1>Create New DocumentType</h1>
+        <phpbraco-doctypeeditor></phpbraco-doctypeeditor>
 @endsection
