@@ -1,3 +1,13 @@
+<html>
+    <head>
+        <title>Administration</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="module" src="/scripts/main.js" ></script>
+        <script type="text/javascript" src="/vendor/uikit/uikit.min.js" ></script>   
+    </head>
+<body>
+
 <nav class="uk-navbar-container sc-container-padding" uk-navbar>
     <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
