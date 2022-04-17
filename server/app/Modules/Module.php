@@ -2,6 +2,7 @@
 
 namespace App\Modules;
 
+use Exception;
 use Illuminate\Foundation\Application;
 
 class Module
@@ -123,9 +124,11 @@ class Module
 	 * @param  string $key
 	 * @return mixed
 	 */
-	public function __get($key)
+	public function __get($key): mixed
 	{
-		return $this->getData()[$key];
+		$data = isset($this->getData()[$key]) ? $this->getData()[$key] : null;
+	
+		return $data;
 	}
 
 	/**
