@@ -51,7 +51,7 @@ class MakeModuleEventCommand extends Command
 
 		$eventName = $this->argument('eventName');
 
-		$generator = new ModuleEventGenerator($eventName, $this->laravel, $module);
+		$generator = new ModuleEventGenerator($eventName, $this->app, $module);
 		$generator->generate();
 
 		$this->info("The event [$eventName] has been created for module [$moduleName].");

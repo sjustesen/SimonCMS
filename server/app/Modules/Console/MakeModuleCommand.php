@@ -33,7 +33,7 @@ class MakeModuleCommand extends Command
 	 *
 	 * @return mixed
 	 */
-	public function fire()
+	public function handle()
 	{
 		$generator = new ModuleGenerator($this->argument('name'), $this->laravel['files'], $this);
 		$generator->generate();

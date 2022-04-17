@@ -125,7 +125,7 @@ class Module
 	 */
 	public function __get($key)
 	{
-		return $this->getData->$key;
+		return $this->getData()[$key];
 	}
 
 	/**

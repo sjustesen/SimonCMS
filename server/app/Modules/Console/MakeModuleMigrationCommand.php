@@ -41,7 +41,7 @@ class MakeModuleMigrationCommand extends Command
 	 *
 	 * @return mixed
 	 */
-	public function fire()
+	public function handle()
 	{
 		$moduleName = $this->argument('name');
 		$module = $this->moduleRepo->getByName($moduleName);
@@ -51,7 +51,7 @@ class MakeModuleMigrationCommand extends Command
 
 		$migrationName = $this->argument('migration');
 
-		$generator = new ModuleMigrationGenerator($migrationName, $this->laravel, $module);
+		$generator = new ModuleMigrationGenerator($migrationName, $this->app, $module);
 		$generator->generate();
 
 		$this->info("The migration [$migrationName] has been created for module [$moduleName].");

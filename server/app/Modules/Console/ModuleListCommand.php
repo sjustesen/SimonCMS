@@ -38,10 +38,10 @@ class ModuleListCommand extends Command
 	/**
 	 * Execute the console command.
 	 */
-	public function fire()
+	public function handle()
 	{
 		$modules = $this->moduleRepo->getModules();
-
+		$rows = [];
 		foreach ($modules as $module)
 			$rows[] = $this->moduleToRow($module);
 

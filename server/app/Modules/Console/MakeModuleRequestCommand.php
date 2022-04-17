@@ -41,7 +41,7 @@ class MakeModuleRequestCommand extends Command
 	 *
 	 * @return mixed
 	 */
-	public function fire()
+	public function handle()
 	{
 		$moduleName = $this->argument('name');
 		$module = $this->moduleRepo->getByName($moduleName);
@@ -51,7 +51,7 @@ class MakeModuleRequestCommand extends Command
 
 		$requestName = $this->argument('request');
 
-		$generator = new ModuleRequestGenerator($requestName, $this->laravel, $module);
+		$generator = new ModuleRequestGenerator($requestName, $this->app, $module);
 		$generator->generate();
 
 		$this->info("The request [$requestName] has been generated for module [$moduleName].");

@@ -41,7 +41,7 @@ class MakeModuleHandlerCommand extends Command
 	 *
 	 * @return mixed
 	 */
-	public function fire()
+	public function handle()
 	{
 		$handlerType = $this->argument('type');
 
@@ -57,7 +57,7 @@ class MakeModuleHandlerCommand extends Command
 		$handlerName = $this->argument('handlerName');
 		$handlingName = $this->argument('handlingName');
 
-		$generator = new ModuleHandlerGenerator($handlerName, $handlingName, $handlerType, $this->laravel, $module);
+		$generator = new ModuleHandlerGenerator($handlerName, $handlingName, $handlerType, $this->app, $module);
 		$generator->generate();
 
 		$this->info("The handler [$handlerName] has been created for module [$moduleName].");

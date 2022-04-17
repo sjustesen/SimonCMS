@@ -102,9 +102,9 @@ class Repository
 
 		foreach ($files as $file) {
 			$moduleName = dirname($file);
-			$moduleData = (object)$this->getJsonContents($file);
+			$moduleData = $this->getJsonContents($file);
 
-			$modules[] = $this->createModuleObject($moduleData->name);
+			$modules[] = $this->createModuleObject($moduleName);
 		}
 
 		return $modules;

@@ -40,7 +40,7 @@ class MakeModuleCommandCommand extends Command
 	 *
 	 * @return mixed
 	 */
-	public function fire()
+	public function handle()
 	{
 		$moduleName = $this->argument('moduleName');
 		$module = $this->moduleRepo->getByName($moduleName);
