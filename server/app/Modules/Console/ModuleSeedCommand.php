@@ -39,7 +39,7 @@ class ModuleSeedCommand extends Command
 	/**
 	 * Execute the console command.
 	 */
-	public function fire()
+	public function handle()
 	{
 		$name = $this->argument('name');
 		$module = $this->moduleRepo->getByName($name);

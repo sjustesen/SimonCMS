@@ -39,7 +39,7 @@ class ModuleMigrateCommand extends Command
 	/**
 	 * Execute the console command.
 	 */
-	public function fire()
+	public function handle()
 	{
 		$moduleName = $this->argument('name');
 		$module = $this->moduleRepo->getByName($moduleName);
