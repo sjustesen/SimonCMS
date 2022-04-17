@@ -27,13 +27,15 @@
 						<li><button id="btnAddTab" class="uk-button uk-button-small uk-button-primary" data-nonremovable>Add tab</button></li>
 					</ul>
 
+					<div class="uk-margin">
 					<button id="btnAddField" class="uk-button uk-button-small uk-button-primary">Add field</button>
+					</div>
 
-					<div id="newfields_template">
+					<div id="newfields_template" style="margin-bottom: 20px;">
 						<input class="uk-input uk-form-large" type="text" placeholder="Visual name">
 						<input class="uk-input uk-form-large" type="text" placeholder="Data alias">
 
-						<select class="uk-select" class="dtComponents">
+						<select class="uk-select uk-form-large" class="dtComponents">
 							<option>Select Doctype control</option>
 							<option value="text">Text</option>
 							<option value="textarea">Textarea</option>
