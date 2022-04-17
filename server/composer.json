@@ -18,6 +18,7 @@
             "App\\": "app/",
             "App\\Repositiories": "app/Repositories",
             "App\\Interfaces": "app/interfaces",
+            "App\\Modules": "app/Modules",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }
