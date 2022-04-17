@@ -15,7 +15,7 @@ class ContentSection extends LitElement {
   render() {
     return html`
     <div>
-      <phpbraco-treeview></phpbraco-treeview>
+      <simoncms-treeview></simoncms-treeview>
     </div> 
     <div>
       <h1>This is Home Page</h1>

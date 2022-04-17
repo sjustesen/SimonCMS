@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-    	Schema::create('pb_backend_navtree', function (Blueprint $table) {
+    	Schema::create('sc_backend_navtree', function (Blueprint $table) {
         $table->id()->autoIncrement();
         $table->string('name');
 	    $table->string('alias');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-	    Schema::Drop('pb_backend_navtree');
+	    Schema::Drop('sc_backend_navtree');
     }
 };

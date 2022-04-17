@@ -1,6 +1,6 @@
-# PHPbraco client
+# simoncms client
 
-This is the PHPbraco client, 
+This is the simoncms client, 
 you can build it by running 
 
 

@@ -17,21 +17,21 @@ class SettingsMenuSeeder extends Seeder
      */
     public function run()
     {
-	  DB::table('pb_backend_navtree')->insert([		    
+	  DB::table('sc_backend_navtree')->insert([		    
             'name' => 'Document Types',
             'alias' => 'doctypes',
 	    'parent' => 4,
 	    'hidden' => 0
 	  ]);
 
-	   DB::table('pb_backend_navtree')->insert([		    
+	   DB::table('sc_backend_navtree')->insert([		    
             'name' => 'Media Types',
             'alias' => 'mediatypes',
 	    'parent' => 4,
 	    'hidden' => 0
 	   ]);
 
- 	   DB::table('pb_backend_navtree')->insert([
+ 	   DB::table('sc_backend_navtree')->insert([
             'name' => 'Backend Datatypes',
             'alias' => 'datatypes',
 	    'parent' => 4,
@@ -39,28 +39,28 @@ class SettingsMenuSeeder extends Seeder
 	  ]);
 
 
-	   DB::table('pb_backend_navtree')->insert([
+	   DB::table('sc_backend_navtree')->insert([
             'name' => 'Templates',
             'alias' => 'templates',
 	    'parent' => 4,
 	    'hidden' => 0
 	  ]);
 
-	   DB::table('pb_backend_navtree')->insert([		    
+	   DB::table('sc_backend_navtree')->insert([		    
             'name' => 'Macros',
             'alias' => 'macros',
 	    'parent' => 4,
 	    'hidden' => 0
 	   ]);
 
-  	  DB::table('pb_backend_navtree')->insert([
+  	  DB::table('sc_backend_navtree')->insert([
             'name' => 'Translations',
             'alias' => 'translations',
 	    'parent' => 4,
 	    'hidden' => 0
 	  ]);
 
-	   DB::table('pb_backend_navtree')->insert([		    
+	   DB::table('sc_backend_navtree')->insert([		    
             'name' => 'Domains',
             'alias' => 'domains',
 	    'parent' => 4,

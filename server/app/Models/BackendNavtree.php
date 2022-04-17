@@ -9,7 +9,7 @@ class BackendNavTree extends Model
 {
     use HasFactory;
 
-    protected $table = 'pb_backend_navtree';
+    protected $table = 'sc_backend_navtree';
     /**
      * The attributes that are mass assignable.
      *

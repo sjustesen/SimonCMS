@@ -19,4 +19,4 @@ export default class DoctypeEditor extends LitElement {
     }
 }
 
-customElements.define('phpbraco-doctypeeditor', DoctypeEditor)
+customElements.define('simoncms-doctypeeditor', DoctypeEditor)

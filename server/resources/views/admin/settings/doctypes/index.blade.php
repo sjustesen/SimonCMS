@@ -2,7 +2,7 @@
 @section('content')
 <main>
 	<h1>Create New DocumentType</h1>
-	<phpbraco-doctypeeditor>
+	<simoncms-doctypeeditor>
 		<slot>
 			<form>
 				<button class="uk-button uk-button-primary">Save</button>
@@ -32,6 +32,6 @@
 				</div>
 			</form>
 		</slot>
-	</phpbraco-doctypeeditor>
+	</simoncms-doctypeeditor>
 </main>
 @endsection

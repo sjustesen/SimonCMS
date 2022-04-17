@@ -20,4 +20,4 @@ export class DocTree extends LitElement {
       return html`<p>Hello, ${this.name}, I am doctree!</p>`;
     }
   }
-  customElements.define('phpbraco-doctree', DocTree);
+  customElements.define('simoncms-doctree', DocTree);

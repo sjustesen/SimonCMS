@@ -52,4 +52,4 @@ export default class TreeView extends LitElement {
 
 }
 
-customElements.define('phpbraco-treeview', TreeView);
+customElements.define('simoncms-treeview', TreeView);

@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pb_usertypes', function (Blueprint $table) {
+        Schema::create('sc_usertypes', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->string('name');
             $table->integer('usertype');

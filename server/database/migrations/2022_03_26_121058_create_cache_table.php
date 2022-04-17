@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pb_cache', function (Blueprint $table) {
+        Schema::create('sc_cache', function (Blueprint $table) {
             $table->string('key')->unique();
             $table->text('value');
             $table->integer('expiration');

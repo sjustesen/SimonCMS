@@ -1,7 +1,7 @@
-# PHPbraco
+# SimonCMS
 
-(It's just a working title... ;-) ... And nothing to see here, just getting started)
-This is not a clone, merely it is a loveletter to the Umbraco. And it is *not* afiliated with Umbraco project.
+(In lack of a better name, simoncms is now SimonCMS. It now has my name, so I better make it good)
+This is not a clone, merely it is a loveletter to the Umbraco. It is *not* afiliated with Umbraco project.
 
 ## Short story
 I've been away from the PHP platform for quite some years. I have been using this wonderful Content Management System called Umbraco on the Microsoft.NET platform. 
