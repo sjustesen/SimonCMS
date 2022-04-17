@@ -4,6 +4,7 @@ namespace App\Modules\Generators;
 
 use Laravel\Lumen\Application;
 use App\Modules\Module;
+use Illuminate\Support\Str;
 
 class ModuleHandlerGenerator extends Generator
 {	
