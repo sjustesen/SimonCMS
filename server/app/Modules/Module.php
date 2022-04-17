@@ -136,7 +136,6 @@ class Module
 	{
 		$jsonPath = $this->getPath() . 'module.json';
 		$contents = $this->app['files']->get($jsonPath);
-
 		return json_decode($contents);
 	}
 

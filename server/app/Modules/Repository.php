@@ -98,11 +98,10 @@ class Repository
 		$modules = [];
 
 		$path = base_path('Modules');
-		$files = $this->filesystem->glob($path . '/*/module.json');
-
+		$files = $this->filesystem->glob($path . '/*');
 		foreach ($files as $file) {
-			$moduleName = dirname($file);
-			$moduleData = $this->getJsonContents($file);
+			$moduleName = basename($file);
+			//$moduleData = $this->getJsonContents($file.'/module.json');
 
 			$modules[] = $this->createModuleObject($moduleName);
 		}
