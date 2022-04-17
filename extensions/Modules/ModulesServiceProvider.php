@@ -1,0 +1,60 @@
+<?php
+
+namespace App\Modules;
+
+use Illuminate\Support\ServiceProvider;
+
+class ModulesServiceProvider extends ServiceProvider
+{
+	/**
+	 * Indicates if loading of the provider is deferred.
+	 */
+	protected $defer = false;
+
+	/**
+	 * @var array
+	 */
+	protected $commands = [
+		'Mrterryh\Modules\Console\MakeModuleCommand',
+		'Mrterryh\Modules\Console\EnableModuleCommand',
+		'Mrterryh\Modules\Console\DisableModuleCommand',
+		'Mrterryh\Modules\Console\MakeModuleMigrationCommand',
+		'Mrterryh\Modules\Console\ModuleMigrateCommand',
+		'Mrterryh\Modules\Console\ModuleMigrateRollbackCommand',
+		'Mrterryh\Modules\Console\ModuleSeedCommand',
+		'Mrterryh\Modules\Console\MakeModuleRequestCommand',
+		'Mrterryh\Modules\Console\ModuleListCommand',
+		'Mrterryh\Modules\Console\MakeModuleCommandCommand',
+		'Mrterryh\Modules\Console\MakeModuleHandlerCommand',
+		'Mrterryh\Modules\Console\MakeModuleEventCommand'
+	];
+
+	/**
+	 * Register the service provider.
+	 */
+	public function register()
+	{
+		$this->app->bind('modules', function($app) {
+			return new Repository($app, $app['files']);
+		});
+
+		$this->commands($this->commands);
+	}
+
+	/**
+	 * Boot the service provider.
+	 */
+	public function boot()
+	{
+		$this->app['modules']->register();
+	}
+
+	/**
+	 * Get the services provided by the provider.
+	 * @return array
+	 */
+	public function provides()
+	{
+		return ['modules'];
+	}
+}
