@@ -5,8 +5,8 @@ namespace App\Modules\Console;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
-use Mrterryh\Modules\Repository;
-use Mrterryh\Modules\Module;
+use App\Modules\Repository;
+use App\Modules\Module;
 
 class ModuleMigrateRollbackCommand extends Command
 {

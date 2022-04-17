@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-use Mrterryh\Modules\Generators\ModuleGenerator;
+use App\Modules\Generators\ModuleGenerator;
 
 class MakeModuleCommand extends Command
 {

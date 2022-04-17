@@ -4,7 +4,7 @@ namespace App\Modules\Console;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
-use Mrterryh\Modules\Repository;
+use App\Modules\Repository;
 
 class DisableModuleCommand extends Command
 {

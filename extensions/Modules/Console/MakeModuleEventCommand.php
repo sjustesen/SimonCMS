@@ -5,8 +5,8 @@ namespace App\Modules\Console;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use Mrterryh\Modules\Repository;
-use Mrterryh\Modules\Generators\ModuleEventGenerator;
+use App\Modules\Repository;
+use App\Modules\Generators\ModuleEventGenerator;
 
 class MakeModuleEventCommand extends Command
 {

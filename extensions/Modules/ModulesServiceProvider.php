@@ -15,18 +15,18 @@ class ModulesServiceProvider extends ServiceProvider
 	 * @var array
 	 */
 	protected $commands = [
-		'Mrterryh\Modules\Console\MakeModuleCommand',
-		'Mrterryh\Modules\Console\EnableModuleCommand',
-		'Mrterryh\Modules\Console\DisableModuleCommand',
-		'Mrterryh\Modules\Console\MakeModuleMigrationCommand',
-		'Mrterryh\Modules\Console\ModuleMigrateCommand',
-		'Mrterryh\Modules\Console\ModuleMigrateRollbackCommand',
-		'Mrterryh\Modules\Console\ModuleSeedCommand',
-		'Mrterryh\Modules\Console\MakeModuleRequestCommand',
-		'Mrterryh\Modules\Console\ModuleListCommand',
-		'Mrterryh\Modules\Console\MakeModuleCommandCommand',
-		'Mrterryh\Modules\Console\MakeModuleHandlerCommand',
-		'Mrterryh\Modules\Console\MakeModuleEventCommand'
+		'App\Modules\Console\MakeModuleCommand',
+		'App\Modules\Console\EnableModuleCommand',
+		'App\Modules\Console\DisableModuleCommand',
+		'App\Modules\Console\MakeModuleMigrationCommand',
+		'App\Modules\Console\ModuleMigrateCommand',
+		'App\Modules\Console\ModuleMigrateRollbackCommand',
+		'App\Modules\Console\ModuleSeedCommand',
+		'App\Modules\Console\MakeModuleRequestCommand',
+		'App\Modules\Console\ModuleListCommand',
+		'App\Modules\Console\MakeModuleCommandCommand',
+		'App\Modules\Console\MakeModuleHandlerCommand',
+		'App\Modules\Console\MakeModuleEventCommand'
 	];
 
 	/**
