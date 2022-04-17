@@ -3,7 +3,6 @@
 namespace App\Modules\Console;
 
 use Illuminate\Console\Command;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use App\Modules\Repository;
 use App\Modules\Generators\ModuleCommandGenerator;
@@ -51,7 +50,7 @@ class MakeModuleCommandCommand extends Command
 
 		$commandName = $this->argument('commandName');
 
-		$generator = new ModuleCommandGenerator($commandName, $this->laravel, $module);
+		$generator = new ModuleCommandGenerator($commandName, $this->app, $module);
 		$generator->generate();
 
 		$this->info("The command [$commandName] has been created for module [$moduleName].");
