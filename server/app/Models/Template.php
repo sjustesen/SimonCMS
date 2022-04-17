@@ -25,4 +25,8 @@ class Template extends Model
      */
     protected $hidden = [
     ];
+
+    public function get_templates() {
+        
+    }
 }

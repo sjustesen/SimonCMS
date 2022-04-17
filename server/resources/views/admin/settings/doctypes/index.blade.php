@@ -5,24 +5,24 @@
 	<simoncms-doctypeeditor>
 		<slot>
 			<form>
-				<button class="uk-button uk-button-primary">Save</button>
+				<button class="uk-button uk-button-primary" id="btnSaveDoctype">Save</button>
 				<div class="uk-container uk-width-1-1">
 					<label>Name</label>
 					<input class="uk-input uk-form-large" type="text" placeholder="100">
 					<label>Alias</label>
 					<input class="uk-input uk-form-large" type="text" placeholder="100">
-					<h2>Controls</h2>
-					<button class="uk-button uk-button-primary">Add new tab</button>
 					
-					<ul uk-tab>
+					<h2>Controls</h2>					
+					<ul uk-tab id="dtTabs">
+						<li><a href="#">Item</a></li>
+						<li><a href="#">Item</a></li>
 						<li class="uk-active"><a href="#">Generic Properties</a></li>
-						<li><a href="#">Item</a></li>
-						<li><a href="#">Item</a></li>
-						<li class="uk-disabled"><a>Disabled</a></li>
+						<li><button id="btnAddTab" class="uk-button uk-button-small uk-button-primary">Add tab</button></li>
 					</ul>
 					<input class="uk-input uk-form-large" type="text" placeholder="Visual name">
 					<input class="uk-input uk-form-large" type="text" placeholder="Data alias">
-					<select class="uk-select">
+					
+					<select class="uk-select" id="dtComponents">
 						<option>Select Doctype control</option>
 						<option value="text">Text</option>
 						<option value="textarea">Textarea</option>
