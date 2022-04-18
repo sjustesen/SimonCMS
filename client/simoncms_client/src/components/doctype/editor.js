@@ -28,7 +28,7 @@ export default class DoctypeEditor extends LitElement {
     registerEventsForDocTypeTabs() {
 
         // event for the save-button
-
+        // figure out a datamodel
         document.querySelector('#btnSaveDoctype').addEventListener('click', (e) => {
             e.preventDefault();
             console.dir('Doctype saving...')

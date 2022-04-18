@@ -4,8 +4,8 @@ body {
     height: 100vh;
 }
 
-button {
-    border-radius: 5px !important;
+button, input, select {
+    border-radius: 10px !important;
 }
 
 .uk-navbar-nav > li > a {
