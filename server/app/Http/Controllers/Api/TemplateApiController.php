@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Modules\Repository;
+use App\Repositories\TemplateRepository;
+
 class TemplateApiController extends ApiController
 {
     /**
@@ -9,14 +12,17 @@ class TemplateApiController extends ApiController
      *
      * @return void
      */
-    public function __construct()
+
+    protected $repository; 
+
+    public function __construct(TemplateRepository $repository)
     {
-        //
+        $this->repository = $repository;
     }
 
     public function listTemplates() {
-
-        return response()->json('Hello from Template');
+        $repotrash = $this->repository->read();
+        return response()->json($repotrash);
 
     }
 

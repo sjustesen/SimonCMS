@@ -18,6 +18,8 @@ class Template extends Model
         'name', 'alias', 'softdeleted'
     ];
 
+    protected $table = 'sc_templates';
+
     /**
      * The attributes excluded from the model's JSON form.
      *
