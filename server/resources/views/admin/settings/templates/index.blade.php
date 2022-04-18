@@ -1,5 +1,10 @@
 @extends('admin.layout.3col')
 
+@section('header')
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+
+@endsection
+
 @section('sectionnav')
 <small>Navigation</small>
 <sc-templatetree>
@@ -33,17 +38,15 @@
         </div>
     
 
-    <div id="editor">function foo(items) {
-        var x = "All this is syntax highlighted";
-        return x;
-        }</div>
+    <div id="editor">
+     
+    </div>
         </div>
 </form>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/phpblade");
+    editor.session.setMode("ace/mode/php_laravel_blade");
 </script>
 
 @endsection
