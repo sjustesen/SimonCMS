@@ -29,19 +29,20 @@
         </div>
 
         <div class="uk-width-1-2">
-            <label>Name</label>
-            <input class="uk-input uk-form-medium" type="text" placeholder="100">
+            <label>Template name</label>
+            <input class="uk-input uk-form-medium" type="text" placeholder="">
         </div>
         <div class="uk-width-1-2">
             <label>Systemwide Element ID</label>
-            <input class="uk-input uk-form-medium" type="text" placeholder="100">
+            <input class="uk-input uk-form-medium" type="text" placeholder="">
         </div>
-    
 
-    <div id="editor">
-     
-    </div>
+        <div class="uk-width-1-1">
+            <div id="editor">
+
+            </div>
         </div>
+    </div>
 </form>
 <script>
     var editor = ace.edit("editor");
