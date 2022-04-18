@@ -29,16 +29,12 @@ export default class DoctypeEditor extends LitElement {
             anchorElement.setAttribute('class', 'uk-input uk-form-small');
             anchorElement.addEventListener('keyup', (e) => {
                 e.preventDefault();
-                if (e.key == 'Enter' )
-                console.log(e)
+                if (e.key == 'Enter')
+                    console.log(e)
             });
 
             listElement.appendChild(anchorElement);
             doctypeTabArray.prepend(listElement);
-        
-            
-
-            console.dir(' adding...')
         })
     }
 
