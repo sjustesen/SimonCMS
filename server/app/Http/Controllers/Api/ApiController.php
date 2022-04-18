@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-class TemplateApiController extends ApiController
+use Laravel\Lumen\Routing\Controller as BaseController;
+
+class ApiController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -11,12 +13,7 @@ class TemplateApiController extends ApiController
      */
     public function __construct()
     {
-        //
-    }
-
-    public function listTemplates() {
-        return response()->json('Hello from Template');
-
+        //parent::__construct();
     }
 
     //

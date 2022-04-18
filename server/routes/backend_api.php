@@ -2,7 +2,7 @@
 
 /** @var \Laravel\Lumen\Routing\Router $router */
 
-// Api Routing
+// Api Routing -- parent is \App\Http\Controllers
 $router->group([
         'prefix' => 'admin/api',
         'namespace' => '\App\Http\Controllers\Api'
