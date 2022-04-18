@@ -23,8 +23,8 @@
 					<h2>Controls</h2>
 
 					<ul uk-tab id="dtTabs">
-						<li class="uk-active" data-nonremovable><a href="#">Generic Properties</a></li>
-						<li><button id="btnAddTab" class="uk-button uk-button-small uk-button-primary" data-nonremovable>Add tab</button></li>
+						<li class="uk-active" data-mustupdate="true" id="genericproptab"><a href="#">Generic Properties</a></li>
+						<li><button id="btnAddTab" class="uk-button uk-button-small uk-button-primary">Add tab</button></li>
 					</ul>
 
 					<div class="uk-margin">
