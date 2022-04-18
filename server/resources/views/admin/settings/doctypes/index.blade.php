@@ -15,7 +15,7 @@
 						<input class="uk-input uk-form-medium" type="text" placeholder="100">
 					</div>
 					<div class="uk-width-1-2">
-						<label>Alias</label>
+						<label>Systemwide Element ID</label>
 						<input class="uk-input uk-form-medium" type="text" placeholder="100">
 					</div>
 				</div>

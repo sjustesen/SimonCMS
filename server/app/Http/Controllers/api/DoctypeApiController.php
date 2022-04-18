@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Model\Doctype;
+use App\Http\Controllers\Api;
+use App\Models\Doctype;
 
 class DoctypeApiController extends ApiController
 {

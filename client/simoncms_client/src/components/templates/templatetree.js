@@ -10,6 +10,10 @@ export default class TemplateTree extends LitElement {
         this.download();
     }
 
+    resolveUrl() {
+        return 'templates'
+    }
+
     download() {
         let section = this.resolveUrl();
         fetch(`/admin/api/${section}`)
