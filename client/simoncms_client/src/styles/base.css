@@ -4,6 +4,10 @@ body {
     height: 100vh;
 }
 
+h1 {
+    margin-top: 0px;
+}
+
 button, input, select {
     border-radius: 10px !important;
 }

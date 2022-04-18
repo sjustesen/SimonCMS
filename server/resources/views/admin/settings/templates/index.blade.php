@@ -8,5 +8,42 @@
 @endsection
 
 @section('content')
+<style type="text/css" media="screen">
+    #editor {
+        position: relative;
+        width: 100%;
+        height: 500px;
+    }
+</style>
+
 <h1>Templates</h1>
+<form class="">
+    <div class="uk-container" uk-grid>
+        <div class="uk-width-1-1">
+            <button class="uk-button uk-button-primary" id="btnSaveDoctype">Save</button>
+        </div>
+
+        <div class="uk-width-1-2">
+            <label>Name</label>
+            <input class="uk-input uk-form-medium" type="text" placeholder="100">
+        </div>
+        <div class="uk-width-1-2">
+            <label>Systemwide Element ID</label>
+            <input class="uk-input uk-form-medium" type="text" placeholder="100">
+        </div>
+    
+
+    <div id="editor">function foo(items) {
+        var x = "All this is syntax highlighted";
+        return x;
+        }</div>
+        </div>
+</form>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.14/ace.js"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/phpblade");
+</script>
+
 @endsection
