@@ -9,13 +9,15 @@ class Doctype extends Model
 {
     use HasFactory;
 
+    protected $table = 'sc_doctypes';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var string[]
      */
     protected $fillable = [
-        'name', 'alias', 'template_id'
+        'name', 'alias', 'template_id','fields'
     ];
 
     /**

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api;
 use App\Models\Doctype;
-use Illuminate\Http\Client\Request;
+use Illuminate\Http\Request as Request;
 
 
 class DoctypeApiController extends ApiController
