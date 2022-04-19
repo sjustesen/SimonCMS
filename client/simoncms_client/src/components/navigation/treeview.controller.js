@@ -1,7 +1,6 @@
 export class TreeviewController {
     constructor(host) {
         (this.host = host).addController(this);
-        console.log('Treeview controller loaded');
     }
 
     fetchJSON(navtype) {

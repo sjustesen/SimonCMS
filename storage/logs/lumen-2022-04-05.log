@@ -1,0 +1,34 @@
+[2022-04-05 07:07:07] local.ERROR: Static route "/admin/users" is shadowed by previously defined variable route "/admin/(.*)" for method "GET" {"exception":"[object] (FastRoute\\BadRouteException(code: 0): Static route \"/admin/users\" is shadowed by previously defined variable route \"/admin/(.*)\" for method \"GET\" at /Users/simonjustesen/Sites/localhost/phpbraco/vendor/nikic/fast-route/src/DataGenerator/RegexBasedAbstract.php:95)
+[stacktrace]
+#0 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/nikic/fast-route/src/DataGenerator/RegexBasedAbstract.php(30): FastRoute\\DataGenerator\\RegexBasedAbstract->addStaticRoute('GET', Array, Array)
+#1 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/nikic/fast-route/src/RouteCollector.php(44): FastRoute\\DataGenerator\\RegexBasedAbstract->addRoute('GET', Array, Array)
+#2 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(207): FastRoute\\RouteCollector->addRoute('GET', '/admin/users', Array)
+#3 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/nikic/fast-route/src/functions.php(25): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(FastRoute\\RouteCollector))
+#4 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(209): FastRoute\\simpleDispatcher(Object(Closure))
+#5 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(173): Laravel\\Lumen\\Application->createDispatcher()
+#6 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(429): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#7 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#8 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#9 /Users/simonjustesen/Sites/localhost/phpbraco/public/index.php(28): Laravel\\Lumen\\Application->run()
+#10 {main}
+"} 
+[2022-04-05 07:08:51] local.ERROR: View [admin.content.index] not found. {"exception":"[object] (InvalidArgumentException(code: 0): View [admin.content.index] not found. at /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/view/FileViewFinder.php:137)
+[stacktrace]
+#0 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/view/FileViewFinder.php(79): Illuminate\\View\\FileViewFinder->findInPaths('admin.content.i...', Array)
+#1 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/view/Factory.php(137): Illuminate\\View\\FileViewFinder->find('admin.content.i...')
+#2 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/helpers.php(433): Illuminate\\View\\Factory->make('admin.content.i...', Array, Array)
+#3 /Users/simonjustesen/Sites/localhost/phpbraco/routes/web.php(35): view('admin.content.i...')
+#4 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/container/BoundMethod.php(36): Closure->{closure}()
+#5 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/container/Util.php(41): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#6 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/container/BoundMethod.php(81): Illuminate\\Container\\Util::unwrapIfClosure(Object(Closure))
+#7 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/container/BoundMethod.php(37): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Laravel\\Lumen\\Application), Object(Closure), Object(Closure))
+#8 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/illuminate/container/Container.php(653): Illuminate\\Container\\BoundMethod::call(Object(Laravel\\Lumen\\Application), Object(Closure), Array, NULL)
+#9 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(302): Illuminate\\Container\\Container->call(Object(Closure), Array)
+#10 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(267): Laravel\\Lumen\\Application->callActionOnArrayBasedRoute(Array)
+#11 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(169): Laravel\\Lumen\\Application->handleFoundRoute(Array)
+#12 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(429): Laravel\\Lumen\\Application->Laravel\\Lumen\\Concerns\\{closure}(Object(Laravel\\Lumen\\Http\\Request))
+#13 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(175): Laravel\\Lumen\\Application->sendThroughPipeline(Array, Object(Closure))
+#14 /Users/simonjustesen/Sites/localhost/phpbraco/vendor/laravel/lumen-framework/src/Concerns/RoutesRequests.php(112): Laravel\\Lumen\\Application->dispatch(NULL)
+#15 /Users/simonjustesen/Sites/localhost/phpbraco/public/index.php(28): Laravel\\Lumen\\Application->run()
+#16 {main}
+"} 
