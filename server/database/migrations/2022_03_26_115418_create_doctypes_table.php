@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('parent_id')->default(0);
             $table->string('name');
             $table->string('alias');
-            $table->json('fields');
-            $table->integer('template_id')->default('0');
+            $table->mediumtext('fields');
+            $table->integer('template_id')->default(0);
             $table->datetime('created_at');
             $table->datetime('updated_at');
         });
