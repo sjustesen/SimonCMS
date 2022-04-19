@@ -4,7 +4,7 @@ import { DoctypeModel } from './model'
 export class DoctypeEditorController {
     constructor(host) {
         (this.host = host).addController(this);
-        this.model = new DoctypeModel().getFields();
+        this.model = new DoctypeModel().getModel();
         console.dir(this.model);
     }
 
@@ -12,6 +12,7 @@ export class DoctypeEditorController {
         let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
 
         doctype_fields.forEach(element => {
+
             if (element.dataset.model == 'doctype_name' || element.dataset.model == 'doctype_alias') {
                 this.model.name = (element.value != '') ? element.value : element.textContent;
                 this.model.alias = (element.value != '') ? element.value : element.textContent;
@@ -30,7 +31,7 @@ export class DoctypeEditorController {
         this.updateModel();
 
         let service = new EditorService();
-        //service.save();
+        service.save(this.model);
         console.dir('Doctype saving...');
     }
 

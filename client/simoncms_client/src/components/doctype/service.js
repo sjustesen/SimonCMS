@@ -3,13 +3,10 @@ export class EditorService {
         console.log('EditorService loaded')
     }
 
-    save() {
+    save(model) {
         let config = { 
             method: 'POST',
-            body: JSON.stringify({
-                title: '',
-                alias: '',
-            }),
+            body: JSON.stringify(model),
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             }
