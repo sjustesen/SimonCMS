@@ -4,6 +4,7 @@ import { router } from "lit-element-router";
 //Components
 import './components/navigation/treeview'
 import './components/templates/templatetree'
+import './components/templates/editor'
 import './components/doctype/editor'
 
 //Styles

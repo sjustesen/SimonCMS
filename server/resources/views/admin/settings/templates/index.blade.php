@@ -22,10 +22,12 @@
 </style>
 
 <h1>Templates</h1>
-<form class="">
+<sc-templateeditor>
+<slot>
+<form id="templateEditor">
     <div class="uk-container" uk-grid>
         <div class="uk-width-1-1">
-            <button class="uk-button uk-button-primary" id="btnSaveDoctype">Save</button>
+            <input type="submit" class="uk-button uk-button-primary" id="btnSaveDoctype" value="Save">
         </div>
 
         <div class="uk-width-1-2">
@@ -44,6 +46,8 @@
         </div>
     </div>
 </form>
+</slot>
+<sc-templateeditor>
 <script>
     var editor = ace.edit("editor");
     editor.setTheme("ace/theme/monokai");

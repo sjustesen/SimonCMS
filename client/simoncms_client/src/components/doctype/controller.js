@@ -1,11 +1,10 @@
-import { EditorService } from './service'
+import { DoctypeEditorService } from './service'
 import { DoctypeModel } from './model'
 
 export class DoctypeEditorController {
     constructor(host) {
         (this.host = host).addController(this);
         this.model = new DoctypeModel().getModel();
-        console.dir(this.model);
     }
 
     updateModel() {
@@ -30,7 +29,7 @@ export class DoctypeEditorController {
         // serialize all form fields before saving
         this.updateModel();
 
-        let service = new EditorService();
+        let service = new DoctypeEditorService();
         service.save(this.model);
         console.dir('Doctype saving...');
     }

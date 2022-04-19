@@ -1,4 +1,4 @@
-export class EditorService {
+export class DoctypeEditorService {
     constructor() {
         console.log('EditorService loaded')
     }

@@ -18,7 +18,7 @@ export default class TemplateTree extends LitElement {
         let section = this.resolveUrl();
         fetch(`/admin/api/${section}`)
             .then(response => response.json())
-            .then(data => this.host.dispatchEvent(
+            .then(data => dispatchEvent(
                 new CustomEvent("updateMenu", {
                     detail: {
                         data: data
@@ -27,7 +27,11 @@ export default class TemplateTree extends LitElement {
     }
 
     render() {
-        return html`hej`;
+        return html`
+        <ul>
+        <li>Folder</li>
+        </ul>
+        `;
     }
 }
 
