@@ -4,23 +4,30 @@ import { DoctypeModel } from './model'
 export class DoctypeEditorController {
     constructor(host) {
         (this.host = host).addController(this);
-        this.model = new DoctypeModel();
+        this.model = new DoctypeModel().getFields();
         console.dir(this.model);
     }
 
-    saveModel() {
-        let doctype_header = document.querySelectorAll('#newfields_template input');
-        let fields = document.querySelectorAll('#newfields_template input');
-        console.dir(fields)
-    }
-
     updateModel() {
-        
+        let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
+
+        doctype_fields.forEach(element => {
+            if (element.dataset.model == 'doctype_name' || element.dataset.model == 'doctype_alias') {
+                this.model.name = (element.value != '') ? element.value : element.textContent;
+                this.model.alias = (element.value != '') ? element.value : element.textContent;
+            } else {
+                this.model.fields.push({
+                    name: element.dataset.model,
+                    value: element.value
+                })
+            }
+        });  
+        console.dir(this.model)
     }
 
     saveDoctype() {
         // serialize all form fields before saving
-        this.saveModel();
+        this.updateModel();
 
         let service = new EditorService();
         //service.save();

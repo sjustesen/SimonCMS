@@ -7,5 +7,5 @@ export class DoctypeModel {
 
         }
     }
-    getFields() { () => this.model };
+    getFields() { return this.model };
 }
