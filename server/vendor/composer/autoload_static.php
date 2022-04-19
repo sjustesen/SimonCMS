@@ -7,26 +7,26 @@ namespace Composer\Autoload;
 class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
 {
     public static $files = array (
-        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
-        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '60799491728b879e74601d83e38b2cad' => __DIR__ . '/..' . '/illuminate/collections/helpers.php',
         'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '72579e7bd17821bb1321b87411366eae' => __DIR__ . '/..' . '/illuminate/support/helpers.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        '25072dd6e2470089de65ae7bf11d3109' => __DIR__ . '/..' . '/symfony/polyfill-php72/bootstrap.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         '23c18046f52bef3eea034657bafda50f' => __DIR__ . '/..' . '/symfony/polyfill-php81/bootstrap.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         'ef65a1626449d89d0811cf9befce46f0' => __DIR__ . '/..' . '/illuminate/events/functions.php',
-        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
         'bee9632da3ca00a99623b9c35d0c4f8b' => __DIR__ . '/..' . '/laravel/lumen-framework/src/helpers.php',
+        'ec07570ca5a812141189b1fa81503674' => __DIR__ . '/..' . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -157,6 +157,10 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         ),
         'A' => 
         array (
+            'App\\Repositiories\\' => 18,
+            'App\\Modules\\' => 12,
+            'App\\Interfaces\\' => 15,
+            'App\\Http\\Controllers\\Api\\' => 25,
             'App\\' => 4,
         ),
     );
@@ -475,6 +479,22 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
         ),
+        'App\\Repositiories\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Repositories',
+        ),
+        'App\\Modules\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Modules',
+        ),
+        'App\\Interfaces\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/interfaces',
+        ),
+        'App\\Http\\Controllers\\Api\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app/Http/Controllers/Api',
+        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
@@ -497,11 +517,18 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'App\\Events\\ExampleEvent' => __DIR__ . '/../..' . '/app/Events/ExampleEvent.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminController.php',
+        'App\\Http\\Controllers\\Api\\ApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ApiController.php',
+        'App\\Http\\Controllers\\Api\\ContentApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ContentApiController.php',
+        'App\\Http\\Controllers\\Api\\DoctypeApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/DoctypeApiController.php',
+        'App\\Http\\Controllers\\Api\\MediaApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/MediaApiController.php',
+        'App\\Http\\Controllers\\Api\\TemplateApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/TemplateApiController.php',
         'App\\Http\\Controllers\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/AuthController.php',
+        'App\\Http\\Controllers\\BackendNavtreeController' => __DIR__ . '/../..' . '/app/Http/Controllers/BackendNavtreeController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\FrontendController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontendController.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\ExampleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ExampleMiddleware.php',
+        'App\\Interfaces\\IRepository' => __DIR__ . '/../..' . '/app/interfaces/IRepository.php',
         'App\\Jobs\\ExampleJob' => __DIR__ . '/../..' . '/app/Jobs/ExampleJob.php',
         'App\\Jobs\\Job' => __DIR__ . '/../..' . '/app/Jobs/Job.php',
         'App\\Listeners\\ExampleListener' => __DIR__ . '/../..' . '/app/Listeners/ExampleListener.php',
@@ -511,9 +538,34 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'App\\Models\\Template' => __DIR__ . '/../..' . '/app/Models/Template.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\UserType' => __DIR__ . '/../..' . '/app/Models/UserType.php',
+        'App\\Modules\\Console\\DisableModuleCommand' => __DIR__ . '/../..' . '/app/Modules/Console/DisableModuleCommand.php',
+        'App\\Modules\\Console\\EnableModuleCommand' => __DIR__ . '/../..' . '/app/Modules/Console/EnableModuleCommand.php',
+        'App\\Modules\\Console\\MakeModuleCommand' => __DIR__ . '/../..' . '/app/Modules/Console/MakeModuleCommand.php',
+        'App\\Modules\\Console\\MakeModuleCommandCommand' => __DIR__ . '/../..' . '/app/Modules/Console/MakeModuleCommandCommand.php',
+        'App\\Modules\\Console\\MakeModuleEventCommand' => __DIR__ . '/../..' . '/app/Modules/Console/MakeModuleEventCommand.php',
+        'App\\Modules\\Console\\MakeModuleHandlerCommand' => __DIR__ . '/../..' . '/app/Modules/Console/MakeModuleHandlerCommand.php',
+        'App\\Modules\\Console\\MakeModuleMigrationCommand' => __DIR__ . '/../..' . '/app/Modules/Console/MakeModuleMigrationCommand.php',
+        'App\\Modules\\Console\\MakeModuleRequestCommand' => __DIR__ . '/../..' . '/app/Modules/Console/MakeModuleRequestCommand.php',
+        'App\\Modules\\Console\\ModuleListCommand' => __DIR__ . '/../..' . '/app/Modules/Console/ModuleListCommand.php',
+        'App\\Modules\\Console\\ModuleMigrateCommand' => __DIR__ . '/../..' . '/app/Modules/Console/ModuleMigrateCommand.php',
+        'App\\Modules\\Console\\ModuleMigrateRollbackCommand' => __DIR__ . '/../..' . '/app/Modules/Console/ModuleMigrateRollbackCommand.php',
+        'App\\Modules\\Console\\ModuleSeedCommand' => __DIR__ . '/../..' . '/app/Modules/Console/ModuleSeedCommand.php',
+        'App\\Modules\\Facades\\Modules' => __DIR__ . '/../..' . '/app/Modules/Facades/Modules.php',
+        'App\\Modules\\Generators\\Generator' => __DIR__ . '/../..' . '/app/Modules/Generators/Generator.php',
+        'App\\Modules\\Generators\\ModuleCommandGenerator' => __DIR__ . '/../..' . '/app/Modules/Generators/ModuleCommandGenerator.php',
+        'App\\Modules\\Generators\\ModuleEventGenerator' => __DIR__ . '/../..' . '/app/Modules/Generators/ModuleEventGenerator.php',
+        'App\\Modules\\Generators\\ModuleGenerator' => __DIR__ . '/../..' . '/app/Modules/Generators/ModuleGenerator.php',
+        'App\\Modules\\Generators\\ModuleHandlerGenerator' => __DIR__ . '/../..' . '/app/Modules/Generators/ModuleHandlerGenerator.php',
+        'App\\Modules\\Generators\\ModuleMigrationGenerator' => __DIR__ . '/../..' . '/app/Modules/Generators/ModuleMigrationGenerator.php',
+        'App\\Modules\\Generators\\ModuleRequestGenerator' => __DIR__ . '/../..' . '/app/Modules/Generators/ModuleRequestGenerator.php',
+        'App\\Modules\\Module' => __DIR__ . '/../..' . '/app/Modules/Module.php',
+        'App\\Modules\\ModulesServiceProvider' => __DIR__ . '/../..' . '/app/Modules/ModulesServiceProvider.php',
+        'App\\Modules\\Repository' => __DIR__ . '/../..' . '/app/Modules/Repository.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\EventServiceProvider' => __DIR__ . '/../..' . '/app/Providers/EventServiceProvider.php',
+        'App\\Repositories\\BackendNavigationRepository' => __DIR__ . '/../..' . '/app/Repositories/BackendNavigationRepository.php',
+        'App\\Repositories\\TemplateRepository' => __DIR__ . '/../..' . '/app/Repositories/TemplateRepository.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Brick\\Math\\BigDecimal' => __DIR__ . '/..' . '/brick/math/src/BigDecimal.php',
         'Brick\\Math\\BigInteger' => __DIR__ . '/..' . '/brick/math/src/BigInteger.php',
@@ -621,7 +673,10 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
         'Database\\Factories\\DocumentNodeFactory' => __DIR__ . '/../..' . '/database/factories/DocumentNodeFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
+        'Database\\Seeders\\BackendContentTreeSeeder' => __DIR__ . '/../..' . '/database/seeders/BackendContentTreeSeeder.php',
+        'Database\\Seeders\\BackendSectionsSeeder' => __DIR__ . '/../..' . '/database/seeders/BackendSectionsSeeder.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\SettingsMenuSeeder' => __DIR__ . '/../..' . '/database/seeders/SettingsMenuSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
