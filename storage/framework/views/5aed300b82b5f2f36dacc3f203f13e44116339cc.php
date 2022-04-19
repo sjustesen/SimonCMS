@@ -1,1 +1,0 @@
-<h1>Templates</h1><?php /**PATH /Users/simonjustesen/Sites/localhost/phpbraco/resources/views/admin/settings/templates/index.blade.php ENDPATH**/ ?>
