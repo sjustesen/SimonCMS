@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api;
 use App\Models\Doctype;
-use Illuminate\Http\Request as Request;
+use Illuminate\Http\Client\Request as Request;
 
 
 class DoctypeApiController extends ApiController
@@ -42,7 +42,7 @@ class DoctypeApiController extends ApiController
 
     public function deleteDoctype($id) {
         Doctype::findOrFail($id)->delete();
-        return response()->json($doctype, 200);
+        return response()->json($id, 200);
     }
 
     //

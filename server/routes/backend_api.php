@@ -13,33 +13,33 @@ $router->group([
     $router->get('logout',  ['uses' => 'AuthController@logout']);
 
     // content api routes
-    $router->get('content',  ['uses' => 'ContentApiController@listContent']);
-    $router->get('content/{id}', ['uses' => 'ContentApiController@showContent']);
-    $router->post('contents', ['uses' => 'ContentApiController@createContent']);
+    $router->get('contents/list',  ['uses' => 'ContentApiController@listContent']);
+    $router->get('content/show/{id}', ['uses' => 'ContentApiController@showContent']);
+    $router->post('content/create', ['uses' => 'ContentApiController@createContent']);
     $router->delete('content/{id}', ['uses' => 'ContentApiController@deleteContent']);
-    $router->put('contents/{id}', ['uses' => 'ContentApiController@updateContent']);
+    $router->put('content/update/{id}', ['uses' => 'ContentApiController@updateContent']);
 
-    $router->get('media',  ['uses' => 'MediaApiController@listMedia']);
-    $router->get('media/{id}', ['uses' => 'MediaApiController@showMedia']);
-    $router->post('media', ['uses' => 'MediaApiController@createMedia']);
-    $router->delete('media/{id}', ['uses' => 'MediaApiController@deleteMedia']);
-    $router->put('media/{id}', ['uses' => 'MediaApiController@updateMedia']);
+    $router->get('media/list',  ['uses' => 'MediaApiController@listMedia']);
+    $router->get('media/show/{id}', ['uses' => 'MediaApiController@showMedia']);
+    $router->post('media/create', ['uses' => 'MediaApiController@createMedia']);
+    $router->delete('media/delete/{id}', ['uses' => 'MediaApiController@deleteMedia']);
+    $router->put('media/update/{id}', ['uses' => 'MediaApiController@updateMedia']);
 
-    $router->get('doctypes',  ['uses' => 'DoctypeApiController@listDoctypes']);
-    $router->get('doctype/{id}', ['uses' => 'DoctypeApiController@showDoctype']);
-    $router->post('doctype', ['uses' => 'DoctypeApiController@createDoctype']);
-    $router->delete('doctype/{id}', ['uses' => 'DoctypeApiController@deleteDoctype']);
-    $router->put('doctype/{id}', ['uses' => 'DoctypeApiController@updateDoctype']);
+    $router->get('doctypes/list',  ['uses' => 'DoctypeApiController@listDoctypes']);
+    $router->get('doctype/show/{id}', ['uses' => 'DoctypeApiController@showDoctype']);
+    $router->post('doctype/create', ['uses' => 'DoctypeApiController@createDoctype']);
+    $router->delete('doctype/delete/{id}', ['uses' => 'DoctypeApiController@deleteDoctype']);
+    $router->put('doctype/update/{id}', ['uses' => 'DoctypeApiController@updateDoctype']);
 
-    $router->get('datatypes',  ['uses' => 'ApiController@listDatatypes']);
-    $router->get('datatype/{id}', ['uses' => 'ApiController@showDatatype']);
-    $router->post('datatype', ['uses' => 'ApiController@createDatatype']);
-    $router->delete('datatype/{id}', ['uses' => 'ApiController@deleteDatatype']);
-    $router->put('datatype/{id}', ['uses' => 'ApiController@updateDatatype']);
+    $router->get('datatypes/list',  ['uses' => 'ApiController@listDatatypes']);
+    $router->get('datatype/show/{id}', ['uses' => 'ApiController@showDatatype']);
+    $router->post('datatype/create', ['uses' => 'ApiController@createDatatype']);
+    $router->delete('datatype/delete/{id}', ['uses' => 'ApiController@deleteDatatype']);
+    $router->put('datatype/update/{id}', ['uses' => 'ApiController@updateDatatype']);
 
-    $router->get('templates',  ['uses' => 'TemplateApiController@listTemplates']);
-    $router->get('template/{id}', ['uses' => 'TemplateApiController@showTemplate']);
-    $router->post('template', ['uses' => 'TemplateApiController@createTemplate']);
-    $router->delete('template/{id}', ['uses' => 'TemplateApiController@deleteTemplate']);
-    $router->put('template/{id}', ['uses' => 'TemplateApiController@updateTemplate']);
+    $router->get('templates/list',  ['uses' => 'TemplateApiController@listTemplates']);
+    $router->get('template/show/{id}', ['uses' => 'TemplateApiController@showTemplate']);
+    $router->post('template/create', ['uses' => 'TemplateApiController@createTemplate']);
+    $router->delete('template/delete/{id}', ['uses' => 'TemplateApiController@deleteTemplate']);
+    $router->put('template/update/{id}', ['uses' => 'TemplateApiController@updateTemplate']);
   });

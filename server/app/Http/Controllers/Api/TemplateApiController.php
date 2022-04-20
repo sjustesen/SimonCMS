@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Modules\Repository;
 use App\Repositories\TemplateRepository;
+use Illuminate\Http\Client\Request;
 
 class TemplateApiController extends ApiController
 {
@@ -21,9 +22,12 @@ class TemplateApiController extends ApiController
     }
 
     public function listTemplates() {
-        $repotrash = $this->repository->read();
+        $repotrash = $this->repository->list();
         return response()->json($repotrash);
+    }
 
+    public function createTemplate(Request $request) {
+        print_r($request->all);
     }
 
     //

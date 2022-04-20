@@ -338,9 +338,9 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/collections',
-            1 => __DIR__ . '/..' . '/illuminate/conditionable',
-            2 => __DIR__ . '/..' . '/illuminate/macroable',
+            0 => __DIR__ . '/..' . '/illuminate/conditionable',
+            1 => __DIR__ . '/..' . '/illuminate/macroable',
+            2 => __DIR__ . '/..' . '/illuminate/collections',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Session\\' => 
@@ -528,7 +528,7 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'App\\Http\\Controllers\\FrontendController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontendController.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\ExampleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ExampleMiddleware.php',
-        'App\\Interfaces\\IRepository' => __DIR__ . '/../..' . '/app/interfaces/IRepository.php',
+        'App\\Interfaces\\IRepository' => __DIR__ . '/../..' . '/app/Interfaces/IRepository.php',
         'App\\Jobs\\ExampleJob' => __DIR__ . '/../..' . '/app/Jobs/ExampleJob.php',
         'App\\Jobs\\Job' => __DIR__ . '/../..' . '/app/Jobs/Job.php',
         'App\\Listeners\\ExampleListener' => __DIR__ . '/../..' . '/app/Listeners/ExampleListener.php',
@@ -1876,6 +1876,7 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'Illuminate\\Database\\Migrations\\MigrationCreator' => __DIR__ . '/..' . '/illuminate/database/Migrations/MigrationCreator.php',
         'Illuminate\\Database\\Migrations\\MigrationRepositoryInterface' => __DIR__ . '/..' . '/illuminate/database/Migrations/MigrationRepositoryInterface.php',
         'Illuminate\\Database\\Migrations\\Migrator' => __DIR__ . '/..' . '/illuminate/database/Migrations/Migrator.php',
+        'Illuminate\\Database\\MultipleColumnsSelectedException' => __DIR__ . '/..' . '/illuminate/database/MultipleColumnsSelectedException.php',
         'Illuminate\\Database\\MultipleRecordsFoundException' => __DIR__ . '/..' . '/illuminate/database/MultipleRecordsFoundException.php',
         'Illuminate\\Database\\MySqlConnection' => __DIR__ . '/..' . '/illuminate/database/MySqlConnection.php',
         'Illuminate\\Database\\PDO\\Concerns\\ConnectsToDatabase' => __DIR__ . '/..' . '/illuminate/database/PDO/Concerns/ConnectsToDatabase.php',
