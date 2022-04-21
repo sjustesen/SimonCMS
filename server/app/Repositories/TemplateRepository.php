@@ -17,7 +17,7 @@ class TemplateRepository implements IRepository
     }
 
     public function list($withfiles = false) {
-        $dir = DirectoryTraversal::getRecursiveIterator($this->template_dir);
+        $dir = DirectoryTraversal::searchDirectoryRecursive($this->template_dir, 1);
         return $dir;
     }
 
