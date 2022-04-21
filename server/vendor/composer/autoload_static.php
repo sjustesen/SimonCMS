@@ -338,9 +338,9 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/conditionable',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/conditionable',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Session\\' => 
@@ -4308,6 +4308,11 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'Symfony\\Polyfill\\Php81\\Php81' => __DIR__ . '/..' . '/symfony/polyfill-php81/Php81.php',
         'Tests\\ExampleTest' => __DIR__ . '/../..' . '/tests/ExampleTest.php',
         'Tests\\TestCase' => __DIR__ . '/../..' . '/tests/TestCase.php',
+        'TheSeer\\DirectoryScanner\\DirectoryScanner' => __DIR__ . '/..' . '/theseer/directoryscanner/src/directoryscanner.php',
+        'TheSeer\\DirectoryScanner\\Exception' => __DIR__ . '/..' . '/theseer/directoryscanner/src/directoryscanner.php',
+        'TheSeer\\DirectoryScanner\\FilesOnlyFilterIterator' => __DIR__ . '/..' . '/theseer/directoryscanner/src/filesonlyfilter.php',
+        'TheSeer\\DirectoryScanner\\IncludeExcludeFilterIterator' => __DIR__ . '/..' . '/theseer/directoryscanner/src/includeexcludefilter.php',
+        'TheSeer\\DirectoryScanner\\PHPFilterIterator' => __DIR__ . '/..' . '/theseer/directoryscanner/src/phpfilter.php',
         'TheSeer\\Tokenizer\\Exception' => __DIR__ . '/..' . '/theseer/tokenizer/src/Exception.php',
         'TheSeer\\Tokenizer\\NamespaceUri' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUri.php',
         'TheSeer\\Tokenizer\\NamespaceUriException' => __DIR__ . '/..' . '/theseer/tokenizer/src/NamespaceUriException.php',

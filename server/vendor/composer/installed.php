@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c8d366eb4c7a844fb52fb5be9587e1461b8a9fec',
+        'reference' => 'f4cf4f8ed145d8cb72c433763aa583b23cd17ed7',
         'name' => 'laravel/lumen',
         'dev' => true,
     ),
@@ -367,7 +367,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c8d366eb4c7a844fb52fb5be9587e1461b8a9fec',
+            'reference' => 'f4cf4f8ed145d8cb72c433763aa583b23cd17ed7',
             'dev_requirement' => false,
         ),
         'laravel/lumen-framework' => array(
@@ -1011,6 +1011,15 @@
             'install_path' => __DIR__ . '/../symfony/var-dumper',
             'aliases' => array(),
             'reference' => '38358405ae948963c50a3aae3dfea598223ba15e',
+            'dev_requirement' => false,
+        ),
+        'theseer/directoryscanner' => array(
+            'pretty_version' => '1.3.3',
+            'version' => '1.3.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../theseer/directoryscanner',
+            'aliases' => array(),
+            'reference' => '4cdce31c1b5120779a01225b5b0968f9321342d6',
             'dev_requirement' => false,
         ),
         'theseer/tokenizer' => array(

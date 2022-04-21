@@ -22,8 +22,8 @@ class TemplateApiController extends ApiController
     }
 
     public function listTemplates() {
-        $repotrash = $this->repository->list();
-        return response()->json($repotrash);
+        $template_files = $this->repository->list();
+        return response()->json($template_files);
     }
 
     public function createTemplate(Request $request) {

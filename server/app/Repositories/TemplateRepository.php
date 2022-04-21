@@ -4,21 +4,47 @@ namespace App\Repositories;
 use App\Models\Template;
 use App\Interfaces\IRepository;
 use Illuminate\Http\Client\Request;
-use Illuminate\Support\Facades\Storage;
+use TheSeer\DirectoryScanner\DirectoryScanner;
 
 class TemplateRepository implements IRepository
 {
+    protected $template_dir = 'uploads/templates/';
+
     public function __construct()
     {
+        
     }
 
-    public function list() {
-        $directory = base_path('upload/templates');
-        $files = Storage::allFiles($directory);
+    public function list($withfiles = false) {
+        $path = base_path($this->template_dir);
+        $iterator = new \RecursiveDirectoryIterator($path);
+
+        $dirs = array();
+        foreach ($iterator as $fileinfo) {
+            if ($iterator->isDot()) continue;
+            $dirs[] = $fileinfo->getFilename();
+        
+        return $dirs;
+        }
+    }
+
+    public function showDirectoryContents() {
+        $scanner = new \TheSeer\DirectoryScanner\DirectoryScanner;
+        $scanner->addInclude('*.php');
+        
+        $filenames = [];
+        foreach($scanner('.') as $content) {
+            array_push($filenames, $content->getFileName());
+        }
+        return $filenames;
     }
 
     public function create(Request $request)
     {
+        // make a db entry 
+        // make the corresponding file in the filesystem.
+        // figure out a way to sync.
+        
         $incoming_data = $request->all();
         print_r($incoming_data);
         $template = new Template();
