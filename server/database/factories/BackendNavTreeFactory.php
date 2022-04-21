@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\BackendNavTree;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BackendNavtreeFactory extends Factory
+class BackendNavTreeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.

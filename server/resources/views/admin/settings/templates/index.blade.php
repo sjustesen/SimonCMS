@@ -8,7 +8,9 @@
 @section('sectionnav')
 <small>Navigation</small>
 <sc-templatetree>
-    <slot></slot>
+    <slot>
+        <ul id="templatefiles"></ul>
+    </slot>
 </sc-templatetree>
 @endsection
 

@@ -159,7 +159,6 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         array (
             'App\\Repositiories\\' => 18,
             'App\\Modules\\' => 12,
-            'App\\Interfaces\\' => 15,
             'App\\Http\\Controllers\\Api\\' => 25,
             'App\\' => 4,
         ),
@@ -487,10 +486,6 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         array (
             0 => __DIR__ . '/../..' . '/app/Modules',
         ),
-        'App\\Interfaces\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app/interfaces',
-        ),
         'App\\Http\\Controllers\\Api\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app/Http/Controllers/Api',
@@ -528,10 +523,13 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'App\\Http\\Controllers\\FrontendController' => __DIR__ . '/../..' . '/app/Http/Controllers/FrontendController.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\ExampleMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/ExampleMiddleware.php',
+        'App\\Interfaces\\IBackendNavigationRepository' => __DIR__ . '/../..' . '/app/Interfaces/IBackendNavigationRepository.php',
         'App\\Interfaces\\IRepository' => __DIR__ . '/../..' . '/app/Interfaces/IRepository.php',
         'App\\Jobs\\ExampleJob' => __DIR__ . '/../..' . '/app/Jobs/ExampleJob.php',
         'App\\Jobs\\Job' => __DIR__ . '/../..' . '/app/Jobs/Job.php',
         'App\\Listeners\\ExampleListener' => __DIR__ . '/../..' . '/app/Listeners/ExampleListener.php',
+        'App\\Logic\\Filesystem\\DirectoryTraversal' => __DIR__ . '/../..' . '/app/Logic/Filesystem/DirectoryTraversal.php',
+        'App\\Models\\BackendNavTree' => __DIR__ . '/../..' . '/app/Models/BackendNavTree.php',
         'App\\Models\\Datatype' => __DIR__ . '/../..' . '/app/Models/Datatype.php',
         'App\\Models\\Doctype' => __DIR__ . '/../..' . '/app/Models/Doctype.php',
         'App\\Models\\DocumentNode' => __DIR__ . '/../..' . '/app/Models/DocumentNode.php',
@@ -671,6 +669,7 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Factories\\BackendNavTreeFactory' => __DIR__ . '/../..' . '/database/factories/BackendNavTreeFactory.php',
         'Database\\Factories\\DocumentNodeFactory' => __DIR__ . '/../..' . '/database/factories/DocumentNodeFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\BackendContentTreeSeeder' => __DIR__ . '/../..' . '/database/seeders/BackendContentTreeSeeder.php',

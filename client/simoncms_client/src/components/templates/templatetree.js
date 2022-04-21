@@ -26,12 +26,14 @@ export default class TemplateTree extends LitElement {
     
     parse_and_inject(menuitems) {
         let ul = document.querySelector('#templatefiles');
-        
+        console.dir(menuitems);
+        if (menuitems.length > 0 ) {
         menuitems.forEach(element => {
             let li = document.createElement('li');
-            li.value = element;
+            li.textContent = element.name;
             ul.appendChild(li);
         });
+    }
     }
 
     fetchFilesAndFolders() {
@@ -43,8 +45,7 @@ export default class TemplateTree extends LitElement {
 
     render() {
         return html`
-        <ul id="templatefiles">
-        </ul>
+        <slot></slot>
         `;
     }
 }

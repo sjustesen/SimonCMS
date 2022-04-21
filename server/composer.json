@@ -19,7 +19,6 @@
             "App\\": "app/",
             "App\\Http\\Controllers\\Api\\": "app/Http/Controllers/Api/",
             "App\\Repositiories\\": "app/Repositories",
-            "App\\Interfaces\\": "app/interfaces",
             "App\\Modules\\": "app/Modules",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"

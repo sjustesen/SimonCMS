@@ -3,40 +3,22 @@ namespace App\Repositories;
 
 use App\Models\Template;
 use App\Interfaces\IRepository;
+use App\Logic\Filesystem\DirectoryTraversal;
 use Illuminate\Http\Client\Request;
-use TheSeer\DirectoryScanner\DirectoryScanner;
+use \App\Logic\FileSystem;
 
 class TemplateRepository implements IRepository
 {
-    protected $template_dir = 'uploads/templates/';
+    protected $template_dir;
 
     public function __construct()
     {
-        
+        $this->template_dir = base_path('uploads/templates');
     }
 
     public function list($withfiles = false) {
-        $path = base_path($this->template_dir);
-        $iterator = new \RecursiveDirectoryIterator($path);
-
-        $dirs = array();
-        foreach ($iterator as $fileinfo) {
-            if ($iterator->isDot()) continue;
-            $dirs[] = $fileinfo->getFilename();
-        
-        return $dirs;
-        }
-    }
-
-    public function showDirectoryContents() {
-        $scanner = new \TheSeer\DirectoryScanner\DirectoryScanner;
-        $scanner->addInclude('*.php');
-        
-        $filenames = [];
-        foreach($scanner('.') as $content) {
-            array_push($filenames, $content->getFileName());
-        }
-        return $filenames;
+        $dir = DirectoryTraversal::getRecursiveIterator($this->template_dir);
+        return $dir;
     }
 
     public function create(Request $request)
