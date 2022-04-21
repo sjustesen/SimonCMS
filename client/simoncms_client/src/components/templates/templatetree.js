@@ -31,6 +31,18 @@ export default class TemplateTree extends LitElement {
             let li = document.createElement('li');
             li.innerHTML = element.name;
             ul.appendChild(li);
+
+            // apply nested
+            let nested_ul = document.createElement('ul');
+            if (element.children.length > 0 ) {
+            element.children.forEach(element => {
+                console.dir(element)
+                let nested_li = document.createElement('li');
+                nested_li.innerHTML = element.name;
+                nested_ul.appendChild(nested_li)
+
+            });
+            }            
         });
     }
     }
