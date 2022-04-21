@@ -26,11 +26,10 @@ export default class TemplateTree extends LitElement {
     
     parse_and_inject(menuitems) {
         let ul = document.querySelector('#templatefiles');
-        console.dir(menuitems);
         if (menuitems.length > 0 ) {
         menuitems.forEach(element => {
             let li = document.createElement('li');
-            li.textContent = element.name;
+            li.innerHTML = element.name;
             ul.appendChild(li);
         });
     }

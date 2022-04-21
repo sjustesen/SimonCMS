@@ -33,6 +33,7 @@ class DirectoryTraversal {
                     }
                     
                     $arr[] = $dir;
+                    sort($arr);
             }
             return $arr;
         }
