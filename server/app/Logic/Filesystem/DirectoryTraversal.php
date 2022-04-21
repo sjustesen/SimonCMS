@@ -25,12 +25,13 @@ class DirectoryTraversal {
                     $dir->name = $fileInfo->getFileName();
                     $dir->path = $fileInfo->getPathname();
                     $dir->depth = $depth;
-
-                    if ($fileInfo->isDir()) {
-                        $dir->children = DirectoryTraversal::searchDirectoryRecursive($fileInfo->getPathname(), $depth);
-                    }
                     $dir->type = $fileInfo->isDir() ? 'folder' : 'file';
                 
+                    if ($fileInfo->isDir()) {
+                        $dir->children = DirectoryTraversal::searchDirectoryRecursive($fileInfo->getPathname(), $depth, $maxdepth);
+                        $depth += 1;
+                    }
+                    
                     $arr[] = $dir;
             }
             return $arr;
