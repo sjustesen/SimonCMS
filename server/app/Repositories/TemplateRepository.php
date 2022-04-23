@@ -33,9 +33,9 @@ class TemplateRepository implements IRepository
         $template->save();
     }
 
-    public function read($templateId = null)
+    public function read($file)
     {
-        $template = Template::find($templateId);
+        $template = file_get_contents(base_path($file));
         return $template;
     }
 

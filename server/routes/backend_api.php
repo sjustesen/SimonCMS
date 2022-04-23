@@ -39,6 +39,7 @@ $router->group([
 
     $router->get('templates/list',  ['uses' => 'TemplateApiController@listTemplates']);
     $router->get('template/show/{id}', ['uses' => 'TemplateApiController@showTemplate']);
+    $router->post('template/read', ['uses' => 'TemplateApiController@readTemplate']);
     $router->post('template/create', ['uses' => 'TemplateApiController@createTemplate']);
     $router->delete('template/delete/{id}', ['uses' => 'TemplateApiController@deleteTemplate']);
     $router->put('template/update/{id}', ['uses' => 'TemplateApiController@updateTemplate']);

@@ -51,7 +51,7 @@
             </div>
         </form>
     </slot>
-    <sc-templateeditor>
+</sc-templateeditor>
         <script>
             var editor = ace.edit("editor");
             editor.setTheme("ace/theme/monokai");
