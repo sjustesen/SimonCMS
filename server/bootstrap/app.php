@@ -18,6 +18,8 @@ date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 | application as an "IoC" container and router for this framework.
 |
 */
+define('UPLOADS_DIR', realpath(__DIR__.'/../uploads'));
+define('UPLOADS_URL', 'uploads');
 
 $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
