@@ -31,7 +31,9 @@
         <form id="templateEditor">
             <div class="uk-container" uk-grid>
                 <div class="uk-width-1-1">
-                    <input type="submit" class="uk-button uk-button-primary" id="btnSaveDoctype" value="Save">
+                    <button class="uk-button button" id="btnSaveTemplate"> 
+                        <span class="button__text">Save</span>
+                    </button>
                 </div>
 
                 <div class="uk-width-1-2">

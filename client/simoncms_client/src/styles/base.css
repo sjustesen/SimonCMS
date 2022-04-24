@@ -16,6 +16,57 @@ h1 {
 button, input, select {
     border-radius: 10px !important;
 }
+#btnSaveDoctype {
+    position: relative; 
+}
+
+.button {
+    position: relative;
+    padding: 4px 16px;
+    background: #005795;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14pt;
+    color: #fff;
+}
+
+.button--loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid #ccc;
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: button-loading-spinner 1s ease infinite;
+    color: #005795 !important;
+}
+
+.button__text {
+    color: #fff;
+    transition: all 0.2s;
+}
+
+.button--loading > .button__text{
+    color: transparent;
+}
+@keyframes button-loading-spinner {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
+}
+
 
 .uk-navbar-nav > li > a {
     font-size: 14pt;

@@ -1,20 +1,29 @@
 export class TemplateEditorController {
     constructor(host) {
-        //self = this;
         ((this.host = host)).addController(this);
+        self = this;
+        self.submit_btn = document.querySelector('#btnSaveTemplate');
     }
 
     saveTemplate() {
+        setTimeout(() => {
+            self.submit_btn.classList.remove("button--loading");    
+
+        }, 3000);
         console.dir('We\'re pretend-saving...');
+
     }
 
     bindEvents() {
-        const submit_btn = document.querySelector('#btnSaveDoctype');
-        submit_btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Save clicked');
+        self.submit_btn.addEventListener('click', function(e) {
+            if (!self.submit_btn.classList.contains('button--loading')) {
+                self.submit_btn.classList.add("button--loading");
+            } else {
+                self.submit_btn.classList.remove("button--loading");    
+            }
+            self.saveTemplate();
         });
-    }
+        }
 
 
 }
