@@ -1,5 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { DoctypeEditorController } from './controller'
+import { DoctypeModel } from "./model";
 
 export default class DoctypeEditor extends LitElement {
 
@@ -15,6 +16,7 @@ export default class DoctypeEditor extends LitElement {
     constructor() {
         super();
         this.controller = new DoctypeEditorController(this);
+        this.doctype = new DoctypeModel
     }
 
     connectedCallback() {

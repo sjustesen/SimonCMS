@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api;
 use App\Models\Doctype;
-use Illuminate\Http\Client\Request as Request;
+use Illuminate\Http\Request as Request;
 
 
 class DoctypeApiController extends ApiController
@@ -25,7 +25,14 @@ class DoctypeApiController extends ApiController
     }
 
     public function createDoctype(Request $request) {
-        $doctype = Doctype::create($request->all());
+        $doctype = new Doctype();
+        
+        $doctype->name = $request->name;
+        $doctype->alias = $request->alias; 
+        $doctype->fields = $request->fields;
+        
+        $doctype->save();
+
         return response()->json($doctype, 201);
     }
 

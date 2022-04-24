@@ -27,7 +27,7 @@ export class TemplateEditorService {
     }
 
     read() {
-        this.fetchData('/admin/api/templates') 
+        this.fetchData('/admin/api/template/read') 
       
     }
 

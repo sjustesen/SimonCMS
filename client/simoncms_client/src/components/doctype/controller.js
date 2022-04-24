@@ -12,10 +12,13 @@ export class DoctypeEditorController {
 
         doctype_fields.forEach(element => {
 
-            if (element.dataset.model == 'doctype_name' || element.dataset.model == 'doctype_alias') {
+            if (element.dataset.model == 'name' || element.dataset.model == 'alias') {
                 this.model.name = (element.value != '') ? element.value : element.textContent;
                 this.model.alias = (element.value != '') ? element.value : element.textContent;
-            } else {
+            } 
+            
+            if (element.dataset.model != 'name' || element.dataset.model != 'alias') {
+            
                 this.model.fields.push({
                     name: element.dataset.model,
                     value: element.value

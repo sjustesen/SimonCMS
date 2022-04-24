@@ -11,7 +11,7 @@ export class DoctypeModel {
     getName() { return this.model.name }
     getAlias() { return this.model.alias }
     getFields() { return this.model.fields };
-    
+
     setName(name) { this.model.name = name; }
     setAlias(alias) { this.model.alias = alias; }
     setFields(fields) { this.model.fields = fields }

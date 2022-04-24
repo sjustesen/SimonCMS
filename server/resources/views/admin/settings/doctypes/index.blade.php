@@ -13,11 +13,11 @@
 
 						<div class="uk-width-1-2">
 							<label>Name</label>
-							<input class="uk-input uk-form-medium" data-model="doctype_name" type="text" placeholder="">
+							<input class="uk-input uk-form-medium" data-model="name" type="text" placeholder="">
 						</div>
 						<div class="uk-width-1-2">
 							<label>Systemwide Element Alias</label>
-							<input class="uk-input uk-form-medium" data-model="doctype_alias" type="text" placeholder="">
+							<input class="uk-input uk-form-medium" data-model="alias" type="text" placeholder="">
 						</div>
 					</div>
 				</section>
@@ -37,11 +37,11 @@
 
 
 							<div id="newfields_template">
-								<input class="uk-input uk-form-medium uk-margin" type="text" data-model="name" placeholder="Visual name">
-								<input class="uk-input uk-form-medium" type="text" data-model="alias" placeholder="Data alias">
+								<input class="uk-input uk-form-medium uk-margin" type="text" data-model="name" placeholder="Visual name" value="">
+								<input class="uk-input uk-form-medium" type="text" data-model="alias" placeholder="Data alias" value="">
 
 								<select class="uk-select uk-form-medium uk-margin" data-model="componentSelected" class="dtComponents">
-									<option>Select Doctype control</option>
+									<option value="">Select Doctype control</option>
 									<option value="text">Text</option>
 									<option value="textarea">Textarea</option>
 									<option value="number">Number</option>
