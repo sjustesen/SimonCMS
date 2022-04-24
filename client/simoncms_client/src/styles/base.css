@@ -8,6 +8,11 @@ h1 {
     margin-top: 0px;
 }
 
+#templatefiles li.menu-closed li
+{
+    display: none;
+}
+
 button, input, select {
     border-radius: 10px !important;
 }

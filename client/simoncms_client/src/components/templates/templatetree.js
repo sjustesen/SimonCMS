@@ -68,8 +68,8 @@ export default class TemplateTree extends LitElement {
                 nested_li.classList.add('menu-closed');
                 nested_li.innerHTML = `<a href="#" data-item=\"${item.path}\")">${item.name}</a>`;
                 nested_li.addEventListener('click', function (e) {
-                    // element.path should be relative
-                    console.dir(e.currentTarget)
+                    let menuitem = e.currentTarget;
+                    menuitem.classList.toggle('menu-closed')
                 });
                 break;
             default:
