@@ -7,7 +7,8 @@
 				<section class="uk-container uk-child-width-1-1">
 					<div uk-grid>
 						<div class="uk-width-1-1">
-							<h1>Create New DocumentType</h1>
+							<h1>Create New Document Type</h1>
+							<p>DocumentTypes is the blueprint for every page. </p>
 							<button class="uk-button uk-button-primary" id="btnSaveDoctype">Save</button>
 						</div>
 
@@ -20,7 +21,9 @@
 							<input class="uk-input uk-form-medium" data-model="alias" type="text" placeholder="">
 						</div>
 					</div>
+					<hr>
 				</section>
+				
 				<section class="uk-container uk-child-width-1-1 uk-margin">
 					<h2>Document type controls</h2>
 					<div class="uk-width-1-2 uk-margin">

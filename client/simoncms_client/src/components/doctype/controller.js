@@ -12,9 +12,9 @@ export class DoctypeEditorController {
 
         doctype_fields.forEach(element => {
 
-            if (element.dataset.model == 'name' || element.dataset.model == 'alias') {
-                this.model.name = (element.value != '') ? element.value : element.textContent;
-                this.model.alias = (element.value != '') ? element.value : element.textContent;
+            if (element.dataset.model == 'name' || element.dataset.model == 'alias') {
+                this.model.name = element.value;
+                this.model.alias = element.value;
             } 
             
             if (element.dataset.model != 'name' || element.dataset.model != 'alias') {
