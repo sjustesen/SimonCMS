@@ -4,12 +4,13 @@
 	<simoncms-doctypeeditor>
 		<slot>
 			<form id="new_doctype_form">
-				<div class="uk-container" uk-grid>
-					<div class="uk-width-1-1">
-						<h1>Create New DocumentType</h1>
-						<button class="uk-button uk-button-primary" id="btnSaveDoctype">Save</button>
-					</div>
-					
+				<section class="uk-container uk-child-width-1-1">
+					<div uk-grid>
+						<div class="uk-width-1-1">
+							<h1>Create New DocumentType</h1>
+							<button class="uk-button uk-button-primary" id="btnSaveDoctype">Save</button>
+						</div>
+
 						<div class="uk-width-1-2">
 							<label>Name</label>
 							<input class="uk-input uk-form-medium" data-model="doctype_name" type="text" placeholder="">
@@ -18,8 +19,8 @@
 							<label>Systemwide Element Alias</label>
 							<input class="uk-input uk-form-medium" data-model="doctype_alias" type="text" placeholder="">
 						</div>
-				</div>
-
+					</div>
+				</section>
 				<section class="uk-container uk-child-width-1-1 uk-margin">
 					<h2>Document type controls</h2>
 					<div class="uk-width-1-2 uk-margin">
