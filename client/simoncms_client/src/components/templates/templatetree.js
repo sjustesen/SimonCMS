@@ -39,7 +39,6 @@ export default class TemplateTree extends LitElement {
         fetch(`/admin/api/${section}`, config)
             .then(response => response.json())
             .then(data => {
-                console.dir(data)
                 var editor = ace.edit("editor");
                 editor.session.setValue(data)
             });
@@ -59,6 +58,8 @@ export default class TemplateTree extends LitElement {
         switch (item.type) {
             case 'file':
                 nested_li.innerHTML = `<a href="#" data-item=\"${item.path}\")">${item.name}</a>`;
+                self = this; // scoping self to local scope, seems hacky, but it works,
+
                 nested_li.addEventListener('click', function (e) {
                     // element.path should be relative
                     self.openInEditor(item.path)
