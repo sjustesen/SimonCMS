@@ -38,15 +38,15 @@
 
                 <div class="uk-width-1-2">
                     <label>Template name</label>
-                    <input class="uk-input uk-form-medium" type="text" placeholder="">
+                    <input class="uk-input uk-form-medium" type="text" data-model="name" placeholder="">
                 </div>
                 <div class="uk-width-1-2">
                     <label>Systemwide Element ID</label>
-                    <input class="uk-input uk-form-medium" type="text" placeholder="">
+                    <input class="uk-input uk-form-medium" type="text" data-model="alias" placeholder="">
                 </div>
 
                 <div class="uk-width-1-1">
-                    <div id="editor">
+                    <div id="editor" data-model="editor">
 
                     </div>
                 </div>
