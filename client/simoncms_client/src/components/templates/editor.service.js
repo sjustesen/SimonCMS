@@ -37,7 +37,7 @@ export class TemplateEditorService {
 
     save(model) {
         let config_override = this.config;
-        config_override.body = JSON.stringify({ 'model': model }); 
+        config_override.body = JSON.stringify(model); 
         let result = this.persistData('/admin/api/template/save', model, config_override);
         return result;
     }

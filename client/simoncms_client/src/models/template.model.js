@@ -14,5 +14,7 @@ export class TemplateViewModel {
 
     setName(name) { this.model.name = name; }
     setAlias(alias) { this.model.alias = alias; }
-    setFields(fields) { this.model.fields = fields }
+    setFields(field) {
+        this.model.fields.push(field)
+    }
 }
