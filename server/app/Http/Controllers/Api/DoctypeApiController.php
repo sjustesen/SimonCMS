@@ -26,14 +26,13 @@ class DoctypeApiController extends ApiController
 
     public function createDoctype(Request $request) {
         $doctype = new Doctype();
-        
         $doctype->name = $request->name;
         $doctype->alias = $request->alias; 
-        $doctype->fields = $request->fields;
+        $doctype->fields = '';
         
         $doctype->save();
 
-        return response()->json($doctype, 201);
+        return response()->json($doctype, 200);
     }
 
     public function showDoctype($id) {

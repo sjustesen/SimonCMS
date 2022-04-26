@@ -16,7 +16,7 @@ export default class DoctypeEditor extends LitElement {
     constructor() {
         super();
         this.controller = new DoctypeEditorController(this);
-        this.doctype = new DoctypeModel
+        this.doctype = new DoctypeModel();
     }
 
     connectedCallback() {

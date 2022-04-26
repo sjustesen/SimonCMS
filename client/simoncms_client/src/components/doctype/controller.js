@@ -11,21 +11,21 @@ export class DoctypeEditorController {
         let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
 
         doctype_fields.forEach(element => {
-
-            if (element.dataset.model == 'name' || element.dataset.model == 'alias') {
-                this.model.name = element.value;
-                this.model.alias = element.value;
-            } 
-            
-            if (element.dataset.model != 'name' || element.dataset.model != 'alias') {
-            
-                this.model.fields.push({
-                    name: element.dataset.model,
-                    value: element.value
-                })
+            switch(element.dataset.model) {
+                case 'name':
+                    this.model.name = element.value;
+                break;
+                case 'alias':
+                    this.model.alias = element.value;
+                break;
+                default:
+                    this.model.fields.push({
+                        name: element.dataset.model,
+                        value: element.value
+                    })
+               
             }
         });  
-        console.dir(this.model)
     }
 
     saveDoctype() {
