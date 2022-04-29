@@ -52,4 +52,4 @@ export default class TreeView extends LitElement {
 
 }
 
-customElements.define('simoncms-treeview', TreeView);
+customElements.define('sc-treeview', TreeView);
