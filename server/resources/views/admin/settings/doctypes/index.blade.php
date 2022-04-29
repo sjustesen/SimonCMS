@@ -1,4 +1,17 @@
-@extends('admin.layout.master')
+@extends('admin.layout.3col')
+
+@section('sectionnav')
+<small>Navigation</small>
+<sc-templatetree>
+    <slot>
+        <ul id="templatefiles">
+            
+        </ul>
+    </slot>
+</sc-templatetree>
+@endsection
+
+
 @section('content')
 <main>
 	<simoncms-doctypeeditor>
@@ -54,8 +67,6 @@
 								</div>
 								<hr>
 							</div>
-
-
 
 							<div id="newfields_container" uk-margin>
 

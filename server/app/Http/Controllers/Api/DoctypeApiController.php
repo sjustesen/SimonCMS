@@ -39,6 +39,13 @@ class DoctypeApiController extends ApiController
         return response()->json(Doctype::find($id));
     }
 
+    public function loadDoctype(Request $request) {
+        $doctype = Doctype::findOrFail($request->id);
+        
+        if ($doctype != null)
+        return response()->json($doctype, 200);½
+    }
+
     public function updateDoctype($id, Request $request) {
         $doctype = Doctype::findOrFail($id);
         $doctype->update($request->all());
