@@ -11,8 +11,10 @@ In lack of a better name, PHPbraco is now SimonCMS. It now has my name, so I bet
 I've been away from the PHP platform for quite some years. I have been using and building sites with this wonderful Content Management System (CMS) 
 called Umbraco on the Microsoft.NET platform. Having utilized other CMS' on the PHP from time to time, I see that many contemporary PHP content management systems lack the flexibility found in .NETs Umbraco. 
 Normally, in PHP CMS space, you get a buttload of controls, and you end up using 10% of them.  You, the designer/developer, should be able to make a tailormade user experience. 
-What Umbraco does so brilliantly is that it starts at nothing more or less, and then it's up to you to design the rest through a set of predefined controls. 
-I want to bring that to the PHP platform, so here we are! 
+What Umbraco does so brilliantly is that it starts at nothing more or less, and then it's up to you to design the rest through a set of predefined controls 
+(you will ofcourse be able to extend the amount of controls programatically, once we have defined an API for extending the various parts of the CMS) 
+
+I want to bring that flexibility to the PHP platform, so here we are! 
 
 This is not a clone, merely it is a loveletter to the Umbraco CMS. It is *not* afiliated with Umbraco project.
 
