@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('sc_doctypes', function (Blueprint $table) {
             $table->id()->autoIncrement();
             $table->integer('parent_id')->default(0);
+            $table->string('uuid');
             $table->string('name');
             $table->string('alias');
             $table->mediumtext('fields');

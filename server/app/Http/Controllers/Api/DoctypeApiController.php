@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Api;
 use App\Models\Doctype;
 use Illuminate\Http\Request as Request;
-
+use Illuminate\Support\Str;
 
 class DoctypeApiController extends ApiController
 {
@@ -27,6 +27,7 @@ class DoctypeApiController extends ApiController
     public function createDoctype(Request $request) {
         $doctype = new Doctype();
         $doctype->name = $request->name;
+        $doctype->uuid = Str::uuid()->toString();
         $doctype->alias = $request->alias; 
         $doctype->fields = json_encode($request->fields);
         
@@ -43,7 +44,7 @@ class DoctypeApiController extends ApiController
         $doctype = Doctype::findOrFail($request->id);
         
         if ($doctype != null)
-        return response()->json($doctype, 200);½
+        return response()->json($doctype, 200);
     }
 
     public function updateDoctype($id, Request $request) {

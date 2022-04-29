@@ -15,7 +15,7 @@ class Template extends Model
      * @var string[]
      */
     protected $fillable = [
-        'name', 'alias', 'softdeleted'
+        'name', 'alias','uuid','softdeleted'
     ];
 
     protected $table = 'sc_templates';

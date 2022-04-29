@@ -17,7 +17,7 @@ class Doctype extends Model
      * @var string[]
      */
     protected $fillable = [
-        'name', 'alias', 'template_id','fields'
+        'name', 'alias', 'uuid', 'template_id','fields'
     ];
 
     /**

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('sc_templates', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('uuid');
             $table->string('title');
             $table->string('alias');
             $table->text('content');
