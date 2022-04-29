@@ -28,7 +28,7 @@ class DoctypeApiController extends ApiController
         $doctype = new Doctype();
         $doctype->name = $request->name;
         $doctype->alias = $request->alias; 
-        $doctype->fields = '';
+        $doctype->fields = json_encode($request->fields);
         
         $doctype->save();
 

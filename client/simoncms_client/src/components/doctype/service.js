@@ -1,4 +1,4 @@
-import { DoctypeModel } from "./model";
+export { DoctypeModel } from "./model";
 
 export class DoctypeEditorService {
     constructor() {

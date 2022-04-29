@@ -23,7 +23,7 @@ export class DoctypeEditorController {
                         name: element.dataset.model,
                         value: element.value
                     })
-               
+					console.dir(this.model);
             }
         });  
     }

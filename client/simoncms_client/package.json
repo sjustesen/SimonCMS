@@ -17,7 +17,8 @@
     "@binar/tree-view-component": "^1.0.25",
     "lit": "^2.2.1",
     "lit-element-router": "^2.0.3",
-    "mithril": "^2.0.4"
+    "mithril": "^2.0.4",
+    "webpack-watch": "^0.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
@@ -26,7 +27,7 @@
     "babel-loader": "^8.2.4",
     "css-loader": "^6.7.1",
     "style-loader": "^3.3.1",
-    "webpack": "^5.70.0",
+    "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2"
   }
 }
