@@ -34,10 +34,10 @@ export class DoctypeEditorController {
                 case 'template':
                     this.model.template = element.selectedValue;
                 default:
-                    this.model.fields.push({
+                  /*  this.model.fields.push({
                         name: element.dataset.model,
                         value: element.value
-                    })
+                    }) */
             }
         });  
     }

@@ -14,7 +14,9 @@ export default class DoctypeTree extends LitElement {
     }
 
     attachEvents() {
-        
+        window.addEventListener('UpdateDoctypeTree', (event) => {
+            this.loadDoctypes();
+        })
     }
 
     loadDoctypes() {
@@ -25,7 +27,8 @@ export default class DoctypeTree extends LitElement {
     }
 
     parse_and_inject(data) {
-        let ul = document.querySelector('#doctypetree')
+        let ul = document.querySelector('#doctypetree');
+        ul.textContent = '';
         data.forEach(element => {
             let li = document.createElement(`li`);
             li.innerHTML = `<li>${element.name}</li>`;

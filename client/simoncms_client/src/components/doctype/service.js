@@ -45,5 +45,7 @@ export class DoctypeEditorService {
         fetch(`/admin/api/doctype/create`, config)
             .then(response => response.json())
             .then(data => console.dir(data));
+
+            dispatchEvent(new Event('UpdateDoctypeTree'));
     }
 }
