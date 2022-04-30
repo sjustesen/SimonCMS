@@ -4,9 +4,22 @@ import { DoctypeModel } from './model'
 export class DoctypeEditorController {
     constructor(host) {
         (this.host = host).addController(this);
-        this.model = new DoctypeModel().getModel();
+        this.model = new DoctypeModel();
+        this.service = new DoctypeEditorService();
     }
 
+    addTab() {
+        let tab = new SCTab();
+        tab.add('Hello', (e) => { 
+            console.log('clicked...')
+        });
+        const dt_tabs = document.querySelector('#dtTabs');  
+        dt_tabs.prepend(tab);
+        
+        const template = document.querySelector('#newfields_template')
+    }
+
+    // FIXME: make reactive
     updateModel() {
         let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
 
@@ -18,22 +31,26 @@ export class DoctypeEditorController {
                 case 'alias':
                     this.model.alias = element.value;
                 break;
+                case 'template':
+                    this.model.template = element.selectedValue;
                 default:
                     this.model.fields.push({
                         name: element.dataset.model,
                         value: element.value
                     })
-					console.dir(this.model);
             }
         });  
+    }
+
+    loadDoctype(uuid) {
+        this.model = this.service.load(uuid);
+        return this.model;
     }
 
     saveDoctype() {
         // serialize all form fields before saving
         this.updateModel();
-
-        let service = new DoctypeEditorService();
-        service.save(this.model);
+        this.service.save(this.model);
         console.dir('Doctype saving...');
     }
 

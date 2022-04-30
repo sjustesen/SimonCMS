@@ -32,6 +32,11 @@
 							<label>Systemwide Element Alias</label>
 							<input class="uk-input uk-form-medium" data-model="alias" type="text" placeholder="">
 						</div>
+						<div class="uk-width-1-2">
+							<select class="uk-select uk-form-medium" id="sc-select-template">
+								<option value="">Select Template</a>
+							</select>
+						</div>
 					</div>
 					<hr>
 				</section>
