@@ -34,7 +34,8 @@ class DoctypeRepository implements IRepository
 
     public function read($id)
     {
-        
+        $doctype = Doctype::where('uuid', $id)->first();
+        return $doctype;
     }
 
     public function update()

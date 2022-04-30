@@ -25,8 +25,8 @@ export default class DoctypeEditor extends LitElement {
         this.controller.registerEventsForFormFields();
     }
 
-    openDocType() {
-        this.controller.loadDoctype();
+    openDocType(uuid) {
+        this.controller.loadDoctype(uuid);
     }
 
 

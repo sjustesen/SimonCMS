@@ -40,8 +40,9 @@ class DoctypeApiController extends ApiController
         return response()->json($doctype, 200);
     }
 
-    public function showDoctype($id) {
-        return response()->json(Doctype::find($id));
+    public function showDoctype(Request $request) {
+        $model = $this->doctypeRepository->read($request->id);
+        return response()->json($model);
     }
 
     public function listDoctypes() {
