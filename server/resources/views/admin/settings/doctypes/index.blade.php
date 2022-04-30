@@ -5,7 +5,6 @@
 <sc-doctypetree>
     <slot>
         <ul id="doctypetree">
-            
         </ul>
     </slot>
 </sc-doctypetree>

@@ -11,6 +11,17 @@ class DoctypeRepository implements IRepository
     {
     }
 
+    public function loadTabs() {
+
+    }
+
+    public function loadContentTabs() {
+        
+    }
+
+
+    // -------------- DOCTYPES ----- //
+
     public function list() {
         $doctypes = Doctype::all();
         $doctypes_shim = $doctypes->makeHidden(['created_at', 'updated_at', 'fields', 'alias']);
