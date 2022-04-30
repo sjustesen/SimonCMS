@@ -3,7 +3,8 @@ import { router } from "lit-element-router";
 
 //Components
 import './components/navigation/treeview'
-import './components/templates/templatetree'
+import './components/templates/menu/templatetree'
+import './components/doctype/menu/doctypetree'
 import './components/templates/editor'
 import './components/doctype/editor'
 

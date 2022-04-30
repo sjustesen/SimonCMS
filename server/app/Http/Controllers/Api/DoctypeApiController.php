@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api;
 use App\Models\Doctype;
+use App\Repositories\DoctypeRepository;
 use Illuminate\Http\Request as Request;
 use Illuminate\Support\Str;
 
@@ -14,9 +15,12 @@ class DoctypeApiController extends ApiController
      *
      * @return void
      */
-    public function __construct()
+
+    protected DoctypeRepository $doctypeRepository;
+
+    public function __construct(DoctypeRepository $repo)
     {
-        //
+        $this->doctypeRepository = $repo;
     }
 
     // doctype endpoints 
@@ -38,6 +42,10 @@ class DoctypeApiController extends ApiController
 
     public function showDoctype($id) {
         return response()->json(Doctype::find($id));
+    }
+
+    public function listDoctypes() {
+        return $this->doctypeRepository->list();
     }
 
     public function loadDoctype(Request $request) {

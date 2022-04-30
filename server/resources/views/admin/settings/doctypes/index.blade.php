@@ -1,14 +1,14 @@
 @extends('admin.layout.3col')
 
 @section('sectionnav')
-<small>Navigation</small>
-<sc-templatetree>
+<small>Doctypes</small>
+<sc-doctypetree>
     <slot>
-        <ul id="templatefiles">
+        <ul id="doctypetree">
             
         </ul>
     </slot>
-</sc-templatetree>
+</sc-doctypetree>
 @endsection
 
 
