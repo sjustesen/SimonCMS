@@ -52,10 +52,9 @@ export class DoctypeEditorController {
         const template_name = document.querySelector('#new_doctype_form [data-model="name"]');
         const template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
         
-        let model = this.service.load(uuid); // TODO: Properties do not get updated
+        let model = this.service.load(uuid);
         template_name.value = model.name;
         template_alias.value = model.alias;
-        console.dir(model.name);
     }
 
     

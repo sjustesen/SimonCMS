@@ -13,18 +13,24 @@ export class DoctypeEditorService {
             }
         }
         
-        let hest = {};
-        fetch(`/admin/api/doctype/show/${document_uuid}`, config)
+        let res = fetch(`/admin/api/doctype/show/${document_uuid}`, config)
             .then(response => response.json())
-            .then((data) => {
-                let model = new DoctypeModel();
-                model.name = data.name;
-                model.alias = data.alias;
-                model.template = data.template;
-                model.fields = data.fields;
-                hest = model;
+            .then(data => {
+                    let model = new DoctypeModel();
+                    model.name = data.name;
+                    model.alias = data.alias;
+                    model.template = data.template;
+                    model.fields = data.fields;
+                return model;
             });
-        return hest;
+        return res;
+    }
+
+    loadTest() {
+        let model = new DoctypeModel();
+        model.name = 'Testnavn';
+        model.alias = 'Testalias';
+        return model;
     }
 
     save(model) {
