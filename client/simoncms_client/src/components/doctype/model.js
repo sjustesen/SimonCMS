@@ -1,7 +1,7 @@
 export class DoctypeModel {
     constructor() {
-        this._name = null;
-        this._alias = null;
+        this._name = '';
+        this._alias = '';
 
         this._template = {
             name: '',

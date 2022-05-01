@@ -4,7 +4,7 @@ export class DoctypeEditorService {
     constructor() {
     }
 
-    load(document_uuid) {
+    async load(document_uuid) {
         console.dir(`DoctypeService: Loading doctype with uuid: ${document_uuid}`)
         let config = { 
             method: 'GET',
@@ -13,17 +13,16 @@ export class DoctypeEditorService {
             }
         }
         
-        let res = fetch(`/admin/api/doctype/show/${document_uuid}`, config)
+        return await fetch(`/admin/api/doctype/show/${document_uuid}`, config)
             .then(response => response.json())
             .then(data => {
-                    let model = new DoctypeModel();
-                    model.name = data.name;
-                    model.alias = data.alias;
-                    model.template = data.template;
-                    model.fields = data.fields;
+                let model = new DoctypeModel();
+                model.name = data.name;
+                model.alias = data.alias;
+                model.template = data.template;
+                model.fields = data.fields;
                 return model;
             });
-        return res;
     }
 
     loadTest() {
