@@ -12,16 +12,19 @@ export class DoctypeEditorService {
                 "Content-type": "application/json; charset=UTF-8"
             }
         }
-        let model = new DoctypeModel();
+        
+        let hest = {};
         fetch(`/admin/api/doctype/show/${document_uuid}`, config)
             .then(response => response.json())
-            .then(data => {
+            .then((data) => {
+                let model = new DoctypeModel();
                 model.name = data.name;
                 model.alias = data.alias;
                 model.template = data.template;
                 model.fields = data.fields;
+                hest = model;
             });
-        return model;
+        return hest;
     }
 
     save(model) {

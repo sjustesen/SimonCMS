@@ -24,6 +24,7 @@ export class DoctypeEditorController {
     // FIXME: make reactive
     updateModel() {
         let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
+        let model = new DoctypeModel();
 
         doctype_fields.forEach(element => {
             switch(element.dataset.model) {
@@ -48,13 +49,13 @@ export class DoctypeEditorController {
 
     loadDoctype(uuid) {
         console.log('Doctype Controller -- Loading doctype');
-        let template_name = document.querySelector('#new_doctype_form [data-model="name"]');
-        let template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
+        const template_name = document.querySelector('#new_doctype_form [data-model="name"]');
+        const template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
         
         let model = this.service.load(uuid); // TODO: Properties do not get updated
         template_name.value = model.name;
         template_alias.value = model.alias;
-
+        console.dir(model.name);
     }
 
     
