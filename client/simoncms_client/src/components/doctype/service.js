@@ -20,7 +20,7 @@ export class DoctypeEditorService {
                 model.name = data.name;
                 model.alias = data.alias;
                 model.template = data.template;
-                model.fields = data.fields;
+                model.fields = JSON.parse(data.fields);
                 return model;
             });
     }

@@ -53,11 +53,23 @@ export class DoctypeEditorController {
         const template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
         
         const template_selector = document.querySelector('#sc-select-template');
+        const doctype_fields = document.querySelector('#newfields_container');
 
+        const fields_template = document.querySelector('#newfields_template');
+        
         this.service.load(uuid).then(model => {
         console.dir(model)
         template_name.value = model.name;
         template_alias.value = model.alias;
+
+        if (model.fields != null) {
+            model.fields.forEach(element => {
+                let template = fields_template.cloneNode(true);
+                template.name = element.name;
+                template.alias = element.alias;
+                doctype_fields.appendChild(template);
+            });
+        }
         });
     }
 
