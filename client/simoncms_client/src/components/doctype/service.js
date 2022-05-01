@@ -21,7 +21,6 @@ export class DoctypeEditorService {
                 model.template = data.template;
                 model.fields = data.fields;
             });
-        
         return model;
     }
 

@@ -2,12 +2,13 @@ import { DoctypeEditorService } from './service'
 import { DoctypeModel } from './model'
 
 export class DoctypeEditorController {
+    
     constructor(host) {
         (this.host = host).addController(this);
-        this.model = new DoctypeModel();
         this.service = new DoctypeEditorService();
     }
 
+    
     addTab() {
         let tab = new SCTab();
         tab.add('Hello', (e) => { 
@@ -19,6 +20,7 @@ export class DoctypeEditorController {
         const template = document.querySelector('#newfields_template')
     }
 
+    
     // FIXME: make reactive
     updateModel() {
         let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
@@ -33,6 +35,7 @@ export class DoctypeEditorController {
                 break;
                 case 'template':
                     this.model.template = element.selectedValue;
+                break;
                 default:
                   /*  this.model.fields.push({
                         name: element.dataset.model,
@@ -42,18 +45,19 @@ export class DoctypeEditorController {
         });  
     }
 
+
     loadDoctype(uuid) {
         console.log('Doctype Controller -- Loading doctype');
-        var template_name = document.querySelector('#new_doctype_form [data-model="name"]');
-        var template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
+        let template_name = document.querySelector('#new_doctype_form [data-model="name"]');
+        let template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
         
-        this.model = this.service.load(uuid); // TODO: Properties do not get updated
-        template_name.value = this.model.name.toString() ?? 'Error';
-
-        template_alias.value = this.model.alias.toString();
+        let model = this.service.load(uuid); // TODO: Properties do not get updated
+        template_name.value = model.name;
+        template_alias.value = model.alias;
 
     }
 
+    
     saveDoctype() {
         // serialize all form fields before saving
         this.updateModel();
@@ -61,10 +65,12 @@ export class DoctypeEditorController {
         console.dir('Doctype saving...');
     }
 
+    
     updateActiveTabContent() {
 
     }
 
+    
     attachEventHandlersToNewTab() {
         let dtTab_listiems = document.querySelectorAll('#dtTabs li');
         dtTab_listiems.forEach(element => {
@@ -81,6 +87,7 @@ export class DoctypeEditorController {
         });
     }
 
+    
     registerEventsForFormFields() {
         let inputs = document.querySelectorAll('#newFields input');
         inputs.forEach(element => {
@@ -90,6 +97,7 @@ export class DoctypeEditorController {
         });
     }
 
+    
     registerEventsForDocTypeTabs() {
         // event for the save-button
         // figure out a datamodel
