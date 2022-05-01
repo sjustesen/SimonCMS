@@ -26,7 +26,7 @@
 
 						<div class="uk-width-1-2">
 							<label>Name</label>
-							<input class="uk-input uk-form-medium" data-model="name" type="text" placeholder="">
+							<input class="uk-input uk-form-medium" id="templatename" data-model="name" type="text" placeholder="">
 						</div>
 						<div class="uk-width-1-2">
 							<label>Systemwide Element Alias</label>

@@ -2,7 +2,6 @@ import { DoctypeModel } from "./model";
 
 export class DoctypeEditorService {
     constructor() {
-        console.log('EditorService loaded')
     }
 
     load(document_uuid) {
@@ -13,18 +12,17 @@ export class DoctypeEditorService {
                 "Content-type": "application/json; charset=UTF-8"
             }
         }
-        this.model = new DoctypeModel();
+        let model = new DoctypeModel();
         fetch(`/admin/api/doctype/show/${document_uuid}`, config)
             .then(response => response.json())
             .then(data => {
-              this.model.setName(data.name);
-              this.model.setAlias(data.alias);
-              this.model.setTemplate(data.template);
-              this.model.setFields(data.fields);
-              console.dir(data)
+                model.name = data.name;
+                model.alias = data.alias;
+                model.template = data.template;
+                model.fields = data.fields;
             });
         
-        return this.model;
+        return model;
     }
 
     save(model) {

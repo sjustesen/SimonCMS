@@ -43,8 +43,15 @@ export class DoctypeEditorController {
     }
 
     loadDoctype(uuid) {
-        this.model = this.service.load(uuid);
-        return this.model;
+        console.log('Doctype Controller -- Loading doctype');
+        var template_name = document.querySelector('#new_doctype_form [data-model="name"]');
+        var template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
+        
+        this.model = this.service.load(uuid); // TODO: Properties do not get updated
+        template_name.value = this.model.name.toString() ?? 'Error';
+
+        template_alias.value = this.model.alias.toString();
+
     }
 
     saveDoctype() {
