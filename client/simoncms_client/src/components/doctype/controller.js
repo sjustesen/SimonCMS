@@ -2,48 +2,61 @@ import { DoctypeEditorService } from './service'
 import { DoctypeModel } from './model'
 
 export class DoctypeEditorController {
-    
+
     constructor(host) {
         (this.host = host).addController(this);
         this.service = new DoctypeEditorService();
     }
 
-    
+
     addTab() {
         let tab = new SCTab();
-        tab.add('Hello', (e) => { 
+        tab.add('Hello', (e) => {
             console.log('clicked...')
         });
-        const dt_tabs = document.querySelector('#dtTabs');  
+        const dt_tabs = document.querySelector('#dtTabs');
         dt_tabs.prepend(tab);
-        
+
         const template = document.querySelector('#newfields_template')
     }
 
-    
+
     // FIXME: make reactive
     updateModel() {
         let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
         let model = new DoctypeModel();
 
         doctype_fields.forEach(element => {
-            switch(element.dataset.model) {
+            switch (element.dataset.model) {
                 case 'name':
                     this.model.name = element.value;
-                break;
+                    break;
                 case 'alias':
                     this.model.alias = element.value;
-                break;
+                    break;
                 case 'template':
                     this.model.template = element.selectedValue;
-                break;
+                    break;
                 default:
-                  /*  this.model.fields.push({
-                        name: element.dataset.model,
-                        value: element.value
-                    }) */
+                /*  this.model.fields.push({
+                      name: element.dataset.model,
+                      value: element.value
+                  }) */
             }
-        });  
+        });
+    }
+
+    filterType(childcontrols, element) {
+        for (let control of childcontrols) {
+
+            if (control.tagName != null) {
+                if (control.tagName.toLowerCase() == 'input') {
+                    control.dataset.model = element.name
+                    control.value = element.value;
+                    return control;
+                }
+            }
+        }
     }
 
 
@@ -51,29 +64,29 @@ export class DoctypeEditorController {
         console.log('Doctype Controller -- Loading doctype');
         const template_name = document.querySelector('#new_doctype_form [data-model="name"]');
         const template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
-        
+
         const template_selector = document.querySelector('#sc-select-template');
         const doctype_fields = document.querySelector('#newfields_container');
 
-        const fields_template = document.querySelector('#newfields_template');
-        
-        this.service.load(uuid).then(model => {
-        console.dir(model)
-        template_name.value = model.name;
-        template_alias.value = model.alias;
 
-        if (model.fields != null) {
-            model.fields.forEach(element => {
-                let template = fields_template.cloneNode(true);
-                template.name = element.name;
-                template.alias = element.alias;
-                doctype_fields.appendChild(template);
-            });
-        }
+        this.service.load(uuid).then(model => {
+            template_name.value = model.name;
+            template_alias.value = model.alias;
+
+            if (model.fields != null) {
+                let itemtemplate_div = document.querySelector('#newfields_template');
+                let cloned_itemtemplate = itemtemplate_div.cloneNode(true)
+                model.fields.forEach(element => {
+                    cloned_itemtemplate = this.filterType(cloned_itemtemplate.childNodes, element);
+                    if (cloned_itemtemplate != null) {
+                        doctype_fields.appendChild(cloned_itemtemplate);
+                    }
+                });
+            }
         });
     }
 
-    
+
     saveDoctype() {
         // serialize all form fields before saving
         this.updateModel();
@@ -81,12 +94,12 @@ export class DoctypeEditorController {
         console.dir('Doctype saving...');
     }
 
-    
+
     updateActiveTabContent() {
 
     }
 
-    
+
     attachEventHandlersToNewTab() {
         let dtTab_listiems = document.querySelectorAll('#dtTabs li');
         dtTab_listiems.forEach(element => {
@@ -103,7 +116,7 @@ export class DoctypeEditorController {
         });
     }
 
-    
+
     registerEventsForFormFields() {
         let inputs = document.querySelectorAll('#newFields input');
         inputs.forEach(element => {
@@ -113,7 +126,7 @@ export class DoctypeEditorController {
         });
     }
 
-    
+
     registerEventsForDocTypeTabs() {
         // event for the save-button
         // figure out a datamodel
