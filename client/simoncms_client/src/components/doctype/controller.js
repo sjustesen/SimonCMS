@@ -1,11 +1,15 @@
 import { DoctypeEditorService } from './service'
 import { DoctypeModel } from './model'
+import { TemplateEditorService } from '../templates/editor.service'
+
 
 export class DoctypeEditorController {
 
     constructor(host) {
         (this.host = host).addController(this);
-        this.service = new DoctypeEditorService();
+        this.doctypeService = new DoctypeEditorService();
+        this.templateService = new TemplateEditorService();
+
         this.model = new DoctypeModel();
 
     }
@@ -48,18 +52,28 @@ export class DoctypeEditorController {
         });
     }
 
+    fillTemplateList(selector) {
+        let templates = this.templateService.list()
+        if (templates != null) {
+        templates.forEach(element => {
+            var option = document.createElement("option");
+            selector,option.text = element.name;
+            selector.add(option);
+        });
+    }
+    }
 
     loadDoctype(uuid) {
         console.log('Doctype Controller -- Loading doctype');
         const template_name = document.querySelector('#new_doctype_form [data-model="name"]');
         const template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
         const selected_template = document.querySelector('#sc-select-template');
-
         const doctype_fields = document.querySelector('#newfields_container');
         const item_template = document.querySelector('#newfields_template').cloneNode(true);
 
+        this.fillTemplateList(selected_template);
 
-        this.service.load(uuid).then(model => {
+        this.doctypeService.load(uuid).then(model => {
             template_name.value = model.name;
             template_alias.value = model.alias;
             selected_template.value = (model.template != null) ? model.template : '';
@@ -69,39 +83,27 @@ export class DoctypeEditorController {
                 model.fields.forEach(element => {
                     let field = item_template.children[i];
 
-                    if (field.tagName == 'INPUT' &&
-                        field.dataset.model == 'newfield_name'
-                    ) {
-                        field.value = element.value;
-                        console.log(field.dataset.model, i)
-                    }
-
-                    if (field.tagName == 'INPUT' &&
-                        field.dataset.model == 'newfield_alias'
-                    ) {
-                        field.value = element.value;
-                        console.log(field.dataset.model, i)
-
-                    }
-
+                    field.value = element.value;
+               
                     if (field.tagName == 'SELECT') {
                         field.value = element.value
                     }
 
-                    if (field.tagName == 'INPUT' &&
-                        field.type == 'checkbox'
+                    // FIXME: reference by selector
+                    // The required field is wrapped in a lot of tags
+                    // hence the cumbersome path to check if its checked off or not.
+                    if (field.tagName == 'DIV' &&
+                        field.children[0].firstElementChild.tagName == 'INPUT'
                     ) {
+                        let inputChild = field.children[0].firstElementChild;
                         if (element.value != 'on') {
-                            field.checked = false;
+                            inputChild.checked = false;
                         } else {
-                            field.checked = true;
+                            inputChild.checked = true;
                         }
                     }
-
-
-                    i++;
                     doctype_fields.append(item_template)
-                    console.dir(model)
+                    i++;
                 });
             }
         });
@@ -111,7 +113,7 @@ export class DoctypeEditorController {
     saveDoctype() {
         // serialize all form fields before saving
         this.updateModel();
-        this.service.save(this.model);
+        this.doctypeService.save(this.model);
         console.dir('Doctype saving...');
     }
 

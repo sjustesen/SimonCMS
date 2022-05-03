@@ -1,18 +1,31 @@
 export class EditorModel {
     constructor() {
-        this.model = {
-            name: '',
-            alias: '',
-            fields: [],
-
-        }
+        this._name = '',
+        this._alias = '',
+        this._template = ''
     }
-    getModel() { return this.model }
-    getName() { return this.model.name }
-    getAlias() { return this.model.alias }
-    getFields() { return this.model.fields };
 
-    setName(name) { this.model.name = name; }
-    setAlias(alias) { this.model.alias = alias; }
-    setFields(fields) { this.model.fields = fields }
+    get name(){
+        return this._name;
+    }
+
+    set name(value) {
+        this._name = value;
+    }
+    
+    get alias(){
+        return this._alias;
+    }
+
+    set alias(value) {
+        this._alias = value;
+    }
+
+    get template(){
+        return this._template;
+    }
+
+    set template(value) {
+        this._template = value;
+    }
 }

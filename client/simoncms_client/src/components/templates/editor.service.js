@@ -29,16 +29,21 @@ export class TemplateEditorService {
        fetch(url, config ?? this.config)
         .then(response => response.json())
         .then(data => {
-            // populate the model loaded in the constructor
-        });
-        
-        return response.status;
+            return data;
+            
+        });        
     }
 
     save(model) {
         let config_override = this.config;
         config_override.body = JSON.stringify(model); 
         let result = this.persistData('/admin/api/template/save', model, config_override);
+        return result;
+    }
+
+    list() {
+        let result = this.fetchData('/admin/api/template/list') 
+        console.dir(result)
         return result;
     }
 
