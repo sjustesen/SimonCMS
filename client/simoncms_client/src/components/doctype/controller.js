@@ -6,6 +6,8 @@ export class DoctypeEditorController {
     constructor(host) {
         (this.host = host).addController(this);
         this.service = new DoctypeEditorService();
+        this.model = new DoctypeModel();
+
     }
 
 
@@ -24,7 +26,6 @@ export class DoctypeEditorController {
     // FIXME: make reactive
     updateModel() {
         let doctype_fields = document.querySelectorAll('#new_doctype_form [data-model]');
-        let model = new DoctypeModel();
 
         doctype_fields.forEach(element => {
             switch (element.dataset.model) {
@@ -38,25 +39,13 @@ export class DoctypeEditorController {
                     this.model.template = element.selectedValue;
                     break;
                 default:
-                /*  this.model.fields.push({
-                      name: element.dataset.model,
-                      value: element.value
-                  }) */
+                    this.model.fields.push({
+                        name: element.name,
+                        alias: element.dataset.model,
+                        value: element.value
+                    })
             }
         });
-    }
-
-    filterType(childcontrols, element) {
-        for (let control of childcontrols) {
-
-            if (control.tagName != null) {
-                if (control.tagName.toLowerCase() == 'input') {
-                    control.dataset.model = element.name
-                    control.value = element.value;
-                    return control;
-                }
-            }
-        }
     }
 
 
@@ -64,23 +53,55 @@ export class DoctypeEditorController {
         console.log('Doctype Controller -- Loading doctype');
         const template_name = document.querySelector('#new_doctype_form [data-model="name"]');
         const template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
+        const selected_template = document.querySelector('#sc-select-template');
 
-        const template_selector = document.querySelector('#sc-select-template');
         const doctype_fields = document.querySelector('#newfields_container');
+        const item_template = document.querySelector('#newfields_template').cloneNode(true);
 
 
         this.service.load(uuid).then(model => {
             template_name.value = model.name;
             template_alias.value = model.alias;
+            selected_template.value = (model.template != null) ? model.template : '';
 
             if (model.fields != null) {
-                let itemtemplate_div = document.querySelector('#newfields_template');
-                let cloned_itemtemplate = itemtemplate_div.cloneNode(true)
+                let i = 0;
                 model.fields.forEach(element => {
-                    cloned_itemtemplate = this.filterType(cloned_itemtemplate.childNodes, element);
-                    if (cloned_itemtemplate != null) {
-                        doctype_fields.appendChild(cloned_itemtemplate);
+                    let field = item_template.children[i];
+
+                    if (field.tagName == 'INPUT' &&
+                        field.dataset.model == 'newfield_name'
+                    ) {
+                        field.value = element.value;
+                        console.log(field.dataset.model, i)
                     }
+
+                    if (field.tagName == 'INPUT' &&
+                        field.dataset.model == 'newfield_alias'
+                    ) {
+                        field.value = element.value;
+                        console.log(field.dataset.model, i)
+
+                    }
+
+                    if (field.tagName == 'SELECT') {
+                        field.value = element.value
+                    }
+
+                    if (field.tagName == 'INPUT' &&
+                        field.type == 'checkbox'
+                    ) {
+                        if (element.value != 'on') {
+                            field.checked = false;
+                        } else {
+                            field.checked = true;
+                        }
+                    }
+
+
+                    i++;
+                    doctype_fields.append(item_template)
+                    console.dir(model)
                 });
             }
         });

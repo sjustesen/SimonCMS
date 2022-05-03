@@ -56,8 +56,6 @@
 						</ul>
 
 						<div class="uk-child-width-1-2">
-
-
 							<div id="newfields_template">
 								<input class="uk-input uk-form-medium uk-margin" type="text" data-model="newfield_name" placeholder="Visual name" value="">
 								<input class="uk-input uk-form-medium" type="text" data-model="newfield_alias" placeholder="Data alias" value="">
