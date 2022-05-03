@@ -10,7 +10,6 @@ export class DoctypeEditorController {
         this.doctypeService = new DoctypeEditorService();
         this.templateService = new TemplateEditorService();
         this.model = new DoctypeModel();
-
     }
 
 
@@ -76,9 +75,9 @@ export class DoctypeEditorController {
         const item_template = document.querySelector('#newfields_template').cloneNode(true);
         const templateSelector = document.querySelector('#sc-select-template');
 
+        self.fillTemplateList();
         this.doctypeService.load(uuid).then(model => {
-            this.fillTemplateList();
-
+        
             template_name.value = model.name;
             template_alias.value = model.alias;
             templateSelector.value = (model.template != null) ? model.template : '';
