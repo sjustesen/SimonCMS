@@ -3,7 +3,7 @@ namespace App\Repositories;
 
 use App\Models\Template;
 use App\Interfaces\IRepository;
-use App\Logic\Filesystem\DirectoryTraversal;
+use App\Logic\Filesystem\Directory;
 use Illuminate\Http\Client\Request;
 use \App\Logic\FileSystem;
 
@@ -17,7 +17,7 @@ class TemplateRepository implements IRepository
     }
 
     public function list($withfiles = false) {
-        $dir = DirectoryTraversal::searchDirectoryRecursive($this->template_dir);
+        $dir = Directory::getContentsRecursive($this->template_dir);
         return $dir;
     }
 

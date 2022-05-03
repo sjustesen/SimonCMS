@@ -36,7 +36,7 @@
 
 						<div class="uk-width-1-2">
 							<select class="uk-select uk-form-medium" id="sc-select-template">
-								<option value="">Select Template</a>
+								<option value="">Select Template</option>
 							</select>
 						</div>
 					</div>

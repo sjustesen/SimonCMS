@@ -5,7 +5,6 @@ export class TemplateEditorService {
         // standard config
         this.config = { 
             method: 'POST',
-            body: '',
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             }
@@ -26,29 +25,30 @@ export class TemplateEditorService {
     }
 
     fetchData(url, config) {    
-       fetch(url, config ?? this.config)
+        let data = fetch(url, config ?? this.config)
         .then(response => response.json())
         .then(data => {
             return data;
-            
-        });        
+        })
     }
 
+    list() {
+        this.config.method = 'GET';
+        let result = this.fetchData('/admin/api/templates/list', this.config) 
+        return result;
+    }
+    
     save(model) {
         let config_override = this.config;
+        config_override.method = "POST";
         config_override.body = JSON.stringify(model); 
+        
         let result = this.persistData('/admin/api/template/save', model, config_override);
         return result;
     }
 
-    list() {
-        let result = this.fetchData('/admin/api/template/list') 
-        console.dir(result)
-        return result;
-    }
-
     read(guid) {
-        let result = this.fetchData('/admin/api/template/read') 
+        let result = this.fetchData(`/admin/api/template/read/${guid}`) 
         return result;
     }
 }

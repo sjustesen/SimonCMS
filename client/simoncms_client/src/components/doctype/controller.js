@@ -9,7 +9,6 @@ export class DoctypeEditorController {
         (this.host = host).addController(this);
         this.doctypeService = new DoctypeEditorService();
         this.templateService = new TemplateEditorService();
-
         this.model = new DoctypeModel();
 
     }
@@ -52,39 +51,49 @@ export class DoctypeEditorController {
         });
     }
 
-    fillTemplateList(selector) {
-        let templates = this.templateService.list()
-        if (templates != null) {
-        templates.forEach(element => {
-            var option = document.createElement("option");
-            selector,option.text = element.name;
-            selector.add(option);
-        });
+    fillTemplateList() {
+        const templateSelector = document.querySelector('#sc-select-template');
+        
+        this.templateService.list().then(element => {
+            let option = document.createElement("option");
+            option.text = element.name;
+            option.value = element.path;
+            templateSelector.add(option);
+            })
     }
+
+    clearChildNodes(parent_element) {
+        while (parent_element.firstChild) {
+            parent_element.removeChild(parent_element.firstChild);
+        }
     }
 
     loadDoctype(uuid) {
         console.log('Doctype Controller -- Loading doctype');
         const template_name = document.querySelector('#new_doctype_form [data-model="name"]');
         const template_alias = document.querySelector('#new_doctype_form [data-model="alias"]');
-        const selected_template = document.querySelector('#sc-select-template');
         const doctype_fields = document.querySelector('#newfields_container');
         const item_template = document.querySelector('#newfields_template').cloneNode(true);
-
-        this.fillTemplateList(selected_template);
+        const templateSelector = document.querySelector('#sc-select-template');
 
         this.doctypeService.load(uuid).then(model => {
+            this.fillTemplateList();
+
             template_name.value = model.name;
             template_alias.value = model.alias;
-            selected_template.value = (model.template != null) ? model.template : '';
+            templateSelector.value = (model.template != null) ? model.template : '';
+
+            // remove previous childnodes before adding new ones
+            this.clearChildNodes(doctype_fields);
 
             if (model.fields != null) {
+
                 let i = 0;
                 model.fields.forEach(element => {
                     let field = item_template.children[i];
 
                     field.value = element.value;
-               
+
                     if (field.tagName == 'SELECT') {
                         field.value = element.value
                     }

@@ -528,7 +528,7 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'App\\Jobs\\ExampleJob' => __DIR__ . '/../..' . '/app/Jobs/ExampleJob.php',
         'App\\Jobs\\Job' => __DIR__ . '/../..' . '/app/Jobs/Job.php',
         'App\\Listeners\\ExampleListener' => __DIR__ . '/../..' . '/app/Listeners/ExampleListener.php',
-        'App\\Logic\\Filesystem\\DirectoryTraversal' => __DIR__ . '/../..' . '/app/Logic/Filesystem/DirectoryTraversal.php',
+        'App\\Logic\\Filesystem\\Directory' => __DIR__ . '/../..' . '/app/Logic/Filesystem/Directory.php',
         'App\\Models\\Datatype' => __DIR__ . '/../..' . '/app/Models/Datatype.php',
         'App\\Models\\Doctype' => __DIR__ . '/../..' . '/app/Models/Doctype.php',
         'App\\Models\\DocumentNode' => __DIR__ . '/../..' . '/app/Models/DocumentNode.php',

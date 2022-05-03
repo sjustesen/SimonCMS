@@ -2,10 +2,9 @@
 
 namespace App\Logic\Filesystem;
 
-use Directory;
 use Laravel\Lumen\Application;
 
-class DirectoryTraversal
+class Directory
 {
 
     public static function getUploadsUrl($path)
@@ -29,13 +28,20 @@ class DirectoryTraversal
         return implode(DIRECTORY_SEPARATOR, $a);
     }
 
-    public static function searchDirectoryRecursive($path, int $depth = 0, $maxdepth = 4)
+    public static function getContents() {
+
+    }
+
+    public static function getContentsRecursive($path, int $depth = 0, $maxdepth = 4)
     {
 
         $dir = new \DirectoryIterator($path);
 
-        $arr = [];
-        foreach ($dir as $key => $fileInfo) {
+        $files = [];
+        $dirs = [];
+        $dirs_and_files = [];
+
+        foreach ($dir as $fileInfo) {
             if ($depth >= $maxdepth)
                 return;
 
@@ -50,13 +56,15 @@ class DirectoryTraversal
 
             if ($fileInfo->isDir()) {
                 $path = $fileInfo->getPathname();
-                $dir->children = DirectoryTraversal::searchDirectoryRecursive($path, $depth, $maxdepth);
+                $dir->children = Directory::getContentsRecursive($path, $depth, $maxdepth);
                 $depth += 1;
-            }
+                $dirs[] = $dir;
+            } else {
+                $files[] = $dir;
 
-            $arr[] = $dir;
-            sort($arr);
+            }
         }
-        return $arr;
+        $dirs_and_files = array_merge($dirs, $files);
+        return $dirs_and_files;
     }
 }

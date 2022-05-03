@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Modules\Repository;
 use App\Repositories\TemplateRepository;
 use Illuminate\Http\Request;
 

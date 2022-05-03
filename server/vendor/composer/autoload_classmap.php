@@ -27,7 +27,7 @@ return array(
     'App\\Jobs\\ExampleJob' => $baseDir . '/app/Jobs/ExampleJob.php',
     'App\\Jobs\\Job' => $baseDir . '/app/Jobs/Job.php',
     'App\\Listeners\\ExampleListener' => $baseDir . '/app/Listeners/ExampleListener.php',
-    'App\\Logic\\Filesystem\\DirectoryTraversal' => $baseDir . '/app/Logic/Filesystem/DirectoryTraversal.php',
+    'App\\Logic\\Filesystem\\Directory' => $baseDir . '/app/Logic/Filesystem/Directory.php',
     'App\\Models\\Datatype' => $baseDir . '/app/Models/Datatype.php',
     'App\\Models\\Doctype' => $baseDir . '/app/Models/Doctype.php',
     'App\\Models\\DocumentNode' => $baseDir . '/app/Models/DocumentNode.php',
