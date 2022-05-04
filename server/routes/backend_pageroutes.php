@@ -52,10 +52,7 @@ $router->group(['prefix' => 'admin'], function () use ($router) {
     });
     
     $router->get('settings/packages', function () use ($router) {
-        require_once(base_path('app/Modules/Module.php'));
-        $modules = new \App\Modules\Module($router->app,'');
-        $module_data = $modules->getData();
-        return view('admin.settings.packages.index', [$module_data]);
+        return view('admin.settings.packages.index', []);
     });
     // TODO: Needs to go
     $router->get('settings/templates', function () use ($router) {
