@@ -34,8 +34,12 @@ export class TemplateEditorService {
 
     list() {
         this.config.method = 'GET';
-        let result = this.fetchData('/admin/api/templates/list', this.config) 
-        return result;
+        let fetchedData = this.fetchData('/admin/api/templates/list', this.config)
+        .then(response => response.json())
+        .then(data => {
+           return data
+        })
+        return fetchedData;
     }
     
     save(model) {

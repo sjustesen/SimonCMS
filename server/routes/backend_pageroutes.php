@@ -1,5 +1,5 @@
 <?php
-
+use App\Modules;
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -51,7 +51,12 @@ $router->group(['prefix' => 'admin'], function () use ($router) {
     $router->get('members', function () use ($router) {
         return view('admin.members.index', []);
     });
-
+    
+    $router->get('settings/packages', function () use ($router) {
+        $modules = new Modules();
+        $modules->getData();
+        return view('admin.settings.packages.index', []);
+    });
     // TODO: Needs to go
     $router->get('settings/templates', function () use ($router) {
         return view('admin.settings.templates.index', []);
