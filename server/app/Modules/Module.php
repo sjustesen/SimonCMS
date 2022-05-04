@@ -78,7 +78,7 @@ class Module
 	 */
 	public function getPath()
 	{
-		return base_path('Modules/' . $this->name . '/');
+		return base_path('Modules/' . $this->name);
 	}
 
 	/**
@@ -137,7 +137,7 @@ class Module
 	 */
 	protected function loadData()
 	{
-		$jsonPath = $this->getPath() . 'module.json';
+		$jsonPath = $this->getPath() . '/module.json';
 		$contents = $this->app['files']->get($jsonPath);
 		return json_decode($contents);
 	}
@@ -159,7 +159,6 @@ class Module
 
 		$data = json_encode($this->data, \JSON_PRETTY_PRINT);
 		$path = $this->getPath() . 'module.json';
-
 		return $this->app['files']->put($path, $data);
 	}
 }
