@@ -6,9 +6,8 @@
     "type": "project",
     "require": {
         "php": "^8.0",
-        "laravel/lumen-framework": "^9.0",
-        "theseer/directoryscanner": "^1.3"
-    },
+        "laravel/lumen-framework": "^9.0"
+        },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "mockery/mockery": "^1.4.4",
@@ -18,8 +17,8 @@
         "psr-4": {
             "App\\": "app/",
             "App\\Http\\Controllers\\Api\\": "app/Http/Controllers/Api/",
-            "App\\Repositiories\\": "app/Repositories",
-            "App\\Modules\\": "app/Modules",
+            "App\\Repositiories\\": "app/Repositories/",
+            "App\\Modules\\": "app/Modules/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
         }

@@ -7094,55 +7094,6 @@
             "install-path": "../symfony/var-dumper"
         },
         {
-            "name": "theseer/directoryscanner",
-            "version": "1.3.3",
-            "version_normalized": "1.3.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/theseer/DirectoryScanner.git",
-                "reference": "4cdce31c1b5120779a01225b5b0968f9321342d6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/theseer/DirectoryScanner/zipball/4cdce31c1b5120779a01225b5b0968f9321342d6",
-                "reference": "4cdce31c1b5120779a01225b5b0968f9321342d6",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.1"
-            },
-            "time": "2021-07-24T18:41:34+00:00",
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A recursive directory scanner and filter",
-            "support": {
-                "issues": "https://github.com/theseer/DirectoryScanner/issues",
-                "source": "https://github.com/theseer/DirectoryScanner/tree/1.3.3"
-            },
-            "install-path": "../theseer/directoryscanner"
-        },
-        {
             "name": "theseer/tokenizer",
             "version": "1.2.1",
             "version_normalized": "1.2.1.0",
