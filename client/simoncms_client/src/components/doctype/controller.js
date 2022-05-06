@@ -6,9 +6,12 @@ export class DoctypeEditorController {
 
     constructor(host, templateService) {
         (this.host = host).addController(this);
+        
         this.model = new DoctypeModel();
         this.doctypeService = new DoctypeEditorService();
         this.templateService = templateService;
+
+        this.fillTemplateList();
     }
 
 
