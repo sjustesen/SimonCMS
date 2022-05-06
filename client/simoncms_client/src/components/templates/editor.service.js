@@ -1,6 +1,7 @@
-import { EditorModel } from "./editor.model";
+import { EditorModel } from './editor.model';
 
 export class TemplateEditorService {
+    
     constructor() {
         // standard config
         this.config = { 
@@ -24,22 +25,18 @@ export class TemplateEditorService {
         return response.status;
     }
 
-    fetchData(url, config) {    
-        let data = fetch(url, config ?? this.config)
+    async fetchData(url, config) {    
+        let data = await fetch(url, config ?? this.config)
         .then(response => response.json())
-        .then(data => {
-            return data;
-        })
+        .then(data => data);
+        return data;
     }
 
-    list() {
-        this.config.method = 'GET';
-        let fetchedData = this.fetchData('/admin/api/templates/list', this.config)
-        .then(response => response.json())
-        .then(data => {
-           return data
-        })
-        return fetchedData;
+    listData() {
+        let config_override = this.config;
+        config_override.method = 'GET';
+        config_override.body = null;
+        return this.fetchData('/admin/api/templates/list', config_override);
     }
     
     save(model) {

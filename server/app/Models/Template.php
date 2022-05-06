@@ -28,7 +28,7 @@ class Template extends Model
     protected $hidden = [
     ];
 
-    public function get_templates() {
-        
+    public function name($filename) {
+        return substr($filename, 0, strpos($filename, '.'));
     }
 }

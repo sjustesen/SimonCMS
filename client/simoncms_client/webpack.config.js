@@ -12,12 +12,6 @@ const config = {
     plugins: [
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
-        '@babel/plugin-transform-modules-commonjs',
-        {
-            loose: false,
-            strictMode: true,
-        },
-
     ],
     module: {
         rules: [

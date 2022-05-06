@@ -1,11 +1,13 @@
-import { LitElement, css, html } from "lit";
+import { LitElement, html } from "lit";
+import { TemplateEditorService } from '../templates/editor.service';
 import { DoctypeEditorController } from './controller'
 
 export default class DoctypeEditor extends LitElement {
 
     constructor() {
         super();
-        this.controller = new DoctypeEditorController(this);
+        this.templateEditorService = Object.create(TemplateEditorService);
+        this.controller = new DoctypeEditorController(this, this.templateEditorService);
     }
 
     connectedCallback() {

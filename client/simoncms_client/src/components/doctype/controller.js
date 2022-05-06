@@ -1,15 +1,14 @@
 import { DoctypeEditorService } from './service'
 import { DoctypeModel } from './model'
-import { TemplateEditorService } from '../templates/editor.service'
-
+import { TemplateEditorService } from '../templates/editor.service';
 
 export class DoctypeEditorController {
 
-    constructor(host) {
+    constructor(host, templateService) {
         (this.host = host).addController(this);
         this.model = new DoctypeModel();
         this.doctypeService = new DoctypeEditorService();
-        this.templateService = new TemplateEditorService();
+        this.templateService = templateService;
     }
 
 
@@ -21,7 +20,7 @@ export class DoctypeEditorController {
         const dt_tabs = document.querySelector('#dtTabs');
         dt_tabs.prepend(tab);
 
-        const template = document.querySelector('#newfields_template')
+        //const template = document.querySelector('#newfields_template')
     }
 
 
@@ -50,21 +49,23 @@ export class DoctypeEditorController {
         });
     }
 
-    fillTemplateList() {
-        const templateSelector = document.querySelector('#sc-select-template');
-        
-        this.templateService.list().then(element => {
-            let option = document.createElement("option");
-            option.text = element.name;
-            option.value = element.path;
-            templateSelector.add(option);
-            })
-    }
-
     clearChildNodes(parent_element) {
         while (parent_element.firstChild) {
             parent_element.removeChild(parent_element.firstChild);
         }
+    }
+
+    fillTemplateList() {
+        const templateSelector = document.querySelector('#sc-select-template');
+        const templateService = new TemplateEditorService();
+        templateService.listData().then(elements => {
+            elements.forEach(element => {
+                let option = document.createElement("option");
+                option.text = element.name;
+                option.value = element.path;
+                templateSelector.add(option);
+            })
+            });
     }
 
     loadDoctype(uuid) {
