@@ -62,6 +62,9 @@ export class DoctypeEditorController {
         const templateSelector = document.querySelector('#sc-select-template');
         const templateService = new TemplateEditorService();
         templateService.listData().then(elements => {
+            
+            this.clearChildNodes(templateSelector);
+
             elements.forEach(element => {
                 let option = document.createElement("option");
                 option.text = element.name;
