@@ -52,9 +52,18 @@ export class DoctypeEditorController {
         });
     }
 
-    clearChildNodes(parent_element) {
-        while (parent_element.firstChild) {
-            parent_element.removeChild(parent_element.firstChild);
+    clearChildNodes(parent_element, skipfirst=false) {
+        let skipIndex = 0;
+        for (let element of parent_element.querySelectorAll('option') ) 
+        {
+            if (!skipfirst) {
+                console.log(element)
+                element.remove();
+            } else {
+                skipfirst = false;
+                continue;
+            }
+            
         }
     }
 
@@ -63,7 +72,7 @@ export class DoctypeEditorController {
         const templateService = new TemplateEditorService();
         templateService.listData().then(elements => {
             
-            this.clearChildNodes(templateSelector);
+            this.clearChildNodes(templateSelector, true);
 
             elements.forEach(element => {
                 let option = document.createElement("option");
