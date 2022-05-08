@@ -57,7 +57,6 @@ export class DoctypeEditorController {
         for (let element of parent_element.querySelectorAll('option') ) 
         {
             if (!skipfirst) {
-                console.log(element)
                 element.remove();
             } else {
                 skipfirst = false;
