@@ -3,10 +3,10 @@
 namespace App\Logic\Filesystem;
 
 use Laravel\Lumen\Application;
+use App\Logic\Filesystem\ListFilter;
 
 class Directory
 {
-
     public static function getUploadsUrl($path)
     {
         $path_arr = explode(DIRECTORY_SEPARATOR, $path);
@@ -32,9 +32,9 @@ class Directory
 
     }
 
-    public static function getContentsRecursive($path, int $depth = 0, $maxdepth = 4)
+    public static function getContentsRecursive($path, $maxdepth = 4, $listfilter = ListFilter::FilesAndDirectories)
     {
-
+		static $depth = 0;
         $dir = new \DirectoryIterator($path);
 
         $files = [];
@@ -56,7 +56,7 @@ class Directory
 
             if ($fileInfo->isDir()) {
                 $path = $fileInfo->getPathname();
-                $dir->children = Directory::getContentsRecursive($path, $depth, $maxdepth);
+                $dir->children = Directory::getContentsRecursive($path, $maxdepth, $listfilter);
                 $depth += 1;
                 $dirs[] = $dir;
             } else {
