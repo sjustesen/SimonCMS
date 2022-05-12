@@ -32,7 +32,8 @@ class Directory
 
     }
 
-    public static function getContentsRecursive($path, $maxdepth = 4, $listfilter = ListFilter::FilesAndDirectories)
+    public static function getContentsRecursive($path, $maxdepth = 4, 
+                                $listfilter = ListFilter::FilesAndDirectories)
     {
 		static $depth = 0;
         $dir = new \DirectoryIterator($path);
@@ -44,7 +45,7 @@ class Directory
         foreach ($dir as $fileInfo) {
             if ($depth >= $maxdepth)
                 return;
-
+			
             if ($fileInfo->isDot()) continue;
             if ($fileInfo->getFileName() == '.gitkeep') continue;
 
@@ -53,15 +54,22 @@ class Directory
             $dir->path = self::getUploadsUrl($fileInfo->getPathname()); //self::getRelativePath($fileInfo->getPathname());
             $dir->depth = $depth;
             $dir->type = $fileInfo->isDir() ? 'folder' : 'file';
+            
+            if ($listfilter == ListFilter::OnlyDirectories 
+                || $listfilter == ListFilter::FilesAndDirectories) {
+                if ($fileInfo->isDir()) {
+                    $path = $fileInfo->getPathname();
+                    $dir->children = Directory::getContentsRecursive($path, $maxdepth, $listfilter);
+                    $depth += 1;
+                    $dirs[] = $dir;
+                }
+            }
+            if ($listfilter == ListFilter::FilesAndDirectories 
+                || $listfilter == ListFilter::FilesOnly) {
+                if (!$fileInfo->isDir()){
+                    $files[] = $dir;
 
-            if ($fileInfo->isDir()) {
-                $path = $fileInfo->getPathname();
-                $dir->children = Directory::getContentsRecursive($path, $maxdepth, $listfilter);
-                $depth += 1;
-                $dirs[] = $dir;
-            } else {
-                $files[] = $dir;
-
+                }
             }
         }
         $dirs_and_files = array_merge($dirs, $files);
