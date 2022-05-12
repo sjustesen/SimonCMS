@@ -3,9 +3,10 @@ namespace App\Repositories;
 
 use App\Models\Template;
 use App\Interfaces\IRepository;
-use App\Logic\Filesystem\Directory;
 use Illuminate\Http\Client\Request;
 use \App\Logic\FileSystem;
+use App\Logic\Filesystem\Directory;
+use App\Logic\FilesystemListFilter;
 
 class TemplateRepository implements IRepository
 {
@@ -16,8 +17,8 @@ class TemplateRepository implements IRepository
         $this->template_dir = base_path('uploads/templates');
     }
 
-    public function list($withfiles = false) {
-        $dir = Directory::getContentsRecursive($this->template_dir);
+    public function list(FilesystemListFilter $listfilter = FilesystemListFilter::FilesAndDirectories) {
+        $dir = Directory::getContentsRecursive($this->template_dir, $listfilter);
         return $dir;
     }
 
