@@ -1,4 +1,5 @@
 <?php
+namespace App\Logic\Filesystem;
 
 enum FilesystemListFilter {
 	case OnlyDirectories;
