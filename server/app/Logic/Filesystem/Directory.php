@@ -55,17 +55,17 @@ class Directory
             $dir->depth = $depth;
             $dir->type = $fileInfo->isDir() ? 'folder' : 'file';
             
-            if ($listfilter == ListFilter::OnlyDirectories 
-                || $listfilter == ListFilter::FilesAndDirectories) {
+            if ($listfilter == ListFilter::OnlyDirectories || $listfilter == ListFilter::FilesAndDirectories) {
                 if ($fileInfo->isDir()) {
                     $path = $fileInfo->getPathname();
                     $dir->children = Directory::getContentsRecursive($path, $maxdepth, $listfilter);
                     $depth += 1;
                     $dirs[] = $dir;
+                    print_r('here');
                 }
             }
             if ($listfilter == ListFilter::FilesAndDirectories 
-                || $listfilter == ListFilter::FilesOnly) {
+                || $listfilter == ListFilter::OnlyFiles) {
                 if (!$fileInfo->isDir()){
                     $files[] = $dir;
 

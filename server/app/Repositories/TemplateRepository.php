@@ -17,6 +17,7 @@ class TemplateRepository implements IRepository
         $this->template_dir = base_path('uploads/templates');
     }
 
+    
     public function list(ListFilter $listfilter = ListFilter::FilesAndDirectories) {
         $dir = Directory::getContentsRecursive($this->template_dir, $maxdepth=4, $listfilter);
         return $dir;
