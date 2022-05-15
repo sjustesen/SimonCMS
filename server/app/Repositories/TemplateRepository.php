@@ -4,7 +4,6 @@ namespace App\Repositories;
 use App\Models\Template;
 use App\Interfaces\IRepository;
 use Illuminate\Http\Client\Request;
-use \App\Logic\FileSystem;
 use App\Logic\Filesystem\Directory;
 use App\Logic\Filesystem\ListFilter;
 
@@ -18,8 +17,9 @@ class TemplateRepository implements IRepository
     }
 
     
-    public function list(ListFilter $listfilter = ListFilter::FilesAndDirectories) {
-        $dir = Directory::getContentsRecursive($this->template_dir, $maxdepth=4, $listfilter);
+    public function list(ListFilter $filter = ListFilter::FilesAndDirectories) {
+        $dir = Directory::getContentsRecursive($this->template_dir, 4, $filter=$filter);
+        print_r($dir);
         return $dir;
     }
 

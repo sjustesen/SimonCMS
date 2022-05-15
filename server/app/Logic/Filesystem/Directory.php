@@ -61,7 +61,6 @@ class Directory
                     $dir->children = Directory::getContentsRecursive($path, $maxdepth, $listfilter);
                     $depth += 1;
                     $dirs[] = $dir;
-                    print_r('here');
                 }
             }
             if ($listfilter == ListFilter::FilesAndDirectories 
