@@ -18,8 +18,8 @@ class TemplateRepository implements IRepository
 
     
     public function list(ListFilter $filter = ListFilter::FilesAndDirectories) {
-        $dir = Directory::getContentsRecursive($this->template_dir, 4, $filter=$filter);
-        print_r($dir);
+        //$dir = Directory::getContentsRecursive($this->template_dir, 4, $filter=$filter);
+        $dir = Directory::getFilesRecursive($this->template_dir);
         return $dir;
     }
 

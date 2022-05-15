@@ -22,7 +22,6 @@ class TemplateApiController extends ApiController
 
     public function listTemplates() {
         $template_files = $this->repository->list();
-        print_r($template_files);
         return response()->json($template_files);
     }
 
