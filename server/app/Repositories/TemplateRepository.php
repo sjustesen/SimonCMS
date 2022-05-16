@@ -4,7 +4,7 @@ namespace App\Repositories;
 use App\Models\Template;
 use App\Interfaces\IRepository;
 use Illuminate\Http\Client\Request;
-use App\Logic\Filesystem\Directory;
+use App\Logic\Filesystem\FilesAndDirectories;
 use App\Logic\Filesystem\ListFilter;
 
 class TemplateRepository implements IRepository
@@ -19,7 +19,7 @@ class TemplateRepository implements IRepository
     
     public function list(ListFilter $filter = ListFilter::FilesAndDirectories) {
         //$dir = Directory::getContentsRecursive($this->template_dir, 4, $filter=$filter);
-        $dir = Directory::getFilesRecursive($this->template_dir);
+        $dir = FilesAndDirectories::getFilesRecursive($this->template_dir);
         return $dir;
     }
 

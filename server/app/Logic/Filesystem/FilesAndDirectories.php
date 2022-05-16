@@ -2,32 +2,11 @@
 
 namespace App\Logic\Filesystem;
 
-use Laravel\Lumen\Application;
 use App\Logic\Filesystem\ListFilter;
+use App\Logic\HostingEnvironment\VirtualPath;
 
-class Directory
+class FilesAndDirectories
 {
-    public static function getUploadsUrl($path)
-    {
-        $path_arr = explode(DIRECTORY_SEPARATOR, $path);
-        
-        // not the upload dir, bail early
-        if (!in_array('uploads', $path_arr)) return;
-
-        $a = [];
-        $i = sizeof($path_arr) - 1;
-        
-        do {
-            array_push($a, $path_arr[$i]);
-            $i--;
-        } while ($path_arr[$i] != 'uploads');
-        
-        $a = array_reverse($a);
-        array_unshift($a, UPLOADS_URL);
-        
-        return implode(DIRECTORY_SEPARATOR, $a);
-    }
-
     public static function getContents() {
 
     }
@@ -51,14 +30,14 @@ class Directory
 
             $it = new \StdClass();
             $it->name = $fileInfo->getFileName();
-            $it->path = self::getUploadsUrl($fileInfo->getPath()); //self::getRelativePath($fileInfo->getPathname());
+            $it->path = VirtualPath::getUploadsUrl($fileInfo->getPath()); //self::getRelativePath($fileInfo->getPathname());
             $it->depth = $depth;
             $it->type = $fileInfo->isDir() ? 'folder' : 'file';
             
             if ($listfilter == ListFilter::OnlyFiles || $listfilter == ListFilter::FilesAndDirectories) {
                 if ($fileInfo->isDir()) {
                     $path = $fileInfo->getPathname();
-                    $it->children = Directory::getContentsRecursive($path, $maxdepth, $listfilter);
+                    $it->children = self::getContentsRecursive($path, $maxdepth, $listfilter);
                     $depth += 1;
                     $dirs[] = $it;
                 }
@@ -82,7 +61,7 @@ class Directory
 
             if ($info->isFile () && !str_starts_with($info->getFileName(), '.')) {
                 $f = new \StdClass();
-                $f->name = substr($info->getFilename(), strpos($info->getFilename(), '.'));
+                $f->name = explode('.', $info->getFilename())[0];
                 $f->filename = $info->getFileName();
                 $f->path = $info->getPath(); //self::getRelativePath($fileInfo->getPathname());
                 $files[] = $f;
