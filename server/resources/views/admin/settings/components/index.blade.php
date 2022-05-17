@@ -12,6 +12,8 @@
 
 @section('content')
 <main>
-    <h1>Installed packages</h1>
+    <h1>Installed components</h1>
+    <sc-installed-packages>
+    </sc-installed-packages>
 </main>
 @endsection
