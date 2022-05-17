@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-class DoctypeSaved extends Event
+class DoctypeSavedEvent extends Event
 {
     /**
      * Create a new event instance.

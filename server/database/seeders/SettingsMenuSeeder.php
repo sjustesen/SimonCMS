@@ -24,16 +24,9 @@ class SettingsMenuSeeder extends Seeder
 	    'hidden' => 0
 	  ]);
 
-	   DB::table('sc_backend_navtree')->insert([		    
-            'name' => 'Media Types',
-            'alias' => 'mediatypes',
-	    'parent' => 4,
-	    'hidden' => 0
-	   ]);
-
  	   DB::table('sc_backend_navtree')->insert([
-            'name' => 'Backend Datatypes',
-            'alias' => 'datatypes',
+            'name' => 'Components',
+            'alias' => 'components',
 	    'parent' => 4,
 	    'hidden' => 0
 	  ]);
@@ -45,13 +38,6 @@ class SettingsMenuSeeder extends Seeder
 	    'parent' => 4,
 	    'hidden' => 0
 	  ]);
-
-	   DB::table('sc_backend_navtree')->insert([		    
-            'name' => 'Macros',
-            'alias' => 'macros',
-	    'parent' => 4,
-	    'hidden' => 0
-	   ]);
 
   	  DB::table('sc_backend_navtree')->insert([
             'name' => 'Translations',

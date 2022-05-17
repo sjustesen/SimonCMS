@@ -12,9 +12,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        \App\Events\ExampleEvent::class => [
-            \App\Listeners\ExampleListener::class,
+        \App\Events\MediaUploadedEvent::class => [
+            \App\Listeners\MediaUploadedListener::class,
         ],
+        \App\Events\DoctypeSavedEvent::class => [
+            \App\Listeners\DoctypeSavedListener::class
+        ]
     ];
 
     /**

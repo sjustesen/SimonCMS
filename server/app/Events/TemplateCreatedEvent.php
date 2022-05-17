@@ -2,7 +2,7 @@
 
 namespace App\Events;
 
-class TemplateCreated extends Event
+class TemplateCreatedEvent extends Event
 {
     /**
      * Create a new event instance.
