@@ -31,11 +31,11 @@ $router->group([
     $router->delete('doctype/delete/{id}', ['uses' => 'DoctypeApiController@deleteDoctype']);
     $router->put('doctype/update/{id}', ['uses' => 'DoctypeApiController@updateDoctype']);
 
-    $router->get('packages/list',  ['uses' => 'PackageApiController@listDatatypes']);
-    $router->get('package/show/{id}', ['uses' => 'PackageApiController@showDatatype']);
-    $router->post('package/create', ['uses' => 'PackageApiController@createDatatype']);
-    $router->delete('package/delete/{id}', ['uses' => 'PackageApiController@deleteDatatype']);
-    $router->put('package/update/{id}', ['uses' => 'PackageApiController@updateDatatype']);
+    $router->get('components/list',  ['uses' => 'ComponentApiController@list']);
+    $router->get('component/show/{id}', ['uses' => 'ComponentApiController@showComponent']);
+    $router->post('component/create', ['uses' => 'ComponentApiController@createComponent']);
+    $router->delete('component/delete/{id}', ['uses' => 'ComponentApiController@deleteComponent']);
+    $router->put('component/update/{id}', ['uses' => 'ComponentApiController@updateComponent']);
 
     $router->get('templates/list',  ['uses' => 'TemplateApiController@listTemplates']);
     $router->get('template/show/{id}', ['uses' => 'TemplateApiController@showTemplate']);
