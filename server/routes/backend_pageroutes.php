@@ -51,8 +51,8 @@ $router->group(['prefix' => 'admin'], function () use ($router) {
         return view('admin.members.index', []);
     });
     
-    $router->get('settings/packages', function () use ($router) {
-        return view('admin.settings.packages.index', []);
+    $router->get('settings/components', function () use ($router) {
+        return view('admin.settings.components.index', []);
     });
     // TODO: Needs to go
     $router->get('settings/templates', function () use ($router) {
