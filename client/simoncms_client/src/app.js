@@ -7,6 +7,7 @@ import './components/templates/menu/templatetree'
 import './components/doctype/menu/doctypetree'
 import './components/templates/editor'
 import './components/doctype/editor'
+import './components/components/components.view' // *giggles* 
 
 //Styles
 import './styles/uikit.min.css'
