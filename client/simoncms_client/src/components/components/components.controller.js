@@ -10,6 +10,7 @@ export class ComponentsController {
         this.componentsService.list()
         .then(data => {
             console.dir(data)
+            return 'halløj'
         })
         return null;
     }
