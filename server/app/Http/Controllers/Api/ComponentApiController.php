@@ -4,10 +4,17 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\ApiController;
 
+use App\Modules\Repository;
+
 class ComponentApiController extends ApiController {
-    public function __construct()
+    
+    protected $modulesRepository;
+
+    public function __construct(Repository $modulesRepository)
     {
-        //
+        parent::__construct();
+        $this->modulesRepository = $modulesRepository;
+
     }
 
     public function installComponent() {
@@ -32,6 +39,11 @@ class ComponentApiController extends ApiController {
     }
 
     public function list() {
-        return response()->json('Hello from listInstalled');
+        $modules = $this->modulesRepository->getModules();
+		$rows = [];
+		foreach ($modules as $module)
+			$rows[] = $module;
+
+        return response()->json($rows);
     }
 }
