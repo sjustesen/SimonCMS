@@ -60,7 +60,7 @@ class Module
 		// SJ: The received data is an object, 
 		// but the original author made this function
 		// emit an array, so I'm doing a cast
-		
+
 		if (!$this->data)
 			$this->data = $this->loadData();
 
@@ -119,7 +119,6 @@ class Module
 	public function registerServiceProvider()
 	{
 		$provider = 'Modules\\' . $this->name . '\\Providers\\' . $this->name . 'ServiceProvider';
-
 		return $this->app->register($provider);
 	}
 
