@@ -89,6 +89,7 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Modules\\' => 8,
         ),
         'L' => 
         array (
@@ -311,6 +312,11 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Modules\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Modules',
+            1 => __DIR__ . '/../..' . '/Modules',
+        ),
         'Laravel\\SerializableClosure\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/serializable-closure/src',
@@ -337,9 +343,9 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         ),
         'Illuminate\\Support\\' => 
         array (
-            0 => __DIR__ . '/..' . '/illuminate/conditionable',
-            1 => __DIR__ . '/..' . '/illuminate/macroable',
-            2 => __DIR__ . '/..' . '/illuminate/collections',
+            0 => __DIR__ . '/..' . '/illuminate/collections',
+            1 => __DIR__ . '/..' . '/illuminate/conditionable',
+            2 => __DIR__ . '/..' . '/illuminate/macroable',
             3 => __DIR__ . '/..' . '/illuminate/support',
         ),
         'Illuminate\\Session\\' => 
@@ -2425,6 +2431,7 @@ class ComposerStaticInitc1900ae9c5ecc8430af5a21d5ab7563d
         'Mockery\\Undefined' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Undefined.php',
         'Mockery\\VerificationDirector' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationDirector.php',
         'Mockery\\VerificationExpectation' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
+        'Modules\\ExampleModule\\Providers\\ExampleModuleServiceProvider' => __DIR__ . '/../..' . '/Modules/ExampleModule/Providers/ExampleModuleServiceProvider.php',
         'Monolog\\Attribute\\AsMonologProcessor' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php',
         'Monolog\\DateTimeImmutable' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/DateTimeImmutable.php',
         'Monolog\\ErrorHandler' => __DIR__ . '/..' . '/monolog/monolog/src/Monolog/ErrorHandler.php',

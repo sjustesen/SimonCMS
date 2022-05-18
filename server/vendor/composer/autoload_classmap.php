@@ -1924,6 +1924,7 @@ return array(
     'Mockery\\Undefined' => $vendorDir . '/mockery/mockery/library/Mockery/Undefined.php',
     'Mockery\\VerificationDirector' => $vendorDir . '/mockery/mockery/library/Mockery/VerificationDirector.php',
     'Mockery\\VerificationExpectation' => $vendorDir . '/mockery/mockery/library/Mockery/VerificationExpectation.php',
+    'Modules\\ExampleModule\\Providers\\ExampleModuleServiceProvider' => $baseDir . '/Modules/ExampleModule/Providers/ExampleModuleServiceProvider.php',
     'Monolog\\Attribute\\AsMonologProcessor' => $vendorDir . '/monolog/monolog/src/Monolog/Attribute/AsMonologProcessor.php',
     'Monolog\\DateTimeImmutable' => $vendorDir . '/monolog/monolog/src/Monolog/DateTimeImmutable.php',
     'Monolog\\ErrorHandler' => $vendorDir . '/monolog/monolog/src/Monolog/ErrorHandler.php',
