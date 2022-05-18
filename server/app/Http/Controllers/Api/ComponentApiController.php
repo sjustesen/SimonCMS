@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\ApiController;
-
+use App\Modules\Module;
 use App\Modules\Repository;
 
 class ComponentApiController extends ApiController {
@@ -42,8 +42,16 @@ class ComponentApiController extends ApiController {
         $modules = $this->modulesRepository->getModules();
 		$rows = [];
 		foreach ($modules as $module)
-			$rows[] = $module;
-
+			$rows[] = $this->moduleToRow($module);
         return response()->json($rows);
     }
+
+    private function moduleToRow(Module $module)
+	{
+		return [
+			'name'			=>	$module->name,
+			'description'	=>	$module->description,
+			'status'		=>	$module->isEnabled() ? 'Enabled' : 'Disabled'
+		];
+	}
 }

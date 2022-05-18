@@ -14,12 +14,16 @@ export class ComponentsService {
         return await fetch(`/admin/api/components/list`, config)
             .then(response => response.json())
             .then(data => {
-                console.dir(data)
-                let model = new ComponentModel();
-                model.name = data.name;
-                model.alias = data.alias;
-                model.status = data.status;
-                return model;
+                let components = [];
+                data.forEach(element => {
+                    let model = new ComponentModel();
+                    model.name = element.name;
+                    model.alias = element.alias ?? '';
+                    model.description = element.description;
+                    model.status = element.status ?? '';        
+                    components.push(model);
+                });
+                return components;
             });
     }
     

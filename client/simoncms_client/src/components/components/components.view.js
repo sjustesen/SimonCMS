@@ -15,8 +15,10 @@ export default class InstalledComponentsList extends LitElement {
     }
 
     listComponents() {
-        let list = this.controller.list();
-        console.dir(list)
+        this.controller.list();
+           /* list.forEach(element => {
+                this.innerHTML += element.name
+            }); */      
     }
 
     render() {
