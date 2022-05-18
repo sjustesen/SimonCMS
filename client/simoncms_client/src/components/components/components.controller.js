@@ -9,9 +9,9 @@ export class ComponentsController {
     list() {
         this.componentsService.list()
         .then(data => {
-            this.host.innerHTML = 'Hello...'; 
-            console.log(data)
+            console.dir(data)
         })
+        return null;
     }
     
 }
