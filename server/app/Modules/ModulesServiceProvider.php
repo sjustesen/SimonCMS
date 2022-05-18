@@ -9,7 +9,7 @@ class ModulesServiceProvider extends ServiceProvider
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 */
-	protected $defer = false;
+	protected $defer = true;
 
 	/**
 	 * @var array
