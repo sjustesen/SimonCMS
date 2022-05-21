@@ -19,7 +19,7 @@ export class ComponentsService {
                     let model = new ComponentModel();
                     model.name = element.name;
                     model.alias = element.alias ?? '';
-                    model.description = element.description;
+                    model.description = element.description ?? '';
                     model.status = element.status ?? '';        
                     components.push(model);
                 });
