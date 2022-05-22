@@ -19,6 +19,10 @@ class DoctypeRepository implements IRepository
         
     }
 
+    public function create(Request $request)
+    {
+        
+    }
 
     // -------------- DOCTYPES ----- //
 
@@ -28,8 +32,10 @@ class DoctypeRepository implements IRepository
         return $doctypes_shim;
     }
 
-    public function create(Request $request)
+    public function save(Request $request)
     {
+        $doctype = new Doctype();
+        $doctype->save($request->doctype);
     }
 
     public function read($id)

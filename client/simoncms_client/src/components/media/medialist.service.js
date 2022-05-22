@@ -1,9 +1,7 @@
-import { MediaService } from './medialist.service';
-import { MediaListController } from './medialist.controller'
+import MediaService from "../../common/services/media.service";
 
-
-export default class MediaService {
-
+export class MediaListService extends MediaService {
     constructor() {
+        super();
     }
 }
