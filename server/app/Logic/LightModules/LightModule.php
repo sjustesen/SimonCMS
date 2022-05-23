@@ -4,7 +4,7 @@ namespace App\Logic\LightModules;
 use App\Interfaces\ILightModule;
 use App\Interfaces\ILightModuleConfig;
 
-class LightModule extends ILightModule {
+class LightModule implements ILightModule {
 
     public ILightModuleConfig $config;
 
