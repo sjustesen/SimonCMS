@@ -42,12 +42,14 @@ export class DoctypeEditorController {
                 case 'template':
                     this.model.template = element.selectedValue;
                     break;
-                default:
+                case 'fields':
                     this.model.fields.push({
                         name: element.name,
                         alias: element.dataset.model,
                         value: element.value
-                    })
+                    });
+                default:
+                    break;
             }
         });
     }

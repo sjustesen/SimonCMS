@@ -21,7 +21,8 @@ class DoctypeRepository implements IRepository
 
     public function create(Request $request)
     {
-        
+        $model = new Doctype();
+        $model->save(); 
     }
 
     // -------------- DOCTYPES ----- //

@@ -40,6 +40,7 @@ export class DoctypeEditorService {
             body: JSON.stringify({
                 name: model.name,
                 alias: model.alias,
+                template: model.template,
                 fields: model.fields
             }),
             headers: {
