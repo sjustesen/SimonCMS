@@ -3,10 +3,11 @@ import { MediaService } from './medialist.service';
 import { MediaListController } from './medialist.controller'
 
 
-export default class MediaList extends LitElement {
+export default class MediaLibrary extends LitElement {
 
     constructor() {
         super();
+        console.log('MediaLibrary says hello...')
         this.controller = new MediaListController(this, new MediaService());
     }
 
@@ -16,11 +17,9 @@ export default class MediaList extends LitElement {
     }
 
     listComponents() {
-        this.controller.list();
-           /* list.forEach(element => {
-                this.innerHTML += element.name
-            }); */      
-    }
+        let test = this.controller.list();
+        this.innerHTML = test;
+       }
 
     render() {
         return html`
@@ -31,4 +30,4 @@ export default class MediaList extends LitElement {
     }
 }
 
-customElements.define('sc-medialist', MediaList)
+customElements.define('sc-medialibrary', MediaLibrary)

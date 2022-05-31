@@ -6,4 +6,8 @@ export default class MediaListController {
 
     constructor() {
     }
+
+    list() {
+        return 'hello';
+    }
 }
