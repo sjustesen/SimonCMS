@@ -4,27 +4,27 @@ namespace App\Logic\LightModules;
 class LightModuleManager {
     public $modules = [];
 
-    public static function add(LightModule $module) {
+    public static function install(LightModule $module) {
 
     }
 
-    public function remove() {
+    public static function uninstall(string $uuid) {
         
     }
 
-    public function getMetaData(string $uuid) {
+    public static function getMetaData(string $uuid) {
 
     }
 
-    public function listEnabled() {
+    public static function getModuleState(string $uuid) {
 
     }
 
-    public function listDisabled() {
+    public static function listEnabled() {
+
+    }
+
+    public static function listDisabled() {
         
     }
-
-    public function loadConfig() {
-
-    } 
 }
