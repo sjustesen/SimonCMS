@@ -11,14 +11,6 @@ class DoctypeRepository implements IRepository
     {
     }
 
-    public function loadTabs() {
-
-    }
-
-    public function loadContentTabs() {
-        
-    }
-
     public function create(Request $request)
     {
         $model = new Doctype();
@@ -45,10 +37,15 @@ class DoctypeRepository implements IRepository
         return $doctype;
     }
 
-    public function update()
+    public function update(Request $request)
     {
-        
-    }
+        // check if items are dirty (updated)
+        $activeDoctype = Doctype::find($request->doctype);
+        if ($activeDoctype->isDirty()) {
+            $activeDoctype->save($request->doctype);
+            }
+        }
+       
     
     public function delete()
     {
